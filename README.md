@@ -1,7 +1,7 @@
 <div align="center">
 
 # HOZA DIGITAL
-### High-Impact Digital Systems · Websites, Apps & Automation Built Fast
+### We Build Digital Things. Fast
 
 [![Next.js](https://img.shields.io/badge/Next.js-14.2-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)

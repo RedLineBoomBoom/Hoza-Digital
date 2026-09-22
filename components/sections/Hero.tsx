@@ -229,13 +229,13 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
 
           <SmoothHeading as="h1" className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.25rem] xl:text-[4.25rem] 2xl:text-[5rem] 3xl:text-[5.5rem] leading-[1.02] tracking-tight">
-            ARCHITECTING <br />
+            WE BUILD <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-hoza-white via-hoza-lavender to-[#8B5CFF]">
-              HIGH-IMPACT
+              DIGITAL THINGS.
             </span>{" "}
             <br />
             <span className="relative inline-block max-w-full text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] via-cyan-200 to-white">
-              DIGITAL SYSTEMS.
+              FAST.
               {/* Cyan Laser Glow Line */}
               <span className="absolute -bottom-2 left-0 w-full h-[3px] bg-gradient-to-r from-[#00F0FF] via-[#8B5CFF] to-transparent shadow-[0_0_15px_#00F0FF]" />
             </span>
