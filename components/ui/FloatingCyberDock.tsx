@@ -1,0 +1,115 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+import {
+  Zap,
+  Layers,
+  Users,
+  MessageCircle,
+  ArrowUp,
+  Sliders,
+  HelpCircle,
+  Newspaper,
+} from "lucide-react";
+
+export const FloatingCyberDock: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsVisible(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  if (!isVisible) return null;
+
+  return (
+    <aside aria-label="Quick Actions Dock" className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 px-4 select-none">
+      <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-5 py-2 bg-[#0C0C0C]/95 tactical-corners border border-white/20 hover:border-[#00F0FF]/50 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.8),0_0_16px_rgba(0,240,255,0.15)] transition-all duration-300">
+        <span className="tactical-corner-tr" />
+        <span className="tactical-corner-bl" />
+        {/* Quick Jumps */}
+        <button
+          onClick={() => scrollTo("capabilities")}
+          className="font-mono text-[11px] text-hoza-muted hover:text-[#00F0FF] px-2 py-1 transition-colors flex items-center gap-1.5 cursor-pointer"
+        >
+          <Layers className="w-3.5 h-3.5 text-[#00F0FF]" />
+          <span className="hidden sm:inline">BENTO</span>
+        </button>
+
+        <button
+          onClick={() => scrollTo("about")}
+          className="font-mono text-[11px] text-hoza-muted hover:text-[#00F0FF] px-2 py-1 transition-colors flex items-center gap-1.5 cursor-pointer"
+        >
+          <Users className="w-3.5 h-3.5 text-[#00F0FF]" />
+          <span className="hidden sm:inline">ABOUT</span>
+        </button>
+
+        <button
+          onClick={() => scrollTo("estimator")}
+          className="font-mono text-[11px] text-hoza-muted hover:text-[#00F0FF] px-2 py-1 transition-colors flex items-center gap-1.5 cursor-pointer"
+        >
+          <Sliders className="w-3.5 h-3.5 text-[#8B5CFF]" />
+          <span className="hidden sm:inline">ESTIMATOR</span>
+        </button>
+
+        <button
+          onClick={() => scrollTo("why-hoza")}
+          className="font-mono text-[11px] text-hoza-muted hover:text-[#00F0FF] px-2 py-1 transition-colors flex items-center gap-1.5 cursor-pointer"
+        >
+          <Zap className="w-3.5 h-3.5 text-amber-400" />
+          <span className="hidden sm:inline">VELOCITY</span>
+        </button>
+
+        <button
+          onClick={() => scrollTo("faq")}
+          className="font-mono text-[11px] text-hoza-muted hover:text-[#00F0FF] px-2 py-1 transition-colors flex items-center gap-1.5 cursor-pointer"
+        >
+          <HelpCircle className="w-3.5 h-3.5 text-hoza-lavender" />
+          <span className="hidden sm:inline">FAQ</span>
+        </button>
+
+        <button
+          onClick={() => scrollTo("articles")}
+          className="font-mono text-[11px] text-hoza-muted hover:text-[#00F0FF] px-2 py-1 transition-colors flex items-center gap-1.5 cursor-pointer"
+        >
+          <Newspaper className="w-3.5 h-3.5 text-[#00F0FF]" />
+          <span className="hidden sm:inline">ARTICLES</span>
+        </button>
+
+        <span className="w-px h-4 bg-white/20 mx-1" />
+
+        {/* 1-Tap WhatsApp Direct */}
+        <a
+          href="https://wa.me/6285111505115?text=Hi%20Hoza%20Digital%2C%20I%20would%20like%20to%20discuss%20a%20new%20digital%20project."
+          target="_blank"
+          rel="noreferrer"
+          className="px-2.5 py-1 bg-emerald-500 hover:bg-emerald-400 text-[#08050D] font-mono text-[11px] font-bold flex items-center gap-1.5 transition-all shadow-sm"
+        >
+          <MessageCircle className="w-3.5 h-3.5 fill-[#08050D]" />
+          <span>CHAT</span>
+        </a>
+
+        {/* Scroll To Top */}
+        <button
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          title="Scroll To Top"
+          className="p-1.5 text-hoza-muted hover:text-white transition-colors"
+        >
+          <ArrowUp className="w-3.5 h-3.5" />
+        </button>
+      </div>
+    </aside>
+  );
+};
