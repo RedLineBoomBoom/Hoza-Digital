@@ -207,35 +207,6 @@ export const Footer: React.FC<{ onOpenProjectModal: () => void }> = ({
                   Technology Matrix
                 </a>
               </li>
-              <li className="pt-2 border-t border-white/10 space-y-1.5">
-                <a
-                  href="https://github.com/hozadigital"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#00F0FF] transition-colors flex items-center justify-between group"
-                >
-                  <span>GitHub @hozadigital</span>
-                  <ArrowUpRight className="w-3 h-3 text-neutral-500 group-hover:text-[#00F0FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </a>
-                <a
-                  href="https://www.instagram.com/hozadigital/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#E1306C] transition-colors flex items-center justify-between group"
-                >
-                  <span>Instagram @hozadigital</span>
-                  <ArrowUpRight className="w-3 h-3 text-neutral-500 group-hover:text-[#E1306C] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </a>
-                <a
-                  href="https://x.com/hozadigital"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#00F0FF] transition-colors flex items-center justify-between group"
-                >
-                  <span>X.com @hozadigital</span>
-                  <ArrowUpRight className="w-3 h-3 text-neutral-500 group-hover:text-[#00F0FF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                </a>
-              </li>
             </ul>
           </div>
 
