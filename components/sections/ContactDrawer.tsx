@@ -381,6 +381,39 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                   {isSubmitting ? "Transmitting..." : "Submit Project Brief"}
                 </Button>
               </div>
+
+              {/* Official Social Channels in Drawer */}
+              <div className="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-mono text-hoza-muted">
+                <span className="text-hoza-lavender">// OFFICIAL CHANNELS</span>
+                <div className="flex items-center gap-4 text-xs">
+                  <a
+                    href="https://github.com/hozadigital"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#00F0FF] transition-colors"
+                  >
+                    GitHub
+                  </a>
+                  <span className="text-white/20">•</span>
+                  <a
+                    href="https://www.instagram.com/hozadigital/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#E1306C] transition-colors"
+                  >
+                    Instagram
+                  </a>
+                  <span className="text-white/20">•</span>
+                  <a
+                    href="https://x.com/hozadigital"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#00F0FF] transition-colors"
+                  >
+                    X (Twitter)
+                  </a>
+                </div>
+              </div>
             </form>
           </div>
         )}

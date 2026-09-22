@@ -68,7 +68,8 @@ export const metadata: Metadata = {
     title: "Hoza — Websites, Apps and Automation Built Fast",
     description:
       "Websites, applications, mobile products and automation systems built for businesses ready to move forward.",
-    creator: "@hozastudio",
+    creator: "@hozadigital",
+    site: "@hozadigital",
     images: ["/og-image.png"],
   },
   robots: {
@@ -99,10 +100,15 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: "Hoza Studio",
+    name: "Hoza Digital",
     description:
       "Hoza designs and develops websites, web applications, mobile products and automation systems for ambitious businesses in Indonesia, Singapore and worldwide.",
     url: "https://hoza.studio",
+    sameAs: [
+      "https://github.com/hozadigital",
+      "https://www.instagram.com/hozadigital/",
+      "https://x.com/hozadigital",
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Jakarta",

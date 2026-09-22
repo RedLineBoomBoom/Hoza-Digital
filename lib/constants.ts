@@ -525,3 +525,31 @@ export const HOZA_ARTICLES: HozaArticle[] = [
   },
 ];
 
+export interface HozaSocial {
+  name: string;
+  handle: string;
+  url: string;
+  description: string;
+}
+
+export const HOZA_SOCIALS: HozaSocial[] = [
+  {
+    name: "GitHub",
+    handle: "@hozadigital",
+    url: "https://github.com/hozadigital",
+    description: "Open-source repositories, developer tools & architecture templates",
+  },
+  {
+    name: "Instagram",
+    handle: "@hozadigital",
+    url: "https://www.instagram.com/hozadigital/",
+    description: "Visual design drops, sprint highlights & digital product studio showcase",
+  },
+  {
+    name: "X (Twitter)",
+    handle: "@hozadigital",
+    url: "https://x.com/hozadigital",
+    description: "Technical dispatches, release telemetry & rapid engineering notes",
+  },
+];
+

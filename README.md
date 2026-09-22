@@ -17,6 +17,10 @@
 
 [🌐 Visit Official Website](https://hoza-digital.vercel.app/) • [⚡ Calculate Sprint Scope](#-architecture-calculator--sprint-estimator) • [👥 Core Squad](#-core-squad) • [🛡 Quality Guarantees](#-quality-guarantees--technical-standards)
 
+<br />
+
+**Official Channels**: [🐙 GitHub (@hozadigital)](https://github.com/hozadigital) • [📸 Instagram (@hozadigital)](https://www.instagram.com/hozadigital/) • [𝕏 X / Twitter (@hozadigital)](https://x.com/hozadigital)
+
 </div>
 
 ---
