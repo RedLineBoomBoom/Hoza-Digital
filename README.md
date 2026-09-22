@@ -15,7 +15,7 @@
 > **"Built in Indonesia. Ready for anywhere."**  
 > Hoza designs and builds mission-critical websites, scalable cloud platforms, native mobile products, and autonomous AI pipelines in rapid 14-day engineering sprints.
 
-[🌐 Visit Official Website](https://hoza-digital.vercel.app/) • [⚡ Calculate Sprint Scope](#-architecture-calculator--sprint-estimator) • [👥 Core Squad](#-core-squad) • [🚀 Local Development](#-getting-started--local-development)
+[🌐 Visit Official Website](https://hoza-digital.vercel.app/) • [⚡ Calculate Sprint Scope](#-architecture-calculator--sprint-estimator) • [👥 Core Squad](#-core-squad) • [🛡 Quality Guarantees](#-quality-guarantees--technical-standards)
 
 </div>
 
@@ -29,8 +29,6 @@
 - [Architecture Calculator & Sprint Estimator](#-architecture-calculator--sprint-estimator)
 - [Technology Matrix (Tech Matrix)](#-technology-matrix-tech-matrix)
 - [Core Squad](#-core-squad)
-- [Project Directory Structure](#-project-directory-structure)
-- [Getting Started & Local Development](#-getting-started--local-development)
 - [Quality Guarantees & Technical Standards](#-quality-guarantees--technical-standards)
 
 ---
@@ -124,75 +122,6 @@ Hoza Digital is driven by senior engineers and operators committed to a *Remote-
 * **Amma** — *Frontend & Systems Engineer*
   > Focused on design systems, conversion-driven UX/UI, interaction fidelity, and fluid web experiences that drive user action.  
   > `Hoza Digital Core Team · Remote-First`
-
----
-
-## 📂 Project Directory Structure
-
-```plaintext
-├── app/
-│   ├── api/                  # Serverless API routes (contact endpoint)
-│   ├── globals.css           # Tailwind base, custom cyber keyframes, GPU acceleration
-│   ├── icon.svg              # Official circular Hoza emblem favicon (SVG)
-│   ├── favicon.ico           # Cross-browser fallback icon (ICO)
-│   ├── layout.tsx            # Root layout, OpenGraph, SEO metadata, JSON-LD schema
-│   └── page.tsx              # Main single-page application entrypoint
-├── components/
-│   ├── sections/
-│   │   ├── HeroSpatial.tsx       # 3D WebGL hero canvas, ambient HUD & CLI runner
-│   │   ├── ClientMarquee.tsx     # Dual-track infinite partner marquee
-│   │   ├── ProjectEstimator.tsx  # Interactive sprint calculator with smooth transitions
-│   │   ├── AboutSection.tsx      # Studio narrative & Core Squad profile cards
-│   │   ├── TechMatrix.tsx        # Architecture domain switcher with cascading badges
-│   │   ├── ArticlesSection.tsx   # ARTICLES marquee ticker & field notes grid
-│   │   └── Footer.tsx            # Dual clocks, contact trigger & studio statements
-│   └── ui/
-│       ├── CustomCursor.tsx      # Rotating Hoza emblem cursor with banking tilt physics
-│       ├── FloatingCyberDock.tsx # Floating cyber dock navigation with live clocks
-│       ├── HozaLogo.tsx          # Official vector wordmark logo
-│       ├── SoundEffects.tsx      # Web Audio API procedural synthesizer
-│       └── SmoothHeading.tsx     # Gradient shimmering display typography
-├── lib/
-│   ├── constants.ts          # Static data for articles, testimonials, and partners
-│   └── utils.ts              # Class merging utilities (clsx, tailwind-merge)
-├── public/
-│   └── images/               # Author 3D avatars, article thumbnails, and assets
-├── tailwind.config.ts        # Custom cyber palette, font stacks, and animations
-└── tsconfig.json             # Strict TypeScript configuration
-```
-
----
-
-## 🚀 Getting Started & Local Development
-
-### Prerequisites
-- **Node.js**: Version `18.18.0` or higher
-- **Package Manager**: `npm`, `yarn`, or `pnpm`
-
-### Installation Steps
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/RedLineBoomBoom/Hoza-Digital.git
-   cd Hoza-Digital
-   ```
-
-2. **Install Dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Start the Development Server**:
-   ```bash
-   npm run dev
-   ```
-   Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
-
-4. **Production Build & Type-Check**:
-   ```bash
-   npm run build
-   npm run start
-   ```
 
 ---
 
