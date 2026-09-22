@@ -88,9 +88,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
             : "bg-transparent border-b border-transparent py-4 sm:py-5"
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative flex items-center justify-between">
           {/* Left: Brand Logo Lockup */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-3 shrink-0 z-10">
             <a
               href="#"
               onClick={(e) => {
@@ -138,8 +138,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
                 </svg>
               </div>
 
-              {/* Sub-label visible on desktop screens */}
-              <div className="hidden xl:flex flex-col pl-3 border-l border-white/15">
+              {/* Sub-label visible on wide desktop screens (symmetric with right Status Available) */}
+              <div className="hidden min-[1500px]:flex flex-col pl-3 border-l border-white/15">
                 <span className="font-mono text-[9px] text-[#00F0FF] font-bold tracking-widest uppercase">
                   HIGH-VELOCITY IT PROTOCOL
                 </span>
@@ -150,9 +150,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
             </a>
           </div>
 
-          {/* Center: Awwwards Floating Glassmorphic Pill */}
+          {/* Center: Awwwards Floating Glassmorphic Pill - Absolutely Centered */}
           <nav
-            className="hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#0D0718]/80 border border-[#8B5CFF]/30 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.5),0_0_12px_rgba(139,92,255,0.1)]"
+            className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 items-center gap-0.5 xl:gap-1 px-2.5 xl:px-3 py-1.5 rounded-full bg-[#0D0718]/80 border border-[#8B5CFF]/30 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.5),0_0_12px_rgba(139,92,255,0.1)] z-20 pointer-events-auto"
             aria-label="Main Navigation"
           >
             {mainNavLinks.map((link) => (
@@ -160,7 +160,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavLinkClick(e, link.href)}
-                className="px-3.5 py-1 rounded-full font-mono text-xs text-hoza-muted hover:text-white hover:bg-white/[0.06] transition-all tracking-wider whitespace-nowrap"
+                className="px-2.5 xl:px-3.5 py-1 rounded-full font-mono text-xs text-hoza-muted hover:text-white hover:bg-white/[0.06] transition-all tracking-wider whitespace-nowrap"
               >
                 {link.label}
               </a>
@@ -173,7 +173,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
                 onClick={() => setMoreOpen((prev) => !prev)}
                 onMouseEnter={() => setMoreOpen(true)}
                 className={cn(
-                  "px-3 py-1 rounded-full font-mono text-xs flex items-center gap-1 text-hoza-muted hover:text-white hover:bg-white/[0.06] transition-all tracking-wider whitespace-nowrap",
+                  "px-2.5 xl:px-3 py-1 rounded-full font-mono text-xs flex items-center gap-1 text-hoza-muted hover:text-white hover:bg-white/[0.06] transition-all tracking-wider whitespace-nowrap",
                   moreOpen && "text-[#00F0FF] bg-white/[0.08]"
                 )}
                 aria-expanded={moreOpen}
@@ -251,9 +251,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
           </nav>
 
           {/* Right Action Cluster - Bulkhead Style Tactical Action */}
-          <div className="flex items-center gap-3 shrink-0">
-            {/* Status Available Pill */}
-            <div className="hidden 2xl:flex items-center gap-2 px-3 py-1.5 bg-tactical-dark border border-emerald-500/40 font-mono text-[11px] text-emerald-400">
+          <div className="flex items-center gap-3 shrink-0 z-10">
+            {/* Status Available Pill (symmetric with left Sub-label) */}
+            <div className="hidden min-[1500px]:flex items-center gap-2 px-3 py-1.5 bg-tactical-dark border border-emerald-500/40 font-mono text-[11px] text-emerald-400">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
