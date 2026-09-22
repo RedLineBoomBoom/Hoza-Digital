@@ -262,57 +262,20 @@ export const Footer: React.FC<{ onOpenProjectModal: () => void }> = ({
         </div>
 
         {/* Bottom Colophon & Scroll to Top */}
-        <div className="border-t border-hoza-violet/80 mt-12 pt-8 flex flex-col gap-6 text-[11px] text-hoza-darkMuted">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 font-mono">
-            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4 text-hoza-muted">
-              <span className="text-[#00F0FF] text-[10px] font-bold tracking-widest">// NETWORKS:</span>
-              <a
-                href="https://github.com/hozadigital"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#00F0FF] transition-colors flex items-center gap-1.5"
-              >
-                <span>github.com/hozadigital</span>
-              </a>
-              <span className="text-white/20">&bull;</span>
-              <a
-                href="https://www.instagram.com/hozadigital/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#E1306C] transition-colors flex items-center gap-1.5"
-              >
-                <span>instagram.com/hozadigital</span>
-              </a>
-              <span className="text-white/20">&bull;</span>
-              <a
-                href="https://x.com/hozadigital"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#00F0FF] transition-colors flex items-center gap-1.5"
-              >
-                <span>x.com/hozadigital</span>
-              </a>
-            </div>
-
-            <div className="flex items-center gap-6 shrink-0">
-              <span className="hidden md:inline">FAST FORWARD // SYSTEM_VERIFIED</span>
-              <button
-                onClick={scrollToTop}
-                className="flex items-center gap-1.5 text-hoza-muted hover:text-hoza-white transition-colors cursor-pointer"
-              >
-                <span>BACK TO TOP</span>
-                <ArrowUp className="w-3.5 h-3.5" />
-              </button>
-            </div>
+        <div className="border-t border-hoza-violet/80 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-hoza-darkMuted">
+          <div>
+            © {new Date().getFullYear()} HOZA STUDIO. ALL RIGHTS RESERVED. BUILT IN INDONESIA. READY FOR ANYWHERE.
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-2 border-t border-white/5 pt-4 text-hoza-darkMuted text-[10.5px]">
-            <div>
-              © {new Date().getFullYear()} HOZA STUDIO. ALL RIGHTS RESERVED. BUILT IN INDONESIA. READY FOR ANYWHERE.
-            </div>
-            <div className="text-center sm:text-right tracking-wider">
-              ENTERPRISE SPRINT ARCHITECTURE // SUB-SECOND PERFORMANCE
-            </div>
+          <div className="flex items-center gap-6">
+            <span>FAST FORWARD // SYSTEM_VERIFIED</span>
+            <button
+              onClick={scrollToTop}
+              className="flex items-center gap-1.5 text-hoza-muted hover:text-hoza-white transition-colors cursor-pointer"
+            >
+              <span>BACK TO TOP</span>
+              <ArrowUp className="w-3.5 h-3.5" />
+            </button>
           </div>
         </div>
       </div>
