@@ -166,38 +166,41 @@ export const Hero: React.FC<HeroProps> = ({
       />
 
       {/* Top Telemetry Flight Deck Header */}
-      <div className="relative z-20 flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-hoza-muted border-b border-white/10 pb-4 w-full">
-        <div className="flex items-center gap-3">
+      <div className="relative z-20 flex flex-wrap md:flex-nowrap items-center justify-between gap-3 md:gap-4 font-mono text-xs text-hoza-muted border-b border-white/10 pb-4 w-full">
+        {/* Left Cluster */}
+        <div className="flex items-center gap-2.5 sm:gap-3 z-10 shrink-0">
           <div className="flex items-center gap-1.5 px-2.5 py-1 bg-hoza-surface border border-[#D4FF00]/40 text-[#D4FF00] rounded-sm text-[11px] shadow-[0_0_12px_rgba(212,255,0,0.2)]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#D4FF00] animate-pulse" />
             <span>CYBER-SPATIAL OS</span>
           </div>
-          <span className="hidden sm:inline-block text-hoza-darkMuted">/</span>
-          <span className="hidden sm:inline-block text-hoza-white">
-            JAKARTA HQ & SINGAPORE REGIONAL
+          <span className="hidden xl:inline-block text-hoza-darkMuted">/</span>
+          <span className="hidden xl:inline-block text-hoza-white">
+            JAKARTA HQ &amp; SINGAPORE REGIONAL
           </span>
         </div>
 
-        {/* Center/Interactive System Health & Scarcity HUD */}
-        <button
-          type="button"
-          onClick={() => {
-            soundEffects.playClick?.();
-            onOpenSystemHealth?.();
-          }}
-          className="group flex items-center gap-2 px-3 py-1 bg-[#121216]/90 hover:bg-[#181820] border border-[#D4FF00]/30 hover:border-[#D4FF00] rounded-full text-[11px] transition-all cursor-pointer shadow-[0_0_12px_rgba(212,255,0,0.1)] active:scale-98"
-          title="Click to view full System Telemetry & Sprint Availability"
-        >
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-white font-medium">OCTOBER SPRINT:</span>
-          <span className="text-[#D4FF00] font-bold">1 SLOT OPEN</span>
-          <span className="text-neutral-500 group-hover:text-white transition-colors hidden md:inline">
-            &bull; 99.98% SLA
-          </span>
-        </button>
+        {/* Center/Interactive System Health & Scarcity HUD - Absolute True Center on Desktop */}
+        <div className="w-full md:w-auto order-3 md:order-2 flex justify-center md:absolute md:left-1/2 md:-translate-x-1/2 md:top-0 md:bottom-4 md:items-center pointer-events-auto z-20">
+          <button
+            type="button"
+            onClick={() => {
+              soundEffects.playClick?.();
+              onOpenSystemHealth?.();
+            }}
+            className="group flex items-center gap-2 px-3.5 py-1 bg-[#121216]/90 hover:bg-[#181820] border border-[#D4FF00]/30 hover:border-[#D4FF00] rounded-full text-[11px] transition-all cursor-pointer shadow-[0_0_12px_rgba(212,255,0,0.12)] active:scale-98 whitespace-nowrap"
+            title="Click to view full System Telemetry & Sprint Availability"
+          >
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-white font-medium">OCTOBER SPRINT:</span>
+            <span className="text-[#D4FF00] font-bold">1 SLOT OPEN</span>
+            <span className="text-neutral-500 group-hover:text-white transition-colors hidden sm:inline">
+              &bull; 99.98% SLA
+            </span>
+          </button>
+        </div>
 
-        {/* Real-time clocks & Latency */}
-        <div className="flex items-center gap-4 sm:gap-6 text-[11px]">
+        {/* Right Cluster: Real-time clocks & Latency */}
+        <div className="flex items-center gap-3.5 sm:gap-6 text-[11px] z-10 order-2 md:order-3 shrink-0">
           <div className="flex items-center gap-2">
             <Clock className="w-3 h-3 text-[#D4FF00]" />
             <span className="text-hoza-white font-semibold">
