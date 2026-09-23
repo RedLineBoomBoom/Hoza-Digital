@@ -149,7 +149,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenProjectModal }) => {
 
         <p className="mt-8 text-base sm:text-xl text-hoza-muted max-w-2xl leading-relaxed">
           Tell us what you are trying to create, improve or automate. We will
-          help you determine the best way to move forwardâ€”with clear milestones,
+          help you determine the best way to move forward—with clear milestones,
           no agency fluff, and working code.
         </p>
 
@@ -197,7 +197,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenProjectModal }) => {
             <Mail className="w-3.5 h-3.5 text-[#D4FF00]" />
             <span>hello@hoza.studio</span>
           </a>
-          <span className="text-hoza-darkMuted">â€¢</span>
+          <span className="text-hoza-darkMuted">•</span>
           <button
             onClick={onOpenProjectModal}
             className="flex items-center gap-2 hover:text-hoza-white transition-colors text-left"
@@ -205,9 +205,9 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenProjectModal }) => {
             <Calendar className="w-3.5 h-3.5 text-[#D4FF00]" />
             <span>Schedule Intro Call (30 mins)</span>
           </button>
-          <span className="text-hoza-darkMuted">â€¢</span>
+          <span className="text-hoza-darkMuted">•</span>
           <span className="text-[#D4FF00]/70">Direct Partner Access</span>
-          <span className="text-hoza-darkMuted">â€¢</span>
+          <span className="text-hoza-darkMuted">•</span>
           <div className="flex items-center gap-3">
             <a
               href="https://github.com/hozadigital"

@@ -1,4 +1,4 @@
-﻿export interface Capability {
+export interface Capability {
   id: string;
   number: string;
   title: string;
@@ -17,7 +17,7 @@ export const CAPABILITIES: Capability[] = [
     shortDesc: "Clear, credible digital experiences built to earn attention, establish market authority, and create business opportunities.",
     businessImpact: "Fast-loading, SEO-dominant digital flagships that convert high-value corporate and institutional inquiries.",
     previewType: "browser",
-    metrics: "< 0.6s LCP â€¢ 100/100 CWV",
+    metrics: "< 0.6s LCP • 100/100 CWV",
     deliverables: ["Custom Architecture", "Multi-Region Edge CDN", "Fluid Kinetic Typography", "Headless CMS Integration"],
   },
   {
@@ -37,7 +37,7 @@ export const CAPABILITIES: Capability[] = [
     shortDesc: "Reliable platforms and dashboards that simplify complex workflows for enterprise teams and customers.",
     businessImpact: "Replaces slow legacy software with reactive, secure cloud interfaces employees and clients love using.",
     previewType: "dashboard",
-    metrics: "Realtime Telemetry â€¢ 99.99% Uptime",
+    metrics: "Realtime Telemetry • 99.99% Uptime",
     deliverables: ["Role-Based Access Control", "Reactive UI States", "GraphQL & REST Pipelines", "Complex State Orchestration"],
   },
   {
@@ -47,7 +47,7 @@ export const CAPABILITIES: Capability[] = [
     shortDesc: "Fast, intuitive mobile products on iOS and Android designed around real user behaviour and gesture ergonomics.",
     businessImpact: "Pocket-sized product engines designed for daily retention, seamless biometric payments, and offline resilience.",
     previewType: "mobile",
-    metrics: "120fps Gesture Motion â€¢ Native Core",
+    metrics: "120fps Gesture Motion • Native Core",
     deliverables: ["Offline-First Sync", "Biometric Authentication", "Push Notification Lifecycles", "Native Hardware Interop"],
   },
   {
@@ -57,7 +57,7 @@ export const CAPABILITIES: Capability[] = [
     shortDesc: "Connected systems and autonomous agents that remove repetitive manual work and keep company operations moving 24/7.",
     businessImpact: "Eliminates hundreds of manual hours every month by connecting CRM, WhatsApp, billing, databases, and AI logic.",
     previewType: "workflow",
-    metrics: "10,000+ Tasks/Hr â€¢ 0% Manual Error",
+    metrics: "10,000+ Tasks/Hr • 0% Manual Error",
     deliverables: ["Autonomous AI Agents", "WhatsApp Cloud API Integration", "CRM Ingestion Sync", "Self-Healing Webhook Mesh"],
   },
   {
@@ -67,7 +67,7 @@ export const CAPABILITIES: Capability[] = [
     shortDesc: "Purpose-built distributed backends and proprietary algorithms for requirements that off-the-shelf software cannot solve.",
     businessImpact: "Gives your company an unfair technological moat with tailored high-throughput software architecture.",
     previewType: "modular",
-    metrics: "Deterministic Architecture â€¢ Scaled",
+    metrics: "Deterministic Architecture • Scaled",
     deliverables: ["Microservices Architecture", "Event-Driven Queues", "Proprietary Data Engines", "Enterprise Audit Logging"],
   },
   {
@@ -77,7 +77,7 @@ export const CAPABILITIES: Capability[] = [
     shortDesc: "Clear, media-ready announcements and digital press hubs for your product launches, investment milestones, and company news.",
     businessImpact: "Positions your company in tier-1 tech publications with journalist-ready assets, interactive press kits, and instant syndication.",
     previewType: "press",
-    metrics: "Top-Tier Media Reach â€¢ SEO Syndicated",
+    metrics: "Top-Tier Media Reach • SEO Syndicated",
     deliverables: ["Digital Press Kits", "Media Contact Hubs", "Embargo Systems", "Interactive Asset Vaults"],
   },
   {
@@ -87,7 +87,7 @@ export const CAPABILITIES: Capability[] = [
     shortDesc: "Editorial layouts, covers, and typography for digital publications, magazines, and tabloids, crafted for print and screens.",
     businessImpact: "Transforms complex reports, research papers, and company catalogues into award-winning editorial experiences.",
     previewType: "editorial",
-    metrics: "Art-Directed Layouts â€¢ 300+ DPI & Web",
+    metrics: "Art-Directed Layouts • 300+ DPI & Web",
     deliverables: ["Grid Systems", "Cover Typography", "Digital Flippable Editions", "Print-Ready Vector Files"],
   },
 ];

@@ -79,7 +79,7 @@ export const HeroInteractiveChips: React.FC = () => {
     <div className="relative w-full py-4 mt-6">
       <div className="text-center font-mono text-[10px] text-hoza-muted uppercase tracking-widest mb-3 flex items-center justify-center gap-2">
         <Sparkles className="w-3 h-3 text-[#D4FF00] animate-pulse" />
-        <span>INTERACTIVE SYSTEM CAPABILITIES â€¢ DRAG TO EXPLORE</span>
+        <span>INTERACTIVE SYSTEM CAPABILITIES • DRAG TO EXPLORE</span>
       </div>
 
       <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 max-w-4xl mx-auto px-4">

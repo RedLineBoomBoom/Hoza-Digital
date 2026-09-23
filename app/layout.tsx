@@ -1,4 +1,4 @@
-﻿import type { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hoza.studio"),
-  title: "Hoza â€” Websites, Apps and Automation Built Fast",
+  title: "Hoza — Websites, Apps and Automation Built Fast",
   description:
     "Hoza designs and develops websites, web applications, mobile products and automation systems for businesses in Indonesia, Singapore and worldwide.",
   keywords: [
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     canonical: "https://hoza.studio",
   },
   openGraph: {
-    title: "Hoza â€” Websites, Apps and Automation Built Fast",
+    title: "Hoza — Websites, Apps and Automation Built Fast",
     description:
       "Websites, applications, mobile products and automation systems built for businesses ready to move forward. Built in Indonesia. Ready for anywhere.",
     url: "https://hoza.studio",
@@ -59,13 +59,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Hoza â€” Digital Product Studio",
+        alt: "Hoza — Digital Product Studio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hoza â€” Websites, Apps and Automation Built Fast",
+    title: "Hoza — Websites, Apps and Automation Built Fast",
     description:
       "Websites, applications, mobile products and automation systems built for businesses ready to move forward.",
     creator: "@hozadigital",

@@ -119,7 +119,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
     soundEffects.playClick?.();
     const scope = getScopeSummary();
     const text = encodeURIComponent(
-      `Hi Hoza Digital, I used your interactive sprint estimator:\n\nÃ¢â‚¬Â¢ ${scope}\n\nCan we discuss feasibility and commercial roadmap?`
+      `Hi Hoza Digital, I used your interactive sprint estimator:\n\n• ${scope}\n\nCan we discuss feasibility and commercial roadmap?`
     );
     window.open(`https://wa.me/6285111505115?text=${text}`, "_blank");
   };

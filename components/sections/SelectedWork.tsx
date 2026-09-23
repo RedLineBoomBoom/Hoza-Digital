@@ -416,7 +416,7 @@ export const SelectedWork: React.FC = () => {
 
                     <div className="p-3.5 bg-[#121216]/60 border border-white/10 rounded-xl text-[11px] space-y-1.5">
                       <div className="flex justify-between text-[#D4FF00]/70 font-semibold">
-                        <span>Ã¢â€”Â FLEET CONSIGNMENT #4829</span>
+                        <span>Ã¢—Â FLEET CONSIGNMENT #4829</span>
                         <span className="text-emerald-400">EN ROUTE</span>
                       </div>
                       <div className="flex justify-between text-hoza-muted text-[10px]">
@@ -479,7 +479,7 @@ export const SelectedWork: React.FC = () => {
 
                     <div className="p-3 bg-[#09090B] rounded-xl border border-white/10 text-[11px] space-y-1.5">
                       <div className="flex items-center justify-between text-[#D4FF00] text-[10px] border-b border-white/10 pb-1.5">
-                        <span>Ã¢â€”Â INBOUND PIPELINE: WHATSAPP + REST</span>
+                        <span>Ã¢—Â INBOUND PIPELINE: WHATSAPP + REST</span>
                         <span className="text-emerald-400">ZERO HUMAN WAIT</span>
                       </div>
                       <div className="space-y-1 text-[10px]">
@@ -716,7 +716,7 @@ export const SelectedWork: React.FC = () => {
             </h3>
 
             <p className="mt-2 text-sm text-hoza-muted">
-              Client: {activeModalProject.client} Ã¢â‚¬Â¢ {activeModalProject.region} Ã¢â‚¬Â¢{" "}
+              Client: {activeModalProject.client} • {activeModalProject.region} •{" "}
               {activeModalProject.year}
             </p>
 

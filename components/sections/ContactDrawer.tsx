@@ -367,7 +367,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
               {/* Submit CTA */}
               <div className="pt-4 border-t border-[#D4FF00]/20 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <span className="font-mono text-xs text-hoza-muted text-center sm:text-left">
-                  Confidential consultation â€¢ Non-disclosure respected
+                  Confidential consultation • Non-disclosure respected
                 </span>
 
                 <Button
@@ -394,7 +394,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                   >
                     GitHub
                   </a>
-                  <span className="text-white/20">â€¢</span>
+                  <span className="text-white/20">•</span>
                   <a
                     href="https://www.instagram.com/hozadigital/"
                     target="_blank"
@@ -403,7 +403,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                   >
                     Instagram
                   </a>
-                  <span className="text-white/20">â€¢</span>
+                  <span className="text-white/20">•</span>
                   <a
                     href="https://x.com/hozadigital"
                     target="_blank"
