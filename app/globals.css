@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --bg-primary: #08050D;
-  --surface-plum: #150A22;
-  --surface-plum-hover: #1D0F2E;
-  --surface-violet: #281044;
-  --surface-violet-border: #341857;
-  --accent-electric: #8B5CFF;
-  --accent-electric-glow: #9E75FF;
-  --accent-lavender: #C8B7FF;
-  --text-primary: #F5F2FA;
-  --text-muted: #8D8498;
+  --bg-primary: #09090B;
+  --surface-plum: #121216;
+  --surface-plum-hover: #1A1A20;
+  --surface-violet: #27272A;
+  --surface-violet-border: #3F3F46;
+  --accent-electric: #D4FF00;
+  --accent-electric-glow: #E6FF4D;
+  --accent-lavender: #E4E4E7;
+  --text-primary: #F4F4F5;
+  --text-muted: #A1A1AA;
   --mouse-x: 50%;
   --mouse-y: 50%;
 }
@@ -22,82 +22,82 @@
 }
 
 html {
-  background-color: #08050D;
-  color: #F5F2FA;
+  background-color: #09090B;
+  color: #F4F4F5;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
 body {
-  background-color: #08050D;
-  color: #F5F2FA;
+  background-color: #09090B;
+  color: #F4F4F5;
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
-  selection-background-color: #8B5CFF;
-  selection-color: #08050D;
+  selection-background-color: #D4FF00;
+  selection-color: #09090B;
 }
 
 ::selection {
-  background: #8B5CFF;
-  color: #08050D;
+  background: #D4FF00;
+  color: #09090B;
 }
 
-/* Custom Minimal Dark-Purple Scrollbar */
+/* Custom Minimal Titanium-Zinc Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #08050D;
+  background: #09090B;
 }
 ::-webkit-scrollbar-thumb {
-  background: #281044;
+  background: #27272A;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #8B5CFF;
+  background: #D4FF00;
 }
 
 /* Subtle Animated Grain / Technical Noise Overlay */
 .bg-grain {
-  background-image: radial-gradient(rgba(139, 92, 255, 0.08) 1px, transparent 0);
+  background-image: radial-gradient(rgba(212, 255, 0, 0.06) 1px, transparent 0);
   background-size: 24px 24px;
 }
 
 .bg-grid-tech {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(40, 16, 68, 0.35) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(40, 16, 68, 0.35) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
 .bg-grid-dense {
   background-size: 20px 20px;
   background-image: 
-    linear-gradient(to right, rgba(139, 92, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(139, 92, 255, 0.08) 1px, transparent 1px);
+    linear-gradient(to right, rgba(212, 255, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(212, 255, 0, 0.05) 1px, transparent 1px);
 }
 
-/* Electric Violet Glow Utilities */
+/* Acid Volt Glow Utilities */
 .electric-glow-text {
-  text-shadow: 0 0 20px rgba(139, 92, 255, 0.65), 0 0 40px rgba(139, 92, 255, 0.35);
+  text-shadow: 0 0 20px rgba(212, 255, 0, 0.65), 0 0 40px rgba(212, 255, 0, 0.35);
 }
 
 .electric-glow-box {
-  box-shadow: 0 0 35px -5px rgba(139, 92, 255, 0.35);
+  box-shadow: 0 0 35px -5px rgba(212, 255, 0, 0.35);
 }
 
 .electric-border-glow {
-  border-color: #8B5CFF;
-  box-shadow: 0 0 20px rgba(139, 92, 255, 0.4);
+  border-color: #D4FF00;
+  box-shadow: 0 0 20px rgba(212, 255, 0, 0.4);
 }
 
 /* Futuristic HUD Corner Clips */
 .hud-box {
   position: relative;
-  background: #150A22;
-  border: 1px solid #281044;
+  background: #121216;
+  border: 1px solid #27272A;
 }
 
 .hud-box::before {
@@ -107,8 +107,8 @@ body {
   left: -1px;
   width: 8px;
   height: 8px;
-  border-top: 2px solid #8B5CFF;
-  border-left: 2px solid #8B5CFF;
+  border-top: 2px solid #D4FF00;
+  border-left: 2px solid #D4FF00;
   pointer-events: none;
 }
 
@@ -119,8 +119,8 @@ body {
   right: -1px;
   width: 8px;
   height: 8px;
-  border-bottom: 2px solid #8B5CFF;
-  border-right: 2px solid #8B5CFF;
+  border-bottom: 2px solid #D4FF00;
+  border-right: 2px solid #D4FF00;
   pointer-events: none;
 }
 
@@ -152,8 +152,8 @@ body {
     left: -1px;
     width: 10px;
     height: 10px;
-    border-top: 2px solid #00F0FF;
-    border-left: 2px solid #00F0FF;
+    border-top: 2px solid #D4FF00;
+    border-left: 2px solid #D4FF00;
     pointer-events: none;
     z-index: 10;
   }
@@ -165,8 +165,8 @@ body {
     right: -1px;
     width: 10px;
     height: 10px;
-    border-bottom: 2px solid #00F0FF;
-    border-right: 2px solid #00F0FF;
+    border-bottom: 2px solid #D4FF00;
+    border-right: 2px solid #D4FF00;
     pointer-events: none;
     z-index: 10;
   }
@@ -177,8 +177,8 @@ body {
     right: -1px;
     width: 10px;
     height: 10px;
-    border-top: 2px solid #00F0FF;
-    border-right: 2px solid #00F0FF;
+    border-top: 2px solid #D4FF00;
+    border-right: 2px solid #D4FF00;
     pointer-events: none;
     z-index: 10;
   }
@@ -189,8 +189,8 @@ body {
     left: -1px;
     width: 10px;
     height: 10px;
-    border-bottom: 2px solid #00F0FF;
-    border-left: 2px solid #00F0FF;
+    border-bottom: 2px solid #D4FF00;
+    border-left: 2px solid #D4FF00;
     pointer-events: none;
     z-index: 10;
   }
@@ -225,9 +225,9 @@ body {
 
   .btn-tactical:hover {
     background-color: #141414;
-    border-color: #00F0FF;
-    color: #00F0FF;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+    border-color: #D4FF00;
+    color: #D4FF00;
+    box-shadow: 0 0 20px rgba(212, 255, 0, 0.25);
   }
 
   .btn-tactical .btn-box-left {
@@ -257,8 +257,8 @@ body {
 
   .btn-tactical:hover .btn-box-left,
   .btn-tactical:hover .btn-box-right {
-    border-color: rgba(0, 240, 255, 0.4);
-    background: rgba(0, 240, 255, 0.08);
+    border-color: rgba(212, 255, 0, 0.4);
+    background: rgba(212, 255, 0, 0.08);
   }
 
   /* Box1 and Box2 style variants */
@@ -278,24 +278,44 @@ body {
     background: rgba(255, 255, 255, 0.03);
   }
 
-  /* Cyan Active Variant */
+  /* Cyan Active Variant (Updated to Electric Glow) */
   .btn-tactical-cyan {
-    background-color: #00F0FF;
-    color: #08050D;
-    border-color: #00F0FF;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+    background-color: #D4FF00;
+    color: #09090B;
+    border-color: #D4FF00;
+    box-shadow: 0 0 20px rgba(212, 255, 0, 0.4);
   }
 
   .btn-tactical-cyan:hover {
-    background-color: #38f5ff;
-    color: #08050D;
-    box-shadow: 0 0 30px rgba(0, 240, 255, 0.6);
+    background-color: #e2ff38;
+    color: #09090B;
+    box-shadow: 0 0 30px rgba(212, 255, 0, 0.6);
   }
 
   .btn-tactical-cyan .btn-box-left,
   .btn-tactical-cyan .btn-box-right {
-    border-color: rgba(8, 5, 13, 0.2);
-    background: rgba(8, 5, 13, 0.08);
+    border-color: rgba(9, 9, 11, 0.2);
+    background: rgba(9, 9, 11, 0.08);
+  }
+
+  /* Acid Volt Active Variant */
+  .btn-tactical-volt {
+    background-color: #D4FF00;
+    color: #09090B;
+    border-color: #D4FF00;
+    box-shadow: 0 0 20px rgba(212, 255, 0, 0.4);
+  }
+
+  .btn-tactical-volt:hover {
+    background-color: #e2ff38;
+    color: #09090B;
+    box-shadow: 0 0 30px rgba(212, 255, 0, 0.6);
+  }
+
+  .btn-tactical-volt .btn-box-left,
+  .btn-tactical-volt .btn-box-right {
+    border-color: rgba(9, 9, 11, 0.2);
+    background: rgba(9, 9, 11, 0.08);
   }
 }
 
@@ -338,6 +358,65 @@ html.lenis, html.lenis body {
   will-change: transform;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
+}
+
+/* Concentric Orbit Radar Rotations & Counter-Rotations */
+@keyframes orbit-spin-cw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-spin-ccw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Ring Rotations */
+.animate-orbit-ring-1 {
+  animation: orbit-spin-cw 50s linear infinite;
+}
+.animate-orbit-ring-2 {
+  animation: orbit-spin-ccw 65s linear infinite;
+}
+.animate-orbit-ring-3 {
+  animation: orbit-spin-cw 80s linear infinite;
+}
+.animate-orbit-ring-4 {
+  animation: orbit-spin-ccw 100s linear infinite;
+}
+.animate-orbit-ring-5 {
+  animation: orbit-spin-cw 125s linear infinite;
+}
+.animate-orbit-ring-6 {
+  animation: orbit-spin-ccw 155s linear infinite;
+}
+
+/* Badge Counter-Rotations (keeps icons perfectly upright during orbit) */
+.animate-badge-counter-1 {
+  animation: orbit-spin-ccw 50s linear infinite;
+}
+.animate-badge-counter-2 {
+  animation: orbit-spin-cw 65s linear infinite;
+}
+.animate-badge-counter-3 {
+  animation: orbit-spin-ccw 80s linear infinite;
+}
+.animate-badge-counter-4 {
+  animation: orbit-spin-cw 100s linear infinite;
+}
+.animate-badge-counter-5 {
+  animation: orbit-spin-ccw 125s linear infinite;
+}
+.animate-badge-counter-6 {
+  animation: orbit-spin-cw 155s linear infinite;
 }
 
 /* Accessibility: Reduced Motion */

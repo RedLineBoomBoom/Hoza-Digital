@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+﻿import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hoza.studio"),
-  title: "Hoza — Websites, Apps and Automation Built Fast",
+  title: "Hoza â€” Websites, Apps and Automation Built Fast",
   description:
     "Hoza designs and develops websites, web applications, mobile products and automation systems for businesses in Indonesia, Singapore and worldwide.",
   keywords: [
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     canonical: "https://hoza.studio",
   },
   openGraph: {
-    title: "Hoza — Websites, Apps and Automation Built Fast",
+    title: "Hoza â€” Websites, Apps and Automation Built Fast",
     description:
       "Websites, applications, mobile products and automation systems built for businesses ready to move forward. Built in Indonesia. Ready for anywhere.",
     url: "https://hoza.studio",
@@ -59,13 +59,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Hoza — Digital Product Studio",
+        alt: "Hoza â€” Digital Product Studio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hoza — Websites, Apps and Automation Built Fast",
+    title: "Hoza â€” Websites, Apps and Automation Built Fast",
     description:
       "Websites, applications, mobile products and automation systems built for businesses ready to move forward.",
     creator: "@hozadigital",
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#08050D",
+  themeColor: "#09090B",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -140,10 +140,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-hoza-bg text-hoza-white font-sans antialiased selection:bg-hoza-electric selection:text-hoza-bg relative">
+      <body className="bg-hoza-bg text-hoza-white font-sans antialiased selection:bg-[#D4FF00] selection:text-hoza-bg relative">
         {/* Subtle background technical grid & vignette */}
         <div className="fixed inset-0 pointer-events-none bg-grid-tech z-0 opacity-40" />
-        <div className="fixed inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(139,92,255,0.15),rgba(8,5,13,0))] z-0" />
+        <div className="fixed inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(212,255,0,0.15),rgba(8,5,13,0))] z-0" />
         <div className="relative z-10 flex flex-col min-h-screen">
           {children}
         </div>

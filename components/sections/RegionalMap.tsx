@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
@@ -57,16 +57,16 @@ export const RegionalMap: React.FC = () => {
       className="relative py-28 px-6 sm:px-8 max-w-7xl mx-auto w-full select-none"
     >
       {/* Section Header */}
-      <div className="border-b border-hoza-violet pb-8 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div className="border-b border-[#D4FF00]/20 pb-8 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
-          <div className="font-mono text-xs text-[#00F0FF] uppercase tracking-widest mb-3 flex items-center gap-2">
-            <Radio className="w-3.5 h-3.5 text-[#00F0FF] animate-pulse" />
+          <div className="font-mono text-xs text-[#D4FF00] uppercase tracking-widest mb-3 flex items-center gap-2">
+            <Radio className="w-3.5 h-3.5 text-[#D4FF00] animate-pulse" />
             <span>// 3D HOLOGRAPHIC GEOSPATIAL EDGE MESH</span>
           </div>
           <SmoothHeading
             title="BUILT IN INDONESIA."
             highlight="READY FOR ANYWHERE."
-            highlightGradient="from-hoza-white via-[#8B5CFF] to-[#00F0FF]"
+            highlightGradient="from-[#E6FF4D] via-[#D4FF00] to-[#E6FF4D]"
           />
         </div>
 
@@ -83,16 +83,16 @@ export const RegionalMap: React.FC = () => {
         <span className="tactical-corner-tr" />
         <span className="tactical-corner-bl" />
         {/* Ambient Backlight Glow */}
-        <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#00F0FF]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#D4FF00]/10 rounded-full blur-3xl pointer-events-none" />
 
         {/* Left: 3D Interactive Cyber Globe Viewport (7 cols) */}
-        <div className="lg:col-span-7 relative flex flex-col justify-between min-h-[440px] sm:min-h-[500px] overflow-hidden border border-white/15 bg-[#08050D] p-4 tactical-corners">
+        <div className="lg:col-span-7 relative flex flex-col justify-between min-h-[440px] sm:min-h-[500px] overflow-hidden border border-white/15 bg-[#09090B] p-4 tactical-corners">
           <span className="tactical-corner-tr" />
           <span className="tactical-corner-bl" />
           {/* Top Telemetry Header Stamp */}
-          <div className="relative z-10 flex items-center justify-between font-mono text-[10px] text-[#00F0FF] pb-2 border-b border-white/10">
+          <div className="relative z-10 flex items-center justify-between font-mono text-[10px] text-[#D4FF00] pb-2 border-b border-white/10">
             <div className="flex items-center gap-2">
-              <Compass className="w-3.5 h-3.5 text-[#00F0FF] animate-spin-slow" />
+              <Compass className="w-3.5 h-3.5 text-[#D4FF00] animate-spin-slow" />
               <span className="tracking-wider uppercase font-bold">
                 ORBITAL TELEMETRY // 3D GEOSPATIAL ENGINE
               </span>
@@ -125,7 +125,7 @@ export const RegionalMap: React.FC = () => {
                     className={cn(
                       "px-2.5 py-1 text-[10px] font-mono tracking-wider uppercase transition-all duration-200 flex items-center gap-1.5 cursor-pointer border",
                       isSelected
-                        ? "bg-[#00F0FF]/15 border-[#00F0FF] text-[#00F0FF] shadow-[0_0_12px_rgba(0,240,255,0.3)] font-bold"
+                        ? "bg-[#D4FF00]/15 border-[#D4FF00] text-[#D4FF00] shadow-[0_0_12px_rgba(212,255,0,0.3)] font-bold"
                         : "bg-white/[0.03] border-white/10 text-hoza-muted hover:text-white hover:border-white/25"
                     )}
                   >
@@ -133,7 +133,7 @@ export const RegionalMap: React.FC = () => {
                       className={cn(
                         "w-1.5 h-1.5 rounded-full",
                         isSelected
-                          ? "bg-[#00F0FF] animate-ping"
+                          ? "bg-[#D4FF00] animate-ping"
                           : "bg-hoza-darkMuted"
                       )}
                     />
@@ -151,7 +151,7 @@ export const RegionalMap: React.FC = () => {
           <span className="tactical-corner-bl" />
           <div>
             <div className="border-b border-white/10 pb-4 mb-4">
-              <span className="font-mono text-[10px] text-[#00F0FF] uppercase font-bold tracking-widest block mb-1">
+              <span className="font-mono text-[10px] text-[#D4FF00] uppercase font-bold tracking-widest block mb-1">
                 NODE TELEMETRY LOG
               </span>
               <div className="flex items-center justify-between">
@@ -168,42 +168,42 @@ export const RegionalMap: React.FC = () => {
             </div>
 
             <div className="space-y-3 font-mono text-xs">
-              <div className="p-3.5 bg-hoza-surface border border-hoza-violet flex items-center justify-between">
+              <div className="p-3.5 bg-hoza-surface border border-[#D4FF00]/20 flex items-center justify-between">
                 <span className="text-hoza-muted">MEASURED LATENCY</span>
-                <span className="text-2xl font-bold text-[#00F0FF]">
+                <span className="text-2xl font-bold text-[#D4FF00]">
                   {probeResult ? probeResult.split(" ")[0] : activeHub.ping}
                 </span>
               </div>
 
-              <div className="p-3.5 bg-hoza-surface border border-hoza-violet flex items-center justify-between">
+              <div className="p-3.5 bg-hoza-surface border border-[#D4FF00]/20 flex items-center justify-between">
                 <span className="text-hoza-muted">ROLE & CLUSTER</span>
                 <span className="text-hoza-white font-bold text-right text-[11px]">
                   {activeHub.status}
                 </span>
               </div>
 
-              <div className="p-3.5 bg-hoza-surface border border-hoza-violet flex items-center justify-between">
+              <div className="p-3.5 bg-hoza-surface border border-[#D4FF00]/20 flex items-center justify-between">
                 <span className="text-hoza-muted">SECURITY & PROTOCOL</span>
                 <span className="text-emerald-400 font-semibold">
                   TLS 1.3 // 0-RTT CACHE
                 </span>
               </div>
 
-              <div className="p-3.5 bg-hoza-surface border border-hoza-violet flex items-center justify-between">
+              <div className="p-3.5 bg-hoza-surface border border-[#D4FF00]/20 flex items-center justify-between">
                 <span className="text-hoza-muted">EDGE HIGHWAY</span>
-                <span className="text-[#C8B7FF] font-semibold">
+                <span className="text-[#E6FF4D] font-semibold">
                   JAKARTA HQ &harr; {activeHub.city.toUpperCase()}
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="space-y-3 pt-4 border-t border-hoza-violet/80">
+          <div className="space-y-3 pt-4 border-t border-[#D4FF00]/20/80">
             <button
               type="button"
               onClick={handleProbeNode}
               disabled={isProbing}
-              className="w-full py-2.5 px-4 rounded-lg bg-[#00F0FF]/15 hover:bg-[#00F0FF]/25 border border-[#00F0FF]/50 text-[#00F0FF] font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-[0_0_15px_rgba(0,240,255,0.15)] disabled:opacity-60"
+              className="w-full py-2.5 px-4 rounded-lg bg-[#D4FF00]/15 hover:bg-[#D4FF00]/25 border border-[#D4FF00]/50 text-[#D4FF00] font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer shadow-[0_0_15px_rgba(212,255,0,0.15)] disabled:opacity-60"
             >
               <RotateCw
                 className={cn("w-3.5 h-3.5", isProbing && "animate-spin")}
@@ -217,7 +217,7 @@ export const RegionalMap: React.FC = () => {
 
             {probeResult && (
               <div className="font-mono text-[10px] text-emerald-400 text-center animate-in fade-in duration-150">
-                ✓ PROBE CONFIRMED: {probeResult}
+                âœ“ PROBE CONFIRMED: {probeResult}
               </div>
             )}
 

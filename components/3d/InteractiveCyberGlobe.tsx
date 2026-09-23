@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
@@ -144,10 +144,10 @@ export const InteractiveCyberGlobe: React.FC<InteractiveCyberGlobeProps> = ({
 
       const GLOBE_RADIUS = 2.2;
 
-      // 1. Solid Dark Core to block backside points
-      const innerGeo = new THREE.SphereGeometry(GLOBE_RADIUS * 0.985, 48, 48);
+      // 1. Opaque Core Sphere (Black Zinc Obsidian)
+      const innerGeo = new THREE.SphereGeometry(GLOBE_RADIUS * 0.995, 36, 24);
       const innerMat = new THREE.MeshBasicMaterial({
-        color: 0x07040e,
+        color: 0x09090b,
         transparent: true,
         opacity: 0.96,
       });
@@ -157,7 +157,7 @@ export const InteractiveCyberGlobe: React.FC<InteractiveCyberGlobeProps> = ({
       // 2. Translucent Cyber Wireframe Sphere
       const wireGeo = new THREE.SphereGeometry(GLOBE_RADIUS, 36, 24);
       const wireMat = new THREE.MeshBasicMaterial({
-        color: 0x8b5cff,
+        color: 0xd4ff00,
         wireframe: true,
         transparent: true,
         opacity: 0.12,
@@ -168,7 +168,7 @@ export const InteractiveCyberGlobe: React.FC<InteractiveCyberGlobeProps> = ({
       // 3. Glowing Equator & Latitudinal Rings
       const equatorGeo = new THREE.RingGeometry(GLOBE_RADIUS * 1.002, GLOBE_RADIUS * 1.008, 64);
       const equatorMat = new THREE.MeshBasicMaterial({
-        color: 0x00f0ff,
+        color: 0xd4ff00,
         transparent: true,
         opacity: 0.35,
         side: THREE.DoubleSide,
@@ -180,9 +180,9 @@ export const InteractiveCyberGlobe: React.FC<InteractiveCyberGlobeProps> = ({
       // 4. Continent Landmass Points Field
       const landPoints: THREE.Vector3[] = [];
       const landColors: number[] = [];
-      const cViolet = new THREE.Color(0x8b5cff);
-      const cCyan = new THREE.Color(0x00f0ff);
-      const cBright = new THREE.Color(0xd2c2ff);
+      const cVolt = new THREE.Color(0xd4ff00);
+      const cCyan = new THREE.Color(0xd4ff00);
+      const cBright = new THREE.Color(0xe6ff4d);
 
       for (let lat = -75; lat <= 75; lat += 3.8) {
         for (let lon = -180; lon <= 180; lon += 3.8) {
@@ -190,7 +190,7 @@ export const InteractiveCyberGlobe: React.FC<InteractiveCyberGlobeProps> = ({
             const pos = latLonToVector3(lat, lon, GLOBE_RADIUS);
             landPoints.push(pos);
             const rand = Math.random();
-            const col = rand > 0.85 ? cCyan : rand > 0.4 ? cViolet : cBright;
+            const col = rand > 0.85 ? cCyan : rand > 0.4 ? cVolt : cBright;
             landColors.push(col.r, col.g, col.b);
           }
         }
@@ -220,7 +220,7 @@ export const InteractiveCyberGlobe: React.FC<InteractiveCyberGlobeProps> = ({
         // Core Beacon Dot
         const bGeo = new THREE.SphereGeometry(isHQ ? 0.08 : 0.06, 16, 16);
         const bMat = new THREE.MeshBasicMaterial({
-          color: isHQ ? 0x00f0ff : 0xc8b7ff,
+          color: isHQ ? 0xd4ff00 : 0xd4ff00,
         });
         const beacon = new THREE.Mesh(bGeo, bMat);
         beacon.position.copy(pos);
@@ -230,7 +230,7 @@ export const InteractiveCyberGlobe: React.FC<InteractiveCyberGlobeProps> = ({
         // Outer Pulsing Ring
         const rGeo = new THREE.RingGeometry(isHQ ? 0.1 : 0.075, isHQ ? 0.14 : 0.1, 32);
         const rMat = new THREE.MeshBasicMaterial({
-          color: isHQ ? 0x00f0ff : 0x8b5cff,
+          color: isHQ ? 0xd4ff00 : 0xd4ff00,
           transparent: true,
           opacity: 0.85,
           side: THREE.DoubleSide,
@@ -244,7 +244,7 @@ export const InteractiveCyberGlobe: React.FC<InteractiveCyberGlobeProps> = ({
         // Vertical Laser Beacon
         const cylinderGeo = new THREE.CylinderGeometry(0.012, 0.012, isHQ ? 0.45 : 0.25, 8);
         const cylinderMat = new THREE.MeshBasicMaterial({
-          color: isHQ ? 0x00f0ff : 0x8b5cff,
+          color: isHQ ? 0xd4ff00 : 0xd4ff00,
           transparent: true,
           opacity: isHQ ? 0.75 : 0.45,
         });
@@ -272,7 +272,7 @@ export const InteractiveCyberGlobe: React.FC<InteractiveCyberGlobeProps> = ({
 
         const arcGeo = new THREE.BufferGeometry().setFromPoints(points);
         const arcMat = new THREE.LineBasicMaterial({
-          color: 0x00f0ff,
+          color: 0xd4ff00,
           transparent: true,
           opacity: 0.35,
         });
@@ -280,7 +280,7 @@ export const InteractiveCyberGlobe: React.FC<InteractiveCyberGlobeProps> = ({
         globeGroup.add(arcLine);
 
         const pulseGeo = new THREE.SphereGeometry(0.04, 8, 8);
-        const pulseMat = new THREE.MeshBasicMaterial({ color: 0x00f0ff });
+        const pulseMat = new THREE.MeshBasicMaterial({ color: 0xd4ff00 });
         const pulseMesh = new THREE.Mesh(pulseGeo, pulseMat);
         globeGroup.add(pulseMesh);
 
@@ -296,13 +296,13 @@ export const InteractiveCyberGlobe: React.FC<InteractiveCyberGlobeProps> = ({
       const ambientLight = new THREE.AmbientLight(0xffffff, 0.45);
       scene.add(ambientLight);
 
-      const cyanPoint = new THREE.PointLight(0x00f0ff, 3.5, 25);
+      const cyanPoint = new THREE.PointLight(0xd4ff00, 3.5, 25);
       cyanPoint.position.set(5, 3, 5);
       scene.add(cyanPoint);
 
-      const violetPoint = new THREE.PointLight(0x8b5cff, 3, 25);
-      violetPoint.position.set(-5, -3, 3);
-      scene.add(violetPoint);
+      const voltPoint = new THREE.PointLight(0xd4ff00, 3, 25);
+      voltPoint.position.set(-5, -3, 3);
+      scene.add(voltPoint);
 
       // Rotation & Physics States
       let isDragging = false;
@@ -545,7 +545,7 @@ export const InteractiveCyberGlobe: React.FC<InteractiveCyberGlobeProps> = ({
             top: `${pin.y}px`,
           }}
         >
-          <div className="px-1.5 py-0.5 rounded bg-[#08050D]/75 border border-[#8B5CFF]/40 backdrop-blur-xs font-mono text-[9px] text-[#C8B7FF] whitespace-nowrap opacity-80">
+          <div className="px-1.5 py-0.5 rounded bg-[#0E0E12]/85 border border-[#D4FF00]/40 backdrop-blur-xs font-mono text-[9px] text-white whitespace-nowrap opacity-85">
             {pin.city.toUpperCase()}
           </div>
         </div>
@@ -561,9 +561,9 @@ export const InteractiveCyberGlobe: React.FC<InteractiveCyberGlobeProps> = ({
           }}
         >
           <div className="flex flex-col items-center animate-in fade-in zoom-in-95 duration-200">
-            <div className="px-2.5 py-1 rounded-full bg-[#08050D]/95 border border-[#00F0FF] shadow-[0_0_16px_rgba(0,240,255,0.7)] backdrop-blur-md font-mono text-[10px] text-white flex items-center gap-1.5 whitespace-nowrap">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-ping" />
-              <span className="font-bold text-[#00F0FF] uppercase">
+            <div className="px-2.5 py-1 rounded-full bg-[#09090B]/95 border border-[#D4FF00] shadow-[0_0_16px_rgba(212,255,0,0.7)] backdrop-blur-md font-mono text-[10px] text-white flex items-center gap-1.5 whitespace-nowrap">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#D4FF00] animate-ping" />
+              <span className="font-bold text-[#D4FF00] uppercase">
                 {activePin.city}
               </span>
               <span className="text-emerald-400 font-bold">
@@ -571,7 +571,7 @@ export const InteractiveCyberGlobe: React.FC<InteractiveCyberGlobeProps> = ({
               </span>
             </div>
             {/* Triangular pointer pin */}
-            <div className="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[5px] border-t-[#00F0FF]" />
+            <div className="w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[5px] border-t-[#D4FF00]" />
           </div>
         </div>
       )}

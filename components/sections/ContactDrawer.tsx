@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { X, CheckCircle2, AlertCircle, Send, Sparkles } from "lucide-react";
@@ -111,12 +111,12 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
   ];
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#08050D]/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200">
-      <div className="hud-box bg-hoza-surface border border-hoza-violet max-w-3xl w-full p-6 sm:p-10 relative max-h-[92vh] overflow-y-auto shadow-2xl">
+    <div className="fixed inset-0 z-50 bg-[#09090B]/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200">
+      <div className="hud-box bg-hoza-surface border border-[#D4FF00]/20 max-w-3xl w-full p-6 sm:p-10 relative max-h-[92vh] overflow-y-auto shadow-2xl">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 p-2 border border-hoza-violet text-hoza-muted hover:text-hoza-white hover:border-hoza-electric bg-hoza-bg transition-colors"
+          className="absolute top-6 right-6 p-2 border border-[#D4FF00]/20 text-hoza-muted hover:text-hoza-white hover:border-[#D4FF00] bg-hoza-bg transition-colors"
           aria-label="Close project modal"
         >
           <X className="w-5 h-5" />
@@ -125,23 +125,23 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
         {isSubmitted ? (
           /* Futuristic OS Success State */
           <div className="py-12 flex flex-col items-center text-center space-y-6 animate-in zoom-in-95 duration-300">
-            <div className="w-16 h-16 bg-hoza-electric/20 border-2 border-hoza-electric flex items-center justify-center shadow-electric-md">
-              <CheckCircle2 className="w-8 h-8 text-hoza-electric" />
+            <div className="w-16 h-16 bg-[#D4FF00]/20 border-2 border-[#D4FF00] flex items-center justify-center shadow-electric-md">
+              <CheckCircle2 className="w-8 h-8 text-[#D4FF00]" />
             </div>
 
             <div className="space-y-2">
-              <div className="font-mono text-xs text-hoza-electric uppercase tracking-widest">
+              <div className="font-mono text-xs text-[#D4FF00] uppercase tracking-widest">
                 // TRANSMISSION ACKNOWLEDGED
               </div>
               <h3 className="font-display font-black text-3xl sm:text-4xl text-hoza-white uppercase">
                 PROJECT REQUEST RECEIVED
               </h3>
-              <p className="text-sm sm:text-base text-hoza-lavender max-w-md mx-auto">
+              <p className="text-sm sm:text-base text-[#D4FF00]/70 max-w-md mx-auto">
                 HOZA WILL BE IN CONTACT SHORTLY VIA WHATSAPP AND EMAIL.
               </p>
             </div>
 
-            <div className="p-4 bg-hoza-bg border border-hoza-violet font-mono text-xs text-hoza-muted max-w-sm w-full space-y-1 text-left">
+            <div className="p-4 bg-hoza-bg border border-[#D4FF00]/20 font-mono text-xs text-hoza-muted max-w-sm w-full space-y-1 text-left">
               <div className="flex justify-between">
                 <span>CLIENT:</span>
                 <span className="text-hoza-white">{formData.name}</span>
@@ -170,7 +170,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
         ) : (
           /* Standard Form */
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs text-hoza-electric uppercase mb-2">
+            <div className="flex items-center gap-2 font-mono text-xs text-[#D4FF00] uppercase mb-2">
               <Sparkles className="w-3.5 h-3.5" />
               <span>// PROJECT INITIATION PROTOCOL</span>
             </div>
@@ -197,7 +197,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                       setFormData({ ...formData, name: e.target.value })
                     }
                     placeholder="e.g. Adrian Wijaya"
-                    className="w-full bg-hoza-bg border border-hoza-violet px-4 py-3 text-sm text-hoza-white focus:outline-none focus:border-hoza-electric transition-colors"
+                    className="w-full bg-hoza-bg border border-[#D4FF00]/20 px-4 py-3 text-sm text-hoza-white focus:outline-none focus:border-[#D4FF00] transition-colors"
                   />
                   {errors.name && (
                     <span className="font-mono text-[11px] text-red-400 mt-1 block">
@@ -217,7 +217,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                       setFormData({ ...formData, company: e.target.value })
                     }
                     placeholder="e.g. Kinetix Ventures"
-                    className="w-full bg-hoza-bg border border-hoza-violet px-4 py-3 text-sm text-hoza-white focus:outline-none focus:border-hoza-electric transition-colors"
+                    className="w-full bg-hoza-bg border border-[#D4FF00]/20 px-4 py-3 text-sm text-hoza-white focus:outline-none focus:border-[#D4FF00] transition-colors"
                   />
                 </div>
               </div>
@@ -235,7 +235,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                       setFormData({ ...formData, email: e.target.value })
                     }
                     placeholder="name@company.com"
-                    className="w-full bg-hoza-bg border border-hoza-violet px-4 py-3 text-sm text-hoza-white focus:outline-none focus:border-hoza-electric transition-colors"
+                    className="w-full bg-hoza-bg border border-[#D4FF00]/20 px-4 py-3 text-sm text-hoza-white focus:outline-none focus:border-[#D4FF00] transition-colors"
                   />
                   {errors.email && (
                     <span className="font-mono text-[11px] text-red-400 mt-1 block">
@@ -255,7 +255,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                       setFormData({ ...formData, whatsapp: e.target.value })
                     }
                     placeholder="+62 / +65 / Country code"
-                    className="w-full bg-hoza-bg border border-hoza-violet px-4 py-3 text-sm text-hoza-white focus:outline-none focus:border-hoza-electric transition-colors"
+                    className="w-full bg-hoza-bg border border-[#D4FF00]/20 px-4 py-3 text-sm text-hoza-white focus:outline-none focus:border-[#D4FF00] transition-colors"
                   />
                   {errors.whatsapp && (
                     <span className="font-mono text-[11px] text-red-400 mt-1 block">
@@ -278,7 +278,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                       setFormData({ ...formData, country: e.target.value })
                     }
                     placeholder="Indonesia / Singapore / Worldwide"
-                    className="w-full bg-hoza-bg border border-hoza-violet px-4 py-3 text-sm text-hoza-white focus:outline-none focus:border-hoza-electric transition-colors"
+                    className="w-full bg-hoza-bg border border-[#D4FF00]/20 px-4 py-3 text-sm text-hoza-white focus:outline-none focus:border-[#D4FF00] transition-colors"
                   />
                 </div>
 
@@ -291,7 +291,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                     onChange={(e) =>
                       setFormData({ ...formData, service: e.target.value })
                     }
-                    className="w-full bg-hoza-bg border border-hoza-violet px-4 py-3 text-sm text-hoza-white focus:outline-none focus:border-hoza-electric transition-colors"
+                    className="w-full bg-hoza-bg border border-[#D4FF00]/20 px-4 py-3 text-sm text-hoza-white focus:outline-none focus:border-[#D4FF00] transition-colors"
                   >
                     {serviceOptions.map((s) => (
                       <option key={s} value={s} className="bg-hoza-surface text-hoza-white">
@@ -314,7 +314,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                     setFormData({ ...formData, description: e.target.value })
                   }
                   placeholder="What are you building or trying to automate? What is the main outcome or deadline?"
-                  className="w-full bg-hoza-bg border border-hoza-violet p-4 text-sm text-hoza-white focus:outline-none focus:border-hoza-electric transition-colors"
+                  className="w-full bg-hoza-bg border border-[#D4FF00]/20 p-4 text-sm text-hoza-white focus:outline-none focus:border-[#D4FF00] transition-colors"
                 />
                 {errors.description && (
                   <span className="font-mono text-[11px] text-red-400 mt-1 block">
@@ -334,7 +334,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                     onChange={(e) =>
                       setFormData({ ...formData, budget: e.target.value })
                     }
-                    className="w-full bg-hoza-bg border border-hoza-violet px-4 py-3 text-sm text-hoza-white focus:outline-none focus:border-hoza-electric"
+                    className="w-full bg-hoza-bg border border-[#D4FF00]/20 px-4 py-3 text-sm text-hoza-white focus:outline-none focus:border-[#D4FF00]"
                   >
                     {budgetOptions.map((b) => (
                       <option key={b} value={b} className="bg-hoza-surface text-hoza-white">
@@ -353,7 +353,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                     onChange={(e) =>
                       setFormData({ ...formData, timeline: e.target.value })
                     }
-                    className="w-full bg-hoza-bg border border-hoza-violet px-4 py-3 text-sm text-hoza-white focus:outline-none focus:border-hoza-electric"
+                    className="w-full bg-hoza-bg border border-[#D4FF00]/20 px-4 py-3 text-sm text-hoza-white focus:outline-none focus:border-[#D4FF00]"
                   >
                     {timelineOptions.map((t) => (
                       <option key={t} value={t} className="bg-hoza-surface text-hoza-white">
@@ -365,9 +365,9 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
               </div>
 
               {/* Submit CTA */}
-              <div className="pt-4 border-t border-hoza-violet flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="pt-4 border-t border-[#D4FF00]/20 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <span className="font-mono text-xs text-hoza-muted text-center sm:text-left">
-                  Confidential consultation • Non-disclosure respected
+                  Confidential consultation â€¢ Non-disclosure respected
                 </span>
 
                 <Button
@@ -384,17 +384,17 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
 
               {/* Official Social Channels in Drawer */}
               <div className="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-mono text-hoza-muted">
-                <span className="text-hoza-lavender">// OFFICIAL CHANNELS</span>
+                <span className="text-[#D4FF00]/70">// OFFICIAL CHANNELS</span>
                 <div className="flex items-center gap-4 text-xs">
                   <a
                     href="https://github.com/hozadigital"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#00F0FF] transition-colors"
+                    className="hover:text-[#D4FF00] transition-colors"
                   >
                     GitHub
                   </a>
-                  <span className="text-white/20">•</span>
+                  <span className="text-white/20">â€¢</span>
                   <a
                     href="https://www.instagram.com/hozadigital/"
                     target="_blank"
@@ -403,12 +403,12 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                   >
                     Instagram
                   </a>
-                  <span className="text-white/20">•</span>
+                  <span className="text-white/20">â€¢</span>
                   <a
                     href="https://x.com/hozadigital"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#00F0FF] transition-colors"
+                    className="hover:text-[#D4FF00] transition-colors"
                   >
                     X (Twitter)
                   </a>

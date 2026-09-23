@@ -5,9 +5,11 @@ import { ArrowUp, Globe, Shield, Terminal, MessageCircle, ArrowUpRight, Mail } f
 import { HOZA_STATEMENTS } from "@/lib/constants";
 import { HozaLogo } from "@/components/ui/HozaLogo";
 
-export const Footer: React.FC<{ onOpenProjectModal: () => void }> = ({
-  onOpenProjectModal,
-}) => {
+export const Footer: React.FC<{
+  onOpenProjectModal: () => void;
+  onOpenStudioDeck?: () => void;
+  onOpenSystemHealth?: () => void;
+}> = ({ onOpenProjectModal, onOpenStudioDeck, onOpenSystemHealth }) => {
   const [timeJakarta, setTimeJakarta] = useState("");
   const [timeSingapore, setTimeSingapore] = useState("");
 
@@ -44,14 +46,14 @@ export const Footer: React.FC<{ onOpenProjectModal: () => void }> = ({
   };
 
   return (
-    <footer className="relative bg-[#050308] border-t border-hoza-violet mt-24 text-hoza-muted font-mono text-xs select-none">
+    <footer className="relative bg-[#09090B] border-t border-[#D4FF00]/20 mt-24 text-hoza-muted font-mono text-xs select-none">
       {/* Upper High-Impact Statement Ticker */}
-      <div className="group border-b border-hoza-violet/60 py-3 overflow-hidden bg-hoza-surface/30 relative flex select-none">
+      <div className="group border-b border-[#D4FF00]/20 py-3 overflow-hidden bg-hoza-surface/30 relative flex select-none">
         {/* Track 1 */}
-        <div className="flex shrink-0 items-center gap-12 pr-12 whitespace-nowrap animate-ticker-left group-hover:[animation-play-state:paused]">
+        <div className="flex shrink-0 items-center gap-12 pr-12 whitespace-nowrap animate-ticker-left">
           {[...HOZA_STATEMENTS, ...HOZA_STATEMENTS].map((st, i) => (
-            <div key={`foot-track1-${i}`} className="flex items-center gap-4 text-hoza-lavender">
-              <span className="w-1.5 h-1.5 bg-hoza-electric" />
+            <div key={`foot-track1-${i}`} className="flex items-center gap-4 text-[#D4FF00]/70">
+              <span className="w-1.5 h-1.5 bg-[#D4FF00]" />
               <span className="tracking-widest uppercase">{st}</span>
             </div>
           ))}
@@ -59,12 +61,12 @@ export const Footer: React.FC<{ onOpenProjectModal: () => void }> = ({
 
         {/* Track 2 (Exact Duplicate Clone for 100% Seamless Infinite Loop) */}
         <div
-          className="flex shrink-0 items-center gap-12 pr-12 whitespace-nowrap animate-ticker-left group-hover:[animation-play-state:paused]"
+          className="flex shrink-0 items-center gap-12 pr-12 whitespace-nowrap animate-ticker-left"
           aria-hidden="true"
         >
           {[...HOZA_STATEMENTS, ...HOZA_STATEMENTS].map((st, i) => (
-            <div key={`foot-track2-${i}`} className="flex items-center gap-4 text-hoza-lavender">
-              <span className="w-1.5 h-1.5 bg-hoza-electric" />
+            <div key={`foot-track2-${i}`} className="flex items-center gap-4 text-[#D4FF00]/70">
+              <span className="w-1.5 h-1.5 bg-[#D4FF00]" />
               <span className="tracking-widest uppercase">{st}</span>
             </div>
           ))}
@@ -103,8 +105,8 @@ export const Footer: React.FC<{ onOpenProjectModal: () => void }> = ({
 
             {/* Official Social Media Networks */}
             <div className="pt-2 max-w-sm space-y-2">
-              <div className="text-[10px] text-[#00F0FF] uppercase tracking-widest font-mono font-bold flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#00F0FF] rounded-full animate-pulse" />
+              <div className="text-[10px] text-[#D4FF00] uppercase tracking-widest font-mono font-bold flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-[#D4FF00] rounded-full animate-pulse" />
                 <span>// OFFICIAL NETWORKS</span>
               </div>
               <div className="grid grid-cols-3 gap-2">
@@ -114,9 +116,9 @@ export const Footer: React.FC<{ onOpenProjectModal: () => void }> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Hoza Digital on GitHub"
-                  className="flex items-center justify-center gap-1.5 px-2.5 py-2 bg-[#0C0C0C] border border-white/15 hover:border-[#8B5CFF] hover:bg-white/[0.04] text-neutral-300 hover:text-white rounded-xl transition-all duration-200 group text-xs font-mono"
+                  className="flex items-center justify-center gap-1.5 px-2.5 py-2 bg-[#0C0C0C] border border-white/15 hover:border-[#D4FF00] hover:bg-white/[0.04] text-neutral-300 hover:text-white rounded-xl transition-all duration-200 group text-xs font-mono"
                 >
-                  <svg className="w-3.5 h-3.5 text-white group-hover:text-[#00F0FF] transition-colors shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-3.5 h-3.5 text-white group-hover:text-[#D4FF00] transition-colors shrink-0" fill="currentColor" viewBox="0 0 24 24">
                     <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                   </svg>
                   <span className="font-semibold text-[11px]">GitHub</span>
@@ -142,9 +144,9 @@ export const Footer: React.FC<{ onOpenProjectModal: () => void }> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Hoza Digital on X"
-                  className="flex items-center justify-center gap-1.5 px-2.5 py-2 bg-[#0C0C0C] border border-white/15 hover:border-[#00F0FF] hover:bg-white/[0.04] text-neutral-300 hover:text-white rounded-xl transition-all duration-200 group text-xs font-mono"
+                  className="flex items-center justify-center gap-1.5 px-2.5 py-2 bg-[#0C0C0C] border border-white/15 hover:border-[#D4FF00] hover:bg-white/[0.04] text-neutral-300 hover:text-white rounded-xl transition-all duration-200 group text-xs font-mono"
                 >
-                  <svg className="w-3.5 h-3.5 text-white group-hover:text-[#00F0FF] transition-colors shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-3.5 h-3.5 text-white group-hover:text-[#D4FF00] transition-colors shrink-0" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                   </svg>
                   <span className="font-semibold text-[11px]">X</span>
@@ -207,6 +209,30 @@ export const Footer: React.FC<{ onOpenProjectModal: () => void }> = ({
                   Technology Matrix
                 </a>
               </li>
+              {onOpenStudioDeck && (
+                <li>
+                  <button
+                    type="button"
+                    onClick={onOpenStudioDeck}
+                    className="hover:text-[#D4FF00] transition-colors text-left font-mono text-[11px] text-[#D4FF00]/80 cursor-pointer flex items-center gap-1.5"
+                  >
+                    <span>Download Studio Deck [PDF]</span>
+                    <ArrowUpRight className="w-3 h-3" />
+                  </button>
+                </li>
+              )}
+              {onOpenSystemHealth && (
+                <li>
+                  <button
+                    type="button"
+                    onClick={onOpenSystemHealth}
+                    className="hover:text-emerald-400 transition-colors text-left font-mono text-[11px] text-emerald-400/80 cursor-pointer flex items-center gap-1.5"
+                  >
+                    <span>Live System Health // SLA</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
 
@@ -223,9 +249,9 @@ export const Footer: React.FC<{ onOpenProjectModal: () => void }> = ({
             <div className="flex flex-wrap items-center gap-2.5 pt-2">
               <a
                 href="mailto:hello@hoza.studio"
-                className="inline-flex items-center gap-2 px-3.5 py-2 bg-[#141414] border border-white/15 hover:border-[#8B5CFF] text-[#C8B7FF] hover:text-white font-mono text-xs font-semibold tracking-wider rounded-xl transition-all duration-200 group"
+                className="inline-flex items-center gap-2 px-3.5 py-2 bg-[#141418] border border-white/15 hover:border-[#D4FF00] text-[#D4FF00] hover:text-white font-mono text-xs font-semibold tracking-wider rounded-xl transition-all duration-200 group"
               >
-                <Mail className="w-3.5 h-3.5 text-[#8B5CFF] group-hover:scale-110 transition-transform" />
+                <Mail className="w-3.5 h-3.5 text-[#D4FF00] group-hover:scale-110 transition-transform" />
                 <span>hello@hoza.studio</span>
                 <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
@@ -234,7 +260,7 @@ export const Footer: React.FC<{ onOpenProjectModal: () => void }> = ({
                 href="https://wa.me/6285111505115?text=Hi%20Hoza%20Digital%2C%20I%20would%20like%20to%20discuss%20a%20new%20digital%20project."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3.5 py-2 bg-[#141414] border border-emerald-500/40 hover:border-emerald-400 text-emerald-400 font-mono text-xs font-semibold tracking-wider rounded-xl transition-all duration-200 group"
+                className="inline-flex items-center gap-2 px-3.5 py-2 bg-[#141418] border border-emerald-500/40 hover:border-emerald-400 text-emerald-400 font-mono text-xs font-semibold tracking-wider rounded-xl transition-all duration-200 group"
               >
                 <MessageCircle className="w-3.5 h-3.5 text-emerald-400 group-hover:scale-110 transition-transform" />
                 <span>Chat on WhatsApp</span>
@@ -245,16 +271,16 @@ export const Footer: React.FC<{ onOpenProjectModal: () => void }> = ({
             <div className="pt-3">
               <button
                 onClick={onOpenProjectModal}
-                className="btn-tactical btn-tactical-cyan rounded-xl overflow-hidden"
+                className="btn-tactical btn-tactical-volt rounded-xl overflow-hidden"
               >
                 <span className="btn-box-left">
-                  <span className="w-1.5 h-1.5 bg-[#08050D]" />
+                  <span className="w-1.5 h-1.5 bg-[#09090B]" />
                 </span>
                 <span className="btn-label font-black">
                   Initiate Project Brief
                 </span>
                 <span className="btn-box-right">
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#08050D]" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#09090B]" />
                 </span>
               </button>
             </div>
@@ -262,9 +288,9 @@ export const Footer: React.FC<{ onOpenProjectModal: () => void }> = ({
         </div>
 
         {/* Bottom Colophon & Scroll to Top */}
-        <div className="border-t border-hoza-violet/80 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-hoza-darkMuted">
+        <div className="border-t border-[#D4FF00]/20 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-hoza-darkMuted">
           <div>
-            © {new Date().getFullYear()} HOZA STUDIO. ALL RIGHTS RESERVED. BUILT IN INDONESIA. READY FOR ANYWHERE.
+            Â© {new Date().getFullYear()} HOZA STUDIO. ALL RIGHTS RESERVED. BUILT IN INDONESIA. READY FOR ANYWHERE.
           </div>
 
           <div className="flex items-center gap-6">
@@ -282,4 +308,3 @@ export const Footer: React.FC<{ onOpenProjectModal: () => void }> = ({
     </footer>
   );
 };
-

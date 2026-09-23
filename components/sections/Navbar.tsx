@@ -1,15 +1,21 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react";
+import { Menu, X, ArrowUpRight, ChevronDown, Command } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
 interface NavbarProps {
   onOpenProjectModal: () => void;
+  onOpenCommandPalette?: () => void;
+  onOpenStudioDeck?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  onOpenProjectModal,
+  onOpenCommandPalette,
+  onOpenStudioDeck,
+}) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
@@ -84,8 +90,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
         className={cn(
           "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
           scrolled
-            ? "bg-[#08050D]/85 backdrop-blur-xl border-b border-hoza-violet/60 py-3 shadow-2xl shadow-black/50"
-            : "bg-transparent border-b border-transparent py-4 sm:py-5"
+            ? "bg-[#09090B]/95 backdrop-blur-xl border-b border-white/10 py-3 shadow-2xl shadow-black/50"
+            : "bg-[#09090B] border-b border-white/10 py-4 sm:py-5 shadow-lg shadow-black/40"
         )}
       >
         <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative flex items-center justify-between">
@@ -103,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
               {/* SVG Brand Mark */}
               <div className="relative flex items-center">
                 <svg
-                  className="h-6 sm:h-7 w-auto text-hoza-white group-hover:text-hoza-lavender transition-colors"
+                  className="h-6 sm:h-7 w-auto text-hoza-white group-hover:text-[#D4FF00] transition-colors"
                   viewBox="0 0 448 82"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -123,8 +129,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
                     cx="147"
                     cy="41"
                     r="6"
-                    fill="#00F0FF"
-                    className="animate-pulse shadow-[0_0_10px_#00F0FF]"
+                    fill="#D4FF00"
+                    className="animate-pulse shadow-[0_0_10px_#D4FF00]"
                   />
                   <polygon
                     points="215,0 319,0 319,20 256,63 319,63 319,82 215,82 215,63 278,19 215,19"
@@ -137,22 +143,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
                   />
                 </svg>
               </div>
-
-              {/* Sub-label visible on wide desktop screens (symmetric with right Status Available) */}
-              <div className="hidden min-[1500px]:flex flex-col pl-3 border-l border-white/15">
-                <span className="font-mono text-[9px] text-[#00F0FF] font-bold tracking-widest uppercase">
-                  HIGH-VELOCITY IT PROTOCOL
-                </span>
-                <span className="font-mono text-[8px] text-hoza-darkMuted tracking-wider">
-                  JKT_HQ &bull; SIN_EDGE &bull; GLOBAL
-                </span>
-              </div>
             </a>
           </div>
 
           {/* Center: Awwwards Floating Glassmorphic Pill - Absolutely Centered */}
           <nav
-            className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 items-center gap-0.5 xl:gap-1 px-2.5 xl:px-3 py-1.5 rounded-full bg-[#0D0718]/80 border border-[#8B5CFF]/30 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.5),0_0_12px_rgba(139,92,255,0.1)] z-20 pointer-events-auto"
+            className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 items-center gap-0.5 xl:gap-1 px-2.5 xl:px-3 py-1.5 rounded-full bg-[#0E0E12]/85 border border-[#D4FF00]/30 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.6),0_0_12px_rgba(212,255,0,0.15)] z-20 pointer-events-auto"
             aria-label="Main Navigation"
           >
             {mainNavLinks.map((link) => (
@@ -174,7 +170,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
                 onMouseEnter={() => setMoreOpen(true)}
                 className={cn(
                   "px-2.5 xl:px-3 py-1 rounded-full font-mono text-xs flex items-center gap-1 text-hoza-muted hover:text-white hover:bg-white/[0.06] transition-all tracking-wider whitespace-nowrap",
-                  moreOpen && "text-[#00F0FF] bg-white/[0.08]"
+                  moreOpen && "text-[#D4FF00] bg-white/[0.08]"
                 )}
                 aria-expanded={moreOpen}
               >
@@ -182,7 +178,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
                 <ChevronDown
                   className={cn(
                     "w-3 h-3 transition-transform duration-200 text-hoza-muted",
-                    moreOpen && "rotate-180 text-[#00F0FF]"
+                    moreOpen && "rotate-180 text-[#D4FF00]"
                   )}
                 />
               </button>
@@ -190,7 +186,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
               {moreOpen && (
                 <div
                   onMouseLeave={() => setMoreOpen(false)}
-                  className="absolute top-full mt-2 -left-6 w-56 p-2 rounded-2xl bg-[#090514]/95 border border-[#8B5CFF]/40 backdrop-blur-2xl shadow-[0_12px_40px_rgba(0,0,0,0.8),0_0_20px_rgba(139,92,255,0.2)] animate-in fade-in slide-in-from-top-2 duration-150 z-50 flex flex-col gap-1"
+                  className="absolute top-full mt-2 -left-6 w-56 p-2 rounded-2xl bg-[#0E0E12]/95 border border-[#D4FF00]/40 backdrop-blur-2xl shadow-[0_12px_40px_rgba(0,0,0,0.85),0_0_20px_rgba(212,255,0,0.2)] animate-in fade-in slide-in-from-top-2 duration-150 z-50 flex flex-col gap-1"
                 >
                   {secondaryNavLinks.map((item) => (
                     <a
@@ -202,9 +198,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
                       }}
                       className="px-3 py-2 rounded-xl text-left hover:bg-white/[0.06] group transition-colors"
                     >
-                      <div className="font-mono text-xs font-semibold text-white group-hover:text-[#00F0FF] transition-colors flex items-center justify-between">
+                      <div className="font-mono text-xs font-semibold text-white group-hover:text-[#D4FF00] transition-colors flex items-center justify-between">
                         <span>{item.label}</span>
-                        <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#00F0FF]" />
+                        <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity text-[#D4FF00]" />
                       </div>
                       <div className="font-mono text-[10px] text-hoza-darkMuted group-hover:text-hoza-muted transition-colors">
                         {item.desc}
@@ -214,7 +210,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
 
                   {/* Official Social Media Channels in More Dropdown */}
                   <div className="border-t border-white/10 my-1 pt-1.5 space-y-0.5">
-                    <div className="px-3 py-1 font-mono text-[9px] text-[#00F0FF] uppercase tracking-wider font-bold">
+                    <div className="px-3 py-1 font-mono text-[9px] text-[#D4FF00] uppercase tracking-wider font-bold">
                       // Social Channels
                     </div>
                     <a
@@ -224,7 +220,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
                       className="px-3 py-1.5 rounded-xl text-left hover:bg-white/[0.06] group transition-colors flex items-center justify-between"
                     >
                       <span className="font-mono text-xs text-neutral-300 group-hover:text-white">GitHub</span>
-                      <ArrowUpRight className="w-3 h-3 text-neutral-500 group-hover:text-[#00F0FF]" />
+                      <ArrowUpRight className="w-3 h-3 text-neutral-500 group-hover:text-[#D4FF00]" />
                     </a>
                     <a
                       href="https://www.instagram.com/hozadigital/"
@@ -241,8 +237,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 rounded-xl text-left hover:bg-white/[0.06] group transition-colors flex items-center justify-between"
                     >
-                      <span className="font-mono text-xs text-neutral-300 group-hover:text-[#00F0FF]">X (Twitter)</span>
-                      <ArrowUpRight className="w-3 h-3 text-neutral-500 group-hover:text-[#00F0FF]" />
+                      <span className="font-mono text-xs text-neutral-300 group-hover:text-[#D4FF00]">X (Twitter)</span>
+                      <ArrowUpRight className="w-3 h-3 text-neutral-500 group-hover:text-[#D4FF00]" />
                     </a>
                   </div>
                 </div>
@@ -251,32 +247,35 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
           </nav>
 
           {/* Right Action Cluster - Bulkhead Style Tactical Action */}
-          <div className="flex items-center gap-3 shrink-0 z-10">
-            {/* Status Available Pill (symmetric with left Sub-label) */}
-            <div className="hidden min-[1500px]:flex items-center gap-2 px-3 py-1.5 bg-tactical-dark border border-emerald-500/40 font-mono text-[11px] text-emerald-400">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
-              </span>
-              <span className="tracking-widest text-[10px] font-bold whitespace-nowrap">
-                STATUS: AVAILABLE
-              </span>
-            </div>
+          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0 z-10">
+            {/* Command Palette Quick Launcher [⌘K] */}
+            {onOpenCommandPalette && (
+              <button
+                type="button"
+                onClick={onOpenCommandPalette}
+                className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#141418] hover:bg-[#1A1A22] border border-white/10 hover:border-[#D4FF00]/50 text-neutral-300 hover:text-white transition-all font-mono text-xs cursor-pointer group shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+                title="Open Cyber-OS Command Palette (Ctrl+K)"
+              >
+                <Command className="w-3.5 h-3.5 text-[#D4FF00] group-hover:scale-110 transition-transform" />
+                <span className="text-[11px] text-neutral-400 group-hover:text-neutral-200">Cmd</span>
+                <kbd className="px-1 py-0.5 bg-black/60 border border-white/15 rounded text-[10px] text-[#D4FF00] font-bold">K</kbd>
+              </button>
+            )}
 
             {/* Start Project Tactical Dual-Box Button */}
             <div className="hidden sm:inline-flex">
               <button
                 onClick={onOpenProjectModal}
-                className="btn-tactical hover:border-tactical-cyan"
+                className="btn-tactical hover:border-[#D4FF00]"
               >
                 <span className="btn-box-left">
-                  <span className="w-2 h-2 rounded-full bg-tactical-cyan animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-[#D4FF00] animate-pulse" />
                 </span>
                 <span className="btn-label font-bold text-xs tracking-wider whitespace-nowrap">
                   Start a Project
                 </span>
                 <span className="btn-box-right">
-                  <ArrowUpRight className="w-3.5 h-3.5 text-tactical-cyan" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-[#D4FF00]" />
                 </span>
               </button>
             </div>
@@ -284,12 +283,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
             {/* Mobile / Tablet Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2.5 text-tactical-offwhite hover:text-tactical-cyan focus:outline-none border border-tactical-border bg-tactical-black tactical-corners transition-colors cursor-pointer"
+              className="lg:hidden p-2.5 text-tactical-offwhite hover:text-[#D4FF00] focus:outline-none border border-tactical-border bg-tactical-black tactical-corners transition-colors cursor-pointer"
               aria-label="Toggle navigation menu"
             >
               <span className="tactical-corner-tr" />
               {mobileMenuOpen ? (
-                <X className="w-5 h-5 text-tactical-cyan" />
+                <X className="w-5 h-5 text-[#D4FF00]" />
               ) : (
                 <Menu className="w-5 h-5" />
               )}
@@ -300,10 +299,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
 
       {/* Mobile Drawer Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-[#08050D]/95 backdrop-blur-2xl lg:hidden pt-20 px-6 flex flex-col justify-between pb-10 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-50 bg-[#09090B]/95 backdrop-blur-2xl lg:hidden pt-20 px-6 flex flex-col justify-between pb-10 animate-in fade-in duration-200">
           <div className="space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-white/10">
-              <span className="font-mono text-xs text-[#00F0FF] uppercase tracking-widest">
+              <span className="font-mono text-xs text-[#D4FF00] uppercase tracking-widest">
                 // NAVIGATION DIRECTORY
               </span>
               <button
@@ -324,14 +323,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
                   className="flex items-center justify-between py-2.5 px-3 rounded-xl hover:bg-white/[0.05] group transition-colors"
                 >
                   <div className="flex items-baseline gap-3">
-                    <span className="font-mono text-xs text-[#8B5CFF]">
+                    <span className="font-mono text-xs text-[#D4FF00]">
                       {link.num}
                     </span>
-                    <span className="font-display font-bold text-xl text-white group-hover:text-[#00F0FF] transition-colors uppercase">
+                    <span className="font-display font-bold text-xl text-white group-hover:text-[#D4FF00] transition-colors uppercase">
                       {link.label}
                     </span>
                   </div>
-                  <ArrowUpRight className="w-4 h-4 text-hoza-darkMuted group-hover:text-[#00F0FF] transition-colors" />
+                  <ArrowUpRight className="w-4 h-4 text-hoza-darkMuted group-hover:text-[#D4FF00] transition-colors" />
                 </a>
               ))}
             </div>
@@ -340,7 +339,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
           <div className="space-y-4 pt-4 border-t border-white/10">
             {/* Mobile Social Links */}
             <div className="space-y-2">
-              <span className="font-mono text-[10px] text-hoza-lavender uppercase tracking-widest block">
+              <span className="font-mono text-[10px] text-hoza-muted uppercase tracking-widest block">
                 // OFFICIAL SOCIALS
               </span>
               <div className="grid grid-cols-3 gap-2">
@@ -348,7 +347,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
                   href="https://github.com/hozadigital"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center gap-1.5 text-xs font-mono text-white hover:border-[#8B5CFF] transition-colors"
+                  className="p-2 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center gap-1.5 text-xs font-mono text-white hover:border-[#D4FF00] transition-colors"
                 >
                   <svg className="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
                     <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
@@ -370,7 +369,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
                   href="https://x.com/hozadigital"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center gap-1.5 text-xs font-mono text-white hover:border-[#00F0FF] transition-colors"
+                  className="p-2 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center gap-1.5 text-xs font-mono text-white hover:border-[#D4FF00] transition-colors"
                 >
                   <svg className="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -385,10 +384,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenProjectModal }) => {
                 setMobileMenuOpen(false);
                 onOpenProjectModal();
               }}
-              className="w-full py-3 px-6 rounded-xl font-mono text-sm font-bold uppercase tracking-wider text-white bg-gradient-to-r from-[#8B5CFF] to-[#6832E3] flex items-center justify-center gap-2 shadow-lg shadow-purple-900/30"
+              className="w-full py-3 px-6 rounded-xl font-mono text-sm font-bold uppercase tracking-wider text-[#09090B] bg-[#D4FF00] hover:bg-[#E6FF4D] flex items-center justify-center gap-2 shadow-lg shadow-[#D4FF00]/20 transition-all cursor-pointer"
             >
               <span>Start a Project</span>
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-4 h-4 text-[#09090B]" />
             </button>
             <div className="flex items-center justify-between font-mono text-[11px] text-hoza-muted px-1">
               <span>JAKARTA &bull; SINGAPORE</span>

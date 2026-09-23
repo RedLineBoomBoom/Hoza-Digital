@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect, useRef } from "react";
 
@@ -92,7 +92,7 @@ export const CustomCursor: React.FC = () => {
           vx: Math.cos(angle) * speed,
           vy: Math.sin(angle) * speed,
           size: Math.random() * 2 + 1.2,
-          color: i % 2 === 0 ? "#00F0FF" : "#C4B5FD",
+          color: i % 2 === 0 ? "#D4FF00" : "#E6FF4D",
           alpha: 1,
           decay: 0.04 + Math.random() * 0.02,
         });
@@ -105,7 +105,7 @@ export const CustomCursor: React.FC = () => {
         r: 8,
         maxR: 52,
         alpha: 0.9,
-        color: isHovering ? "#00F0FF" : "#A78BFA",
+        color: isHovering ? "#D4FF00" : "#E6FF4D",
       });
     };
 
@@ -168,7 +168,7 @@ export const CustomCursor: React.FC = () => {
           vx: (Math.random() - 0.5) * 0.4,
           vy: (Math.random() - 0.5) * 0.4,
           size: Math.random() * 1.8 + 0.8,
-          color: Math.random() > 0.45 ? "#00F0FF" : "#A78BFA",
+          color: Math.random() > 0.45 ? "#D4FF00" : "#E6FF4D",
           alpha: 0.6,
           decay: 0.03,
         });
@@ -229,10 +229,10 @@ export const CustomCursor: React.FC = () => {
         const stretchY = baseScale * (1 - speed * 0.35);
 
         ringRef.current.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) rotate(${currentAngle}deg) scale(${stretchX}, ${stretchY})`;
-        ringRef.current.style.color = isHovering ? "#00F0FF" : "#8B5CFF";
+        ringRef.current.style.color = isHovering ? "#D4FF00" : "#D4FF00";
         ringRef.current.style.filter = isHovering
-          ? "drop-shadow(0 0 16px rgba(0, 240, 255, 0.85)) drop-shadow(0 0 6px rgba(0, 240, 255, 0.95))"
-          : "drop-shadow(0 0 10px rgba(139, 92, 255, 0.65)) drop-shadow(0 0 4px rgba(139, 92, 255, 0.75))";
+          ? "drop-shadow(0 0 16px rgba(212, 255, 0, 0.85)) drop-shadow(0 0 6px rgba(212, 255, 0, 0.95))"
+          : "drop-shadow(0 0 10px rgba(212, 255, 0, 0.65)) drop-shadow(0 0 4px rgba(212, 255, 0, 0.75))";
       }
 
       // 4. Ambient Spotlight
@@ -324,7 +324,7 @@ export const CustomCursor: React.FC = () => {
           marginTop: "-190px",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(139, 92, 255, 0.14) 0%, rgba(0, 240, 255, 0.05) 35%, transparent 70%)",
+            "radial-gradient(circle, rgba(212, 255, 0, 0.14) 0%, rgba(212, 255, 0, 0.05) 35%, transparent 70%)",
           transformOrigin: "center center",
         }}
       />
@@ -338,7 +338,7 @@ export const CustomCursor: React.FC = () => {
       {/* 3. Follower Official Round Hoza Emblem Cursor */}
       <div
         ref={ringRef}
-        className="fixed top-0 left-0 pointer-events-none z-40 will-change-transform opacity-0 text-[#8B5CFF]"
+        className="fixed top-0 left-0 pointer-events-none z-40 will-change-transform opacity-0 text-[#D4FF00]"
         style={{
           width: "42px",
           height: "42px",
@@ -371,7 +371,7 @@ export const CustomCursor: React.FC = () => {
             cx="50"
             cy="50"
             r="49"
-            stroke="#00F0FF"
+            stroke="#D4FF00"
             strokeWidth="1.2"
             className="opacity-35"
           />
@@ -388,7 +388,7 @@ export const CustomCursor: React.FC = () => {
             cx="50"
             cy="50"
             r="6.5"
-            fill="#00F0FF"
+            fill="#D4FF00"
             className="opacity-40 animate-pulse"
           />
         </svg>
@@ -404,9 +404,9 @@ export const CustomCursor: React.FC = () => {
           marginLeft: "-2.5px",
           marginTop: "-2.5px",
           borderRadius: "50%",
-          background: "radial-gradient(circle, #ffffff 45%, #00F0FF 100%)",
+          background: "radial-gradient(circle, #ffffff 45%, #D4FF00 100%)",
           boxShadow:
-            "0 0 5px #00F0FF, 0 0 10px rgba(0, 240, 255, 0.9), 0 0 18px rgba(139, 92, 255, 0.6)",
+            "0 0 5px #D4FF00, 0 0 10px rgba(212, 255, 0, 0.9), 0 0 18px rgba(212, 255, 0, 0.6)",
           transformOrigin: "center center",
           transition: "opacity 0.15s ease",
         }}

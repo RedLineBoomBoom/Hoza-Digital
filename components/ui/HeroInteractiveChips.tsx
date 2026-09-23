@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { motion } from "framer-motion";
@@ -28,16 +28,16 @@ const CHIPS: ChipData[] = [
     id: "chip-1",
     label: "Next.js 14 & Edge Core",
     sub: "Sub-Second LCP",
-    icon: <Zap className="w-3.5 h-3.5 text-[#8B5CFF]" />,
-    accent: "border-[#8B5CFF]/60 hover:border-[#8B5CFF]",
+    icon: <Zap className="w-3.5 h-3.5 text-[#D4FF00]" />,
+    accent: "border-[#D4FF00]/60 hover:border-[#D4FF00]",
     initialPos: { x: -8, y: 0, rotate: -2 },
   },
   {
     id: "chip-2",
     label: "Autonomous AI Agents",
     sub: "24/7 Operations",
-    icon: <Bot className="w-3.5 h-3.5 text-[#00F0FF]" />,
-    accent: "border-[#00F0FF]/50 hover:border-[#00F0FF]",
+    icon: <Bot className="w-3.5 h-3.5 text-[#D4FF00]" />,
+    accent: "border-[#D4FF00]/50 hover:border-[#D4FF00]",
     initialPos: { x: 5, y: -4, rotate: 1.5 },
   },
   {
@@ -52,8 +52,8 @@ const CHIPS: ChipData[] = [
     id: "chip-4",
     label: "120fps Gesture Motion",
     sub: "iOS & Android",
-    icon: <Layers className="w-3.5 h-3.5 text-[#C8B7FF]" />,
-    accent: "border-[#C8B7FF]/40 hover:border-[#C8B7FF]",
+    icon: <Layers className="w-3.5 h-3.5 text-[#E6FF4D]" />,
+    accent: "border-[#E6FF4D]/40 hover:border-[#E6FF4D]",
     initialPos: { x: 10, y: 4, rotate: 2 },
   },
   {
@@ -78,8 +78,8 @@ export const HeroInteractiveChips: React.FC = () => {
   return (
     <div className="relative w-full py-4 mt-6">
       <div className="text-center font-mono text-[10px] text-hoza-muted uppercase tracking-widest mb-3 flex items-center justify-center gap-2">
-        <Sparkles className="w-3 h-3 text-hoza-electric animate-pulse" />
-        <span>INTERACTIVE SYSTEM CAPABILITIES • DRAG TO EXPLORE</span>
+        <Sparkles className="w-3 h-3 text-[#D4FF00] animate-pulse" />
+        <span>INTERACTIVE SYSTEM CAPABILITIES â€¢ DRAG TO EXPLORE</span>
       </div>
 
       <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 max-w-4xl mx-auto px-4">
@@ -96,7 +96,7 @@ export const HeroInteractiveChips: React.FC = () => {
             whileDrag={{ scale: 1.12, zIndex: 40, cursor: "grabbing" }}
             onHoverStart={() => soundEffects.playHover?.()}
             onDragStart={() => soundEffects.playClick?.()}
-            className={`cursor-grab select-none px-3.5 py-2 rounded-full bg-[#0D0718]/90 border backdrop-blur-md shadow-lg transition-colors flex items-center gap-2.5 ${chip.accent}`}
+            className={`cursor-grab select-none px-3.5 py-2 rounded-full bg-[#121216]/90 border backdrop-blur-md shadow-lg transition-colors flex items-center gap-2.5 ${chip.accent}`}
           >
             <span className="p-1 rounded-full bg-white/5">{chip.icon}</span>
             <div className="flex flex-col text-left">
@@ -107,7 +107,7 @@ export const HeroInteractiveChips: React.FC = () => {
                 {chip.sub}
               </span>
             </div>
-            <span className="w-1.5 h-1.5 rounded-full bg-hoza-electric/60 ml-0.5 animate-ping" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D4FF00]/60 ml-0.5 animate-ping" />
           </motion.div>
         ))}
       </div>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -69,7 +69,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
     {
       name: "Arma",
       role: "Lead Ops",
-      location: "Hoza Digital Core Team · Remote-First",
+      location: "Hoza Digital Core Team Â· Remote-First",
       avatar: "/images/authors/arma.webp",
       bio: "Lead Operations at Hoza Digital. Specializing in analytics pipelines, sales intelligence, workflow automation, and client delivery systems that eliminate friction and scale revenue.",
       stats: "24h Response SLA",
@@ -82,7 +82,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
     {
       name: "Owen",
       role: "Lead Engineer",
-      location: "Hoza Digital Core Team · Remote-First",
+      location: "Hoza Digital Core Team Â· Remote-First",
       avatar: "/images/authors/owen.webp",
       bio: "Lead Engineer at Hoza Digital. Building mission-critical full-stack web platforms, mobile products, real-time database architectures, and high-performance serverless infrastructure.",
       stats: "Sub-Second Deploys",
@@ -95,7 +95,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
     {
       name: "Amma",
       role: "Engineer",
-      location: "Hoza Digital Core Team · Remote-First",
+      location: "Hoza Digital Core Team Â· Remote-First",
       avatar: "/images/authors/amma.webp",
       bio: "Frontend & Systems Engineer at Hoza Digital. Focused on design systems, conversion-driven UX/UI, interaction fidelity, and fluid web experiences that drive user action.",
       stats: "100% Type-Safe",
@@ -227,17 +227,17 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
       id="about"
       className="relative py-24 px-6 sm:px-8 max-w-7xl mx-auto w-full select-none"
     >
-      {/* ── SECTION HEADER (Clean, Balanced & Aligned) ────────────────────────── */}
-      <div className="border-b border-hoza-violet pb-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      {/* â”€â”€ SECTION HEADER (Clean, Balanced & Aligned) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <div className="border-b border-[#D4FF00]/20 pb-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
-          <div className="font-mono text-xs text-[#00F0FF] uppercase tracking-widest mb-3 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#00F0FF] animate-pulse" />
+          <div className="font-mono text-xs text-[#D4FF00] uppercase tracking-widest mb-3 flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#D4FF00] animate-pulse" />
             <span>// 05 ABOUT HOZA DIGITAL</span>
           </div>
           <SmoothHeading
             title="BRANDS ARE TASTE."
             highlight="THE REST IS SOFTWARE."
-            highlightGradient="from-hoza-white via-[#8B5CFF] to-[#00F0FF]"
+            highlightGradient="from-[#E6FF4D] via-[#D4FF00] to-[#E6FF4D]"
           />
         </div>
 
@@ -250,7 +250,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
         </div>
       </div>
 
-      {/* ── CLEAN TAB BAR (Segmented Pill Style, High Readability) ──────────── */}
+      {/* â”€â”€ CLEAN TAB BAR (Segmented Pill Style, High Readability) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="mb-10 p-1.5 bg-[#121214] border border-white/10 rounded-xl grid grid-cols-2 md:grid-cols-4 gap-1.5">
         {tabs.map((tab) => {
           const isSelected = activeTab === tab.id;
@@ -273,7 +273,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 className={cn(
                   "w-8 h-8 rounded-md flex items-center justify-center shrink-0 transition-colors",
                   isSelected
-                    ? "bg-[#00F0FF]/15 text-[#00F0FF] border border-[#00F0FF]/30"
+                    ? "bg-[#D4FF00]/15 text-[#D4FF00] border border-[#D4FF00]/30"
                     : "bg-white/5 text-neutral-400 group-hover:text-white"
                 )}
               >
@@ -292,12 +292,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
         })}
       </div>
 
-      {/* ── CONTENT PANEL (Simple, Clean, Easy on the Eyes) ────────────────── */}
+      {/* â”€â”€ CONTENT PANEL (Simple, Clean, Easy on the Eyes) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="bg-[#0D0D10] border border-white/10 rounded-2xl p-4 sm:p-8 lg:p-10 relative overflow-hidden shadow-2xl">
         <AnimatePresence mode="wait">
-          {/* ════════════════════════════════════════════════════════════════════
+          {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
               TAB 0: STUDIO & MISSION
-              ════════════════════════════════════════════════════════════════════ */}
+              â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
           {activeTab === 0 && (
             <motion.div
               key="tab-mission"
@@ -310,7 +310,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
               {/* Header inside Panel */}
               <div className="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                  <span className="font-mono text-xs text-[#00F0FF] uppercase tracking-wider block mb-1">
+                  <span className="font-mono text-xs text-[#D4FF00] uppercase tracking-wider block mb-1">
                     Philosophy & Architecture
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
@@ -354,29 +354,29 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 </div>
 
                 {/* Hoza Studio Model */}
-                <div className="p-6 rounded-xl bg-gradient-to-b from-[#161622] to-[#12121A] border border-[#00F0FF]/30 space-y-4 shadow-lg">
+                <div className="p-6 rounded-xl bg-gradient-to-b from-[#161622] to-[#12121A] border border-[#D4FF00]/30 space-y-4 shadow-lg">
                   <div className="flex items-center justify-between pb-3 border-b border-white/10">
-                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#00F0FF] flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-[#00F0FF] animate-pulse" />
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#D4FF00] flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-[#D4FF00] animate-pulse" />
                       The Hoza Digital Studio
                     </span>
                     <span className="text-[11px] text-emerald-400 font-medium">Zero Waste</span>
                   </div>
                   <ul className="space-y-3 text-sm text-neutral-200">
                     <li className="flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-[#00F0FF] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#D4FF00] shrink-0 mt-0.5" />
                       <span>A single cohesive team owning design, code, and infrastructure from day one</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-[#00F0FF] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#D4FF00] shrink-0 mt-0.5" />
                       <span>Automated Playwright test suites catching edge cases before deployment</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-[#00F0FF] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#D4FF00] shrink-0 mt-0.5" />
                       <span>Custom event-driven webhook pipelines linking PostgreSQL, Stripe, and CRM</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-[#00F0FF] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#D4FF00] shrink-0 mt-0.5" />
                       <span>Direct Slack/WhatsApp access to the actual engineers building your product</span>
                     </li>
                   </ul>
@@ -389,7 +389,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                   <div className="text-3xl sm:text-4xl font-black text-white tracking-tight">
                     24h
                   </div>
-                  <div className="text-xs font-mono text-[#00F0FF] uppercase mt-1 font-semibold">
+                  <div className="text-xs font-mono text-[#D4FF00] uppercase mt-1 font-semibold">
                     Sprint Turnaround
                   </div>
                   <p className="text-xs text-neutral-400 mt-2 leading-relaxed">
@@ -401,7 +401,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                   <div className="text-3xl sm:text-4xl font-black text-white tracking-tight">
                     11
                   </div>
-                  <div className="text-xs font-mono text-[#00F0FF] uppercase mt-1 font-semibold">
+                  <div className="text-xs font-mono text-[#D4FF00] uppercase mt-1 font-semibold">
                     Autonomous Engines
                   </div>
                   <p className="text-xs text-neutral-400 mt-2 leading-relaxed">
@@ -424,9 +424,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             </motion.div>
           )}
 
-          {/* ════════════════════════════════════════════════════════════════════
+          {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
               TAB 1: CORE SQUAD
-              ════════════════════════════════════════════════════════════════════ */}
+              â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
           {activeTab === 1 && (
             <motion.div
               key="tab-squad"
@@ -439,8 +439,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
               {/* Header inside Panel */}
               <div className="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                  <span className="font-mono text-xs text-[#00F0FF] uppercase tracking-wider block mb-1">
-                    Who Builds It · Remote-First · Since 2025
+                  <span className="font-mono text-xs text-[#D4FF00] uppercase tracking-wider block mb-1">
+                    Who Builds It Â· Remote-First Â· Since 2025
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                     Dedicated Engineers, Zero Account Managers.
@@ -456,7 +456,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 {squadMembers.map((member, idx) => (
                   <div
                     key={idx}
-                    className="p-4 sm:p-6 rounded-2xl bg-[#141418] border border-white/10 hover:border-[#8B5CFF]/30 transition-all flex flex-col justify-between h-full shadow-lg"
+                    className="p-4 sm:p-6 rounded-2xl bg-[#141418] border border-white/10 hover:border-[#D4FF00]/40 transition-all flex flex-col justify-between h-full shadow-lg"
                   >
                     <div>
                       {/* Avatar Header & Socials */}
@@ -475,7 +475,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                             <h4 className="text-base sm:text-lg lg:text-xl font-bold text-white tracking-tight whitespace-nowrap">
                               {member.name}
                             </h4>
-                            <span className="px-2 py-0.5 rounded-full text-[9.5px] sm:text-[10px] font-medium bg-[#8B5CFF]/15 text-[#C4B5FD] border border-[#8B5CFF]/30 whitespace-nowrap">
+                            <span className="px-2 py-0.5 rounded-full text-[9.5px] sm:text-[10px] font-medium bg-[#D4FF00]/15 text-[#D4FF00] border border-[#D4FF00]/30 whitespace-nowrap">
                               {member.role}
                             </span>
                           </div>
@@ -541,23 +541,23 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
               {/* QA Methodology Callout Banner */}
               <div className="p-4 sm:p-5 rounded-xl bg-gradient-to-r from-[#14141E] to-[#121218] border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#00F0FF]/10 border border-[#00F0FF]/20 flex items-center justify-center shrink-0">
-                    <ShieldCheck className="w-4 h-4 text-[#00F0FF]" />
+                  <div className="w-8 h-8 rounded-lg bg-[#D4FF00]/10 border border-[#D4FF00]/20 flex items-center justify-center shrink-0">
+                    <ShieldCheck className="w-4 h-4 text-[#D4FF00]" />
                   </div>
                   <p className="text-sm text-neutral-300">
                     <strong className="text-white">Automated QA Before Production:</strong> Bugs caught in staging take minutes to resolve. Caught in production, they cost customer trust.
                   </p>
                 </div>
-                <span className="text-xs font-mono font-bold text-[#00F0FF] uppercase px-3 py-1 bg-[#00F0FF]/10 rounded-full border border-[#00F0FF]/20 shrink-0 self-start sm:self-auto">
+                <span className="text-xs font-mono font-bold text-[#D4FF00] uppercase px-3 py-1 bg-[#D4FF00]/10 rounded-full border border-[#D4FF00]/20 shrink-0 self-start sm:self-auto">
                   Zero-Defect Protocol
                 </span>
               </div>
             </motion.div>
           )}
 
-          {/* ════════════════════════════════════════════════════════════════════
+          {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
               TAB 2: 11 AUTOMATION ENGINES (Clean Categorized Layout)
-              ════════════════════════════════════════════════════════════════════ */}
+              â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
           {activeTab === 2 && (
             <motion.div
               key="tab-engines"
@@ -570,7 +570,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
               {/* Header inside Panel */}
               <div className="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                  <span className="font-mono text-xs text-[#00F0FF] uppercase tracking-wider block mb-1">
+                  <span className="font-mono text-xs text-[#D4FF00] uppercase tracking-wider block mb-1">
                     Continuous 24/7 Autonomous Workflows
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
@@ -606,10 +606,10 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                         {cat.engines.map((engine) => (
                           <div
                             key={engine.num}
-                            className="p-3.5 rounded-lg bg-[#0C0C0E] border border-white/5 hover:border-[#00F0FF]/30 transition-colors group"
+                            className="p-3.5 rounded-lg bg-[#0C0C0E] border border-white/5 hover:border-[#D4FF00]/30 transition-colors group"
                           >
                             <div className="flex items-center justify-between mb-1">
-                              <span className="text-xs font-semibold text-white group-hover:text-[#00F0FF] transition-colors">
+                              <span className="text-xs font-semibold text-white group-hover:text-[#D4FF00] transition-colors">
                                 {engine.title}
                               </span>
                               <span className="font-mono text-[10px] text-neutral-500 font-bold">
@@ -626,7 +626,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
 
                     <div className="pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-neutral-500">
                       <span>Deterministic Execution</span>
-                      <span className="text-[#00F0FF]">100% Guaranteed</span>
+                      <span className="text-[#D4FF00]">100% Guaranteed</span>
                     </div>
                   </div>
                 ))}
@@ -634,9 +634,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             </motion.div>
           )}
 
-          {/* ════════════════════════════════════════════════════════════════════
+          {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
               TAB 3: PLATFORM & STACK
-              ════════════════════════════════════════════════════════════════════ */}
+              â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
           {activeTab === 3 && (
             <motion.div
               key="tab-platform"
@@ -649,7 +649,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
               {/* Header inside Panel */}
               <div className="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                  <span className="font-mono text-xs text-[#00F0FF] uppercase tracking-wider block mb-1">
+                  <span className="font-mono text-xs text-[#D4FF00] uppercase tracking-wider block mb-1">
                     Working Software, Not Slide Decks
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
@@ -666,18 +666,18 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 {/* Left Column (5 Cols): Verified Disciplines */}
                 <div className="lg:col-span-5 space-y-3">
                   <div className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-400 mb-3 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#00F0FF]" />
+                    <span className="w-2 h-2 rounded-full bg-[#D4FF00]" />
                     <span>Verified Production Disciplines</span>
                   </div>
                   {realDeliverables.map((item, dIdx) => (
                     <div
                       key={dIdx}
-                      className="p-4 rounded-xl bg-[#141418] border border-white/10 hover:border-[#00F0FF]/40 transition-colors group"
+                      className="p-4 rounded-xl bg-[#141418] border border-white/10 hover:border-[#D4FF00]/40 transition-colors group"
                     >
-                      <div className="text-[10px] font-mono text-[#00F0FF] uppercase tracking-wider mb-1">
+                      <div className="text-[10px] font-mono text-[#D4FF00] uppercase tracking-wider mb-1">
                         {item.category}
                       </div>
-                      <div className="text-sm font-semibold text-white group-hover:text-[#00F0FF] transition-colors">
+                      <div className="text-sm font-semibold text-white group-hover:text-[#D4FF00] transition-colors">
                         {item.title}
                       </div>
                       <p className="text-xs text-neutral-400 mt-1 leading-relaxed">
@@ -690,7 +690,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                 {/* Right Column (7 Cols): Infrastructure Ecosystem Wall */}
                 <div className="lg:col-span-7 space-y-3">
                   <div className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-400 mb-3 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#8B5CFF]" />
+                    <span className="w-2 h-2 rounded-full bg-[#D4FF00]" />
                     <span>Integrated Cloud Ecosystem</span>
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -703,7 +703,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                           {partner.name}
                         </div>
                         <div className="mt-3 pt-2 border-t border-white/5">
-                          <span className="text-[9px] font-mono font-semibold text-[#00F0FF] block">
+                          <span className="text-[9px] font-mono font-semibold text-[#D4FF00] block">
                             {partner.tag}
                           </span>
                           <span className="text-[10px] text-neutral-400 block mt-0.5 leading-tight">
@@ -727,7 +727,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
                     {onOpenProjectModal && (
                       <button
                         onClick={onOpenProjectModal}
-                        className="px-5 py-2.5 rounded-lg bg-[#00F0FF] hover:bg-[#00F0FF]/90 text-[#08050D] font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all shadow-md shrink-0 cursor-pointer self-start sm:self-auto"
+                        className="px-5 py-2.5 rounded-lg bg-[#D4FF00] hover:bg-[#D4FF00]/90 text-[#09090B] font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all shadow-md shrink-0 cursor-pointer self-start sm:self-auto"
                       >
                         <span>Start a Project</span>
                         <ArrowRight className="w-4 h-4" />

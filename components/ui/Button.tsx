@@ -46,13 +46,13 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantClasses = {
     primary:
-      "bg-hoza-electric text-hoza-white hover:bg-hoza-electricGlow hover:shadow-electric-md border border-hoza-lavender/30 active:scale-[0.98]",
+      "bg-[#D4FF00] text-[#09090B] font-bold hover:bg-[#E6FF4D] hover:shadow-electric-md border border-[#D4FF00] active:scale-[0.98]",
     secondary:
-      "bg-hoza-surface text-hoza-white border border-hoza-violet hover:border-hoza-electric/60 hover:bg-hoza-surfaceHover active:scale-[0.98]",
+      "bg-hoza-surface text-hoza-white border border-[#D4FF00]/20 hover:border-[#D4FF00]/60 hover:bg-hoza-surfaceHover active:scale-[0.98]",
     outline:
-      "bg-transparent text-hoza-white border border-hoza-violet hover:border-hoza-electric hover:bg-hoza-electric/10 active:scale-[0.98]",
+      "bg-transparent text-hoza-white border border-[#D4FF00]/20 hover:border-[#D4FF00] hover:bg-[#D4FF00]/10 active:scale-[0.98]",
     ghost:
-      "bg-transparent text-hoza-muted hover:text-hoza-white hover:bg-hoza-violet/30",
+      "bg-transparent text-hoza-muted hover:text-hoza-white hover:bg-[#D4FF00]/20",
   };
 
   const baseClasses = cn(

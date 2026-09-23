@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
@@ -14,7 +14,7 @@ interface SmoothHeadingProps {
   align?: "left" | "center";
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Luxury Kinetic SmoothHeading
 // - Masked spatial slit reveal with 3D perspective fold & optical blur dissipation
 // - Word-by-word cascading rhythm for Line 1 (crisp white)
@@ -22,11 +22,11 @@ interface SmoothHeadingProps {
 // - Rock-solid dual scroll observer (useInView + native viewport probe)
 //   Ensures animation NEVER triggers prematurely while offscreen, and ALWAYS
 //   unfurls with buttery 60/120fps silkiness as the user scrolls into view.
-// ─────────────────────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const SmoothHeading: React.FC<SmoothHeadingProps> = ({
   title,
   highlight,
-  highlightGradient = "from-hoza-white via-[#8B5CFF] to-[#00F0FF]",
+  highlightGradient = "from-[#E6FF4D] via-[#D4FF00] to-[#E6FF4D]",
   children,
   className,
   as = "h2",
@@ -63,7 +63,7 @@ export const SmoothHeading: React.FC<SmoothHeadingProps> = ({
     return () => window.removeEventListener("scroll", checkPosition);
   }, [inView, hasTriggered]);
 
-  // ── CHILDREN BRANCH (Hero <h1> freeform typography) ─────────────────────────
+  // â”€â”€ CHILDREN BRANCH (Hero <h1> freeform typography) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   if (children) {
     const MotionTag = motion[as];
     return (
@@ -106,7 +106,7 @@ export const SmoothHeading: React.FC<SmoothHeadingProps> = ({
     );
   }
 
-  // ── TITLE / HIGHLIGHT BRANCH (Section Headings) ────────────────────────────
+  // â”€â”€ TITLE / HIGHLIGHT BRANCH (Section Headings) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const Tag = as;
   const titleWords = title ? title.trim().split(/\s+/) : [];
   const highlightWords = highlight ? highlight.trim().split(/\s+/) : [];

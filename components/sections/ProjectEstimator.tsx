@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { soundEffects } from "@/components/ui/SoundEffects";
@@ -119,7 +119,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
     soundEffects.playClick?.();
     const scope = getScopeSummary();
     const text = encodeURIComponent(
-      `Hi Hoza Digital, I used your interactive sprint estimator:\n\n• ${scope}\n\nCan we discuss feasibility and commercial roadmap?`
+      `Hi Hoza Digital, I used your interactive sprint estimator:\n\nÃ¢â‚¬Â¢ ${scope}\n\nCan we discuss feasibility and commercial roadmap?`
     );
     window.open(`https://wa.me/6285111505115?text=${text}`, "_blank");
   };
@@ -137,16 +137,16 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
       className="relative py-24 sm:py-28 px-6 sm:px-8 max-w-7xl mx-auto w-full select-none"
     >
       {/* Section Header */}
-      <div className="border-b border-hoza-violet pb-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10">
+      <div className="border-b border-[#D4FF00]/20 pb-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10">
         <div>
-          <div className="font-mono text-xs text-[#00F0FF] uppercase tracking-widest mb-3 flex items-center gap-2">
-            <Sliders className="w-3.5 h-3.5 text-[#00F0FF]" />
+          <div className="font-mono text-xs text-[#D4FF00] uppercase tracking-widest mb-3 flex items-center gap-2">
+            <Sliders className="w-3.5 h-3.5 text-[#D4FF00]" />
             <span>// 03 ARCHITECTURE & SPRINT ESTIMATOR</span>
           </div>
           <SmoothHeading
             title="CALCULATE"
             highlight="SPRINT SCOPE."
-            highlightGradient="from-hoza-white via-[#8B5CFF] to-[#00F0FF]"
+            highlightGradient="from-[#E6FF4D] via-[#D4FF00] to-[#E6FF4D]"
           />
         </div>
 
@@ -163,10 +163,10 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
         {/* Left Configurator Column (7 cols) */}
         <div className="lg:col-span-7 space-y-6 sm:space-y-8">
           {/* Step 1: Select Foundation (Clean Rounded Container) */}
-          <div className="p-6 sm:p-8 bg-[#0F081D]/80 border border-white/10 rounded-2xl backdrop-blur-md shadow-xl">
+          <div className="p-6 sm:p-8 bg-[#121216]/80 border border-white/10 rounded-2xl backdrop-blur-md shadow-xl">
             <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
-              <span className="font-mono text-xs text-[#00F0FF] uppercase font-bold flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#00F0FF] shadow-[0_0_8px_#00F0FF]" />
+              <span className="font-mono text-xs text-[#D4FF00] uppercase font-bold flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#D4FF00] shadow-[0_0_8px_#D4FF00]" />
                 STEP 1: SELECT CORE SYSTEM TYPE
               </span>
               <span className="font-mono text-[11px] text-hoza-muted px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10">
@@ -188,15 +188,15 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
                     className={cn(
                       "relative p-4 sm:p-5 text-left border transition-colors duration-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl cursor-pointer group overflow-hidden",
                       isSelected
-                        ? "border-[#8B5CFF] shadow-[0_0_25px_rgba(139,92,255,0.25)]"
-                        : "bg-[#0F081D]/70 border-white/10 hover:border-white/25 hover:bg-[#140A26]"
+                        ? "border-[#D4FF00] shadow-[0_0_25px_rgba(212,255,0,0.25)]"
+                        : "bg-[#121216]/70 border-white/10 hover:border-white/25 hover:bg-[#18181D]"
                     )}
                   >
                     {/* Sliding active pill indicator */}
                     {isSelected && (
                       <motion.div
                         layoutId="activeFoundationHighlight"
-                        className="absolute inset-0 bg-gradient-to-r from-[#8B5CFF]/25 via-[#8B5CFF]/15 to-[#8B5CFF]/10 rounded-2xl pointer-events-none"
+                        className="absolute inset-0 bg-gradient-to-r from-[#D4FF00]/25 via-[#D4FF00]/15 to-[#D4FF00]/10 rounded-2xl pointer-events-none"
                         transition={{ type: "spring", stiffness: 450, damping: 35 }}
                       />
                     )}
@@ -208,7 +208,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
                             initial={{ scale: 0, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ type: "spring", stiffness: 500, damping: 25 }}
-                            className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] shadow-[0_0_8px_#00F0FF]"
+                            className="w-1.5 h-1.5 rounded-full bg-[#D4FF00] shadow-[0_0_8px_#D4FF00]"
                           />
                         )}
                       </div>
@@ -220,11 +220,11 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
                       className={cn(
                         "relative z-10 flex items-center gap-2 font-mono text-xs px-3 py-1.5 rounded-full border shrink-0 font-medium transition-colors duration-200",
                         isSelected
-                          ? "bg-[#8B5CFF]/20 border-[#8B5CFF]/50 text-[#00F0FF] shadow-[0_0_10px_rgba(139,92,255,0.3)]"
+                          ? "bg-[#D4FF00]/20 border-[#D4FF00]/50 text-[#D4FF00] shadow-[0_0_10px_rgba(212,255,0,0.3)]"
                           : "bg-white/5 border-white/10 text-hoza-muted"
                       )}
                     >
-                      <Clock className={cn("w-3.5 h-3.5", isSelected ? "text-[#00F0FF]" : "text-hoza-muted")} />
+                      <Clock className={cn("w-3.5 h-3.5", isSelected ? "text-[#D4FF00]" : "text-hoza-muted")} />
                       <span>~{f.baseDays} Days Base</span>
                     </div>
                   </button>
@@ -234,13 +234,13 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
           </div>
 
           {/* Step 2: Select Addons (Clean Rounded Container) */}
-          <div className="p-6 sm:p-8 bg-[#0F081D]/80 border border-white/10 rounded-2xl backdrop-blur-md shadow-xl">
+          <div className="p-6 sm:p-8 bg-[#121216]/80 border border-white/10 rounded-2xl backdrop-blur-md shadow-xl">
             <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
-              <span className="font-mono text-xs text-emerald-400 uppercase font-bold flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#10B981]" />
+              <span className="font-mono text-xs text-[#D4FF00] uppercase font-bold flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#D4FF00] shadow-[0_0_8px_#D4FF00]" />
                 STEP 2: ENHANCE WITH INTEGRATIONS
               </span>
-              <span className="font-mono text-[11px] text-emerald-400 px-2.5 py-0.5 rounded-full bg-emerald-950/30 border border-emerald-500/20">
+              <span className="font-mono text-[11px] text-[#D4FF00] px-2.5 py-0.5 rounded-full bg-[#D4FF00]/10 border border-[#D4FF00]/30">
                 {selectedAddons.length} SELECTED
               </span>
             </div>
@@ -256,8 +256,8 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
                     className={cn(
                       "p-3.5 sm:p-4 text-left border transition-all duration-200 flex items-center justify-between rounded-xl cursor-pointer group",
                       isChecked
-                        ? "bg-[#8B5CFF]/20 border-[#8B5CFF] text-white shadow-[0_0_15px_rgba(139,92,255,0.2)]"
-                        : "bg-[#0F081D]/70 border-white/10 text-hoza-muted hover:text-white hover:bg-[#140A26]"
+                        ? "bg-[#D4FF00]/20 border-[#D4FF00] text-white shadow-[0_0_15px_rgba(212,255,0,0.2)]"
+                        : "bg-[#121216]/70 border-white/10 text-hoza-muted hover:text-white hover:bg-[#18181D]"
                     )}
                   >
                     <div className="flex items-center gap-3">
@@ -265,15 +265,15 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
                         className={cn(
                           "w-5 h-5 rounded-md border flex items-center justify-center transition-colors",
                           isChecked
-                            ? "bg-[#8B5CFF] border-[#00F0FF] text-white shadow-[0_0_8px_#8B5CFF]"
+                            ? "bg-[#D4FF00] border-[#D4FF00] text-[#09090B] shadow-[0_0_8px_#D4FF00]"
                             : "border-white/20 bg-white/5"
                         )}
                       >
-                        {isChecked && <Check className="w-3.5 h-3.5 text-white" />}
+                        {isChecked && <Check className="w-3.5 h-3.5 text-[#09090B] stroke-[3]" />}
                       </div>
                       <span className="font-sans text-xs font-medium">{addon.name}</span>
                     </div>
-                    <span className="font-mono text-[10px] text-hoza-lavender px-2 py-0.5 rounded-full bg-white/5 border border-white/10 shrink-0 ml-2">
+                    <span className="font-mono text-[10px] text-[#D4FF00]/70 px-2 py-0.5 rounded-full bg-white/5 border border-white/10 shrink-0 ml-2">
                       +{addon.extraDays}d
                     </span>
                   </button>
@@ -285,11 +285,11 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
 
         {/* Right Output Scope Summary Column (5 cols, sticky) */}
         <div className="lg:col-span-5 lg:sticky lg:top-28">
-          <div className="p-6 sm:p-8 bg-[#0F081D]/90 border border-[#8B5CFF]/40 rounded-2xl backdrop-blur-md shadow-2xl relative overflow-hidden">
+          <div className="p-6 sm:p-8 bg-[#121216]/90 border border-[#D4FF00]/40 rounded-2xl backdrop-blur-md shadow-2xl relative overflow-hidden">
             {/* Top Badge */}
             <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
-              <span className="font-mono text-xs text-[#00F0FF] uppercase font-bold flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-[#00F0FF] animate-pulse" />
+              <span className="font-mono text-xs text-[#D4FF00] uppercase font-bold flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-[#D4FF00] animate-pulse" />
                 SYSTEM BLUEPRINT READOUT
               </span>
               <span className="px-3 py-1 bg-emerald-500/15 text-emerald-400 font-mono text-[10px] rounded-full border border-emerald-500/30">
@@ -298,7 +298,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
             </div>
 
             {/* Velocity Output Display */}
-            <div className="mb-6 p-5 bg-[#08050D] border border-white/10 rounded-2xl flex items-center justify-between shadow-inner relative overflow-hidden">
+            <div className="mb-6 p-5 bg-[#09090B] border border-white/10 rounded-2xl flex items-center justify-between shadow-inner relative overflow-hidden">
               <div className="min-h-[56px] flex flex-col justify-center">
                 <div className="flex items-center gap-2">
                   <span className="font-mono text-[10px] text-hoza-muted uppercase block">
@@ -311,7 +311,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: 6 }}
                       transition={{ duration: 0.18 }}
-                      className="font-mono text-[9px] text-[#00F0FF] px-2 py-0.5 rounded bg-[#00F0FF]/10 border border-[#00F0FF]/20"
+                      className="font-mono text-[9px] text-[#D4FF00] px-2 py-0.5 rounded bg-[#D4FF00]/10 border border-[#D4FF00]/20"
                     >
                       {currentFoundation.name.split(" ")[0]}
                     </motion.span>
@@ -336,7 +336,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
                 initial={{ scale: 0.82, rotate: -18 }}
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ type: "spring", stiffness: 500, damping: 24 }}
-                className="w-12 h-12 rounded-full bg-[#8B5CFF]/20 border border-[#8B5CFF] flex items-center justify-center text-[#00F0FF] shadow-[0_0_15px_rgba(139,92,255,0.3)] shrink-0"
+                className="w-12 h-12 rounded-full bg-[#D4FF00]/20 border border-[#D4FF00] flex items-center justify-center text-[#D4FF00] shadow-[0_0_15px_rgba(212,255,0,0.3)] shrink-0"
               >
                 <Zap className="w-6 h-6" />
               </motion.div>
@@ -355,7 +355,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
-                    className="font-mono text-[10px] text-hoza-lavender"
+                    className="font-mono text-[10px] text-[#D4FF00]/70"
                   >
                     {currentFoundation.stack.length} Modules
                   </motion.span>
@@ -398,7 +398,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
                           transition: { duration: 0.22, ease: "easeOut" },
                         },
                       }}
-                      className="px-3 py-1.5 bg-[#140A26] border border-[#8B5CFF]/35 font-mono text-xs text-hoza-lavender rounded-lg shadow-sm hover:border-[#00F0FF]/50 transition-colors cursor-default"
+                      className="px-3 py-1.5 bg-[#18181D] border border-[#D4FF00]/35 font-mono text-xs text-[#D4FF00]/70 rounded-lg shadow-sm hover:border-[#D4FF00]/50 transition-colors cursor-default"
                     >
                       {item}
                     </motion.span>
@@ -428,7 +428,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
               <button
                 onClick={handleWhatsAppDirect}
                 onMouseEnter={() => soundEffects.playHover?.()}
-                className="w-full py-3.5 px-4 bg-emerald-500 hover:bg-emerald-400 text-[#08050D] font-mono text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+                className="w-full py-3.5 px-4 bg-emerald-500 hover:bg-emerald-400 text-[#09090B] font-mono text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[0_0_20px_rgba(16,185,129,0.3)]"
               >
                 <span>Export Scope to WhatsApp</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -437,7 +437,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
               <button
                 onClick={handleOpenDrawer}
                 onMouseEnter={() => soundEffects.playHover?.()}
-                className="w-full py-3.5 px-4 bg-[#140A26] hover:bg-[#1C0F33] border border-[#8B5CFF]/40 text-white font-mono text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:border-[#00F0FF]/50"
+                className="w-full py-3.5 px-4 bg-[#18181D] hover:bg-[#1E1E24] border border-[#D4FF00]/40 text-white font-mono text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:border-[#D4FF00]/50"
               >
                 <span>Open Project Enquiry Modal</span>
               </button>

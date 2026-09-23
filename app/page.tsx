@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { IntroLoader } from "@/components/sections/IntroLoader";
@@ -22,15 +22,33 @@ import { Footer } from "@/components/sections/Footer";
 import { ContactDrawer } from "@/components/sections/ContactDrawer";
 import { FloatingCyberDock } from "@/components/ui/FloatingCyberDock";
 import { TacticalFrame } from "@/components/ui/TacticalFrame";
+import { CommandPalette } from "@/components/ui/CommandPalette";
+import { StudioDeckModal } from "@/components/ui/StudioDeckModal";
+import { StudioHealthModal } from "@/components/ui/StudioHealthModal";
 
 export default function HomePage() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
+  const [isStudioDeckOpen, setIsStudioDeckOpen] = useState(false);
+  const [isSystemHealthOpen, setIsSystemHealthOpen] = useState(false);
   const [preselectedService, setPreselectedService] = useState<string | undefined>(
     undefined
   );
   const [preselectedScope, setPreselectedScope] = useState<string | undefined>(
     undefined
   );
+
+  // Global keyboard shortcut for Command Palette (Cmd+K / Ctrl+K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setIsCommandPaletteOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   const handleOpenProjectModal = (service?: string) => {
     if (service) {
@@ -59,7 +77,11 @@ export default function HomePage() {
       <CustomCursor />
 
       {/* Fixed Futuristic Header with Sound Controller */}
-      <Navbar onOpenProjectModal={() => handleOpenProjectModal()} />
+      <Navbar
+        onOpenProjectModal={() => handleOpenProjectModal()}
+        onOpenCommandPalette={() => setIsCommandPaletteOpen(true)}
+        onOpenStudioDeck={() => setIsStudioDeckOpen(true)}
+      />
 
       {/* Bulkhead Tactical Viewport Ruler Ticks & Crosshairs */}
       <TacticalFrame />
@@ -72,6 +94,8 @@ export default function HomePage() {
             const el = document.getElementById("estimator");
             if (el) el.scrollIntoView({ behavior: "smooth" });
           }}
+          onOpenSystemHealth={() => setIsSystemHealthOpen(true)}
+          onOpenStudioDeck={() => setIsStudioDeckOpen(true)}
         />
 
         {/* 2. Ecosystem & Partners Ticker Marquee */}
@@ -114,10 +138,16 @@ export default function HomePage() {
       </main>
 
       {/* Studio Colophon & Local Clocks Footer */}
-      <Footer onOpenProjectModal={() => handleOpenProjectModal()} />
+      <Footer
+        onOpenProjectModal={() => handleOpenProjectModal()}
+        onOpenStudioDeck={() => setIsStudioDeckOpen(true)}
+        onOpenSystemHealth={() => setIsSystemHealthOpen(true)}
+      />
 
       {/* Floating Tactical Cyber Action Dock */}
-      <FloatingCyberDock />
+      <FloatingCyberDock
+        onOpenCommandPalette={() => setIsCommandPaletteOpen(true)}
+      />
 
       {/* Project Enquiry OS Modal with Scope Pre-fill */}
       <ContactDrawer
@@ -125,6 +155,28 @@ export default function HomePage() {
         onClose={handleCloseProjectModal}
         preselectedService={preselectedService}
         initialDescription={preselectedScope}
+      />
+
+      {/* Cyber-OS Command Palette Modal (Cmd+K) */}
+      <CommandPalette
+        isOpen={isCommandPaletteOpen}
+        onClose={() => setIsCommandPaletteOpen(false)}
+        onOpenProjectModal={handleOpenProjectModal}
+        onOpenStudioDeck={() => setIsStudioDeckOpen(true)}
+        onOpenSystemHealth={() => setIsSystemHealthOpen(true)}
+      />
+
+      {/* Executive Studio Credentials Deck Modal */}
+      <StudioDeckModal
+        isOpen={isStudioDeckOpen}
+        onClose={() => setIsStudioDeckOpen(false)}
+      />
+
+      {/* Studio System Health & Live Sprint Availability Telemetry Modal */}
+      <StudioHealthModal
+        isOpen={isSystemHealthOpen}
+        onClose={() => setIsSystemHealthOpen(false)}
+        onOpenProjectModal={() => handleOpenProjectModal("High-Velocity Sprint")}
       />
     </SmoothScroll>
   );

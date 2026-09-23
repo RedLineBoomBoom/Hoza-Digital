@@ -44,19 +44,19 @@ export const HeroCoreCanvas: React.FC<{ className?: string }> = ({
       // 1. Central Holographic Torus Knot (Quantum Core)
       const knotGeo = new THREE.TorusKnotGeometry(1.3, 0.28, 120, 20, 2, 3);
       const knotMat = new THREE.MeshStandardMaterial({
-        color: 0x8b5cff,
+        color: 0xd4ff00,
         wireframe: true,
-        emissive: 0x3b1c70,
+        emissive: 0x384500,
         roughness: 0.1,
         metalness: 0.9,
       });
       const knotMesh = new THREE.Mesh(knotGeo, knotMat);
       rootGroup.add(knotMesh);
 
-      // 2. Cyan Laser Orbit Ring 1
+      // 2. Electric Glow Orbit Ring 1
       const laserRingGeo1 = new THREE.TorusGeometry(2.6, 0.02, 16, 120);
       const laserRingMat1 = new THREE.MeshBasicMaterial({
-        color: 0x00f0ff,
+        color: 0xe6ff4d,
         transparent: true,
         opacity: 0.85,
       });
@@ -64,22 +64,22 @@ export const HeroCoreCanvas: React.FC<{ className?: string }> = ({
       laserRing1.rotation.x = Math.PI / 2.8;
       rootGroup.add(laserRing1);
 
-      // 3. Electric Purple Orbit Ring 2
+      // 3. Acid Volt Orbit Ring 2
       const laserRingGeo2 = new THREE.TorusGeometry(3.0, 0.015, 16, 120);
       const laserRingMat2 = new THREE.MeshBasicMaterial({
-        color: 0x8b5cff,
+        color: 0xd4ff00,
         transparent: true,
-        opacity: 0.6,
+        opacity: 0.7,
       });
       const laserRing2 = new THREE.Mesh(laserRingGeo2, laserRingMat2);
       laserRing2.rotation.y = Math.PI / 3;
       laserRing2.rotation.x = -Math.PI / 5;
       rootGroup.add(laserRing2);
 
-      // 4. Outer Cyan Laser Scanner Ring 3
+      // 4. Outer Volt Scanner Ring 3
       const laserRingGeo3 = new THREE.TorusGeometry(3.4, 0.012, 16, 120);
       const laserRingMat3 = new THREE.MeshBasicMaterial({
-        color: 0x00f0ff,
+        color: 0xa3c900,
         transparent: true,
         opacity: 0.45,
       });
@@ -94,8 +94,8 @@ export const HeroCoreCanvas: React.FC<{ className?: string }> = ({
       const positions = new Float32Array(particleCount * 3);
       const colors = new Float32Array(particleCount * 3);
 
-      const colorPurple = new THREE.Color(0x8b5cff);
-      const colorCyan = new THREE.Color(0x00f0ff);
+      const colorVolt = new THREE.Color(0xd4ff00);
+      const colorElectric = new THREE.Color(0xe6ff4d);
       const colorWhite = new THREE.Color(0xffffff);
 
       for (let i = 0; i < particleCount * 3; i += 3) {
@@ -107,10 +107,10 @@ export const HeroCoreCanvas: React.FC<{ className?: string }> = ({
         positions[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
         positions[i + 2] = radius * Math.cos(phi);
 
-        // Mix cyan and purple particles
+        // Mix volt, electric glow, and white particles
         const rand = Math.random();
         const chosenColor =
-          rand < 0.45 ? colorCyan : rand < 0.85 ? colorPurple : colorWhite;
+          rand < 0.55 ? colorVolt : rand < 0.82 ? colorElectric : colorWhite;
         colors[i] = chosenColor.r;
         colors[i + 1] = chosenColor.g;
         colors[i + 2] = chosenColor.b;
@@ -132,17 +132,17 @@ export const HeroCoreCanvas: React.FC<{ className?: string }> = ({
       const particleMesh = new THREE.Points(particleGeo, particleMat);
       rootGroup.add(particleMesh);
 
-      // Lighting: Cyan and Electric Purple directional/point lights
+      // Lighting: Acid Volt directional/point lights
       const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
       scene.add(ambientLight);
 
-      const cyanPointLight = new THREE.PointLight(0x00f0ff, 5, 20);
-      cyanPointLight.position.set(4, 3, 4);
-      scene.add(cyanPointLight);
+      const voltPointLight2 = new THREE.PointLight(0xe6ff4d, 5, 20);
+      voltPointLight2.position.set(4, 3, 4);
+      scene.add(voltPointLight2);
 
-      const purplePointLight = new THREE.PointLight(0x8b5cff, 4.5, 20);
-      purplePointLight.position.set(-4, -3, 3);
-      scene.add(purplePointLight);
+      const voltPointLight = new THREE.PointLight(0xd4ff00, 5, 20);
+      voltPointLight.position.set(-4, -3, 3);
+      scene.add(voltPointLight);
 
       // Cursor physics tracking
       let targetX = 0;

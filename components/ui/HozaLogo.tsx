@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { cn } from "@/lib/utils";
@@ -22,7 +22,7 @@ export const HozaLogo: React.FC<HozaLogoProps> = ({
       xmlns="http://www.w3.org/2000/svg"
       className={cn(
         "w-auto text-tactical-offwhite transition-colors",
-        glow && "drop-shadow-[0_0_15px_rgba(0,240,255,0.3)]",
+        glow && "drop-shadow-[0_0_15px_rgba(212,255,0,0.3)]",
         className
       )}
       style={{ height, width: "auto" }}
@@ -46,8 +46,8 @@ export const HozaLogo: React.FC<HozaLogoProps> = ({
         cx="147"
         cy="41"
         r="6"
-        fill="#00F0FF"
-        className="animate-pulse shadow-[0_0_12px_#00F0FF]"
+        fill="#D4FF00"
+        className="animate-pulse shadow-[0_0_12px_#D4FF00]"
       />
 
       {/* Letter Z */}

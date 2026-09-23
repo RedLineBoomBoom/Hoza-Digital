@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useRef, useState, useEffect } from "react";
 import { MessageCircle, Calendar, Mail, ArrowUpRight, Sparkles } from "lucide-react";
@@ -92,7 +92,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenProjectModal }) => {
           }}
         >
           <svg
-            className="w-full h-auto text-[#8B5CFF]/25 hover:text-[#8B5CFF]/40 transition-colors drop-shadow-[0_0_60px_rgba(139,92,255,0.2)]"
+            className="w-full h-auto text-[#D4FF00]/20 hover:text-[#D4FF00]/35 transition-colors drop-shadow-[0_0_60px_rgba(212,255,0,0.15)]"
             viewBox="0 0 448 82"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -110,8 +110,8 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenProjectModal }) => {
               cx="147"
               cy="41"
               r="6"
-              fill="#00F0FF"
-              className="animate-pulse shadow-[0_0_20px_#00F0FF]"
+              fill="#D4FF00"
+              className="animate-pulse shadow-[0_0_20px_#D4FF00]"
               opacity="0.8"
             />
             <polygon
@@ -128,12 +128,12 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenProjectModal }) => {
       </div>
 
       {/* Top telemetry notice */}
-      <div className="relative z-10 flex items-center justify-between border-b border-hoza-violet/80 pb-4 font-mono text-xs text-hoza-muted">
-        <span className="text-hoza-electric font-bold flex items-center gap-2">
+      <div className="relative z-10 flex items-center justify-between border-b border-[#D4FF00]/30 pb-4 font-mono text-xs text-hoza-muted">
+        <span className="text-[#D4FF00] font-bold flex items-center gap-2">
           <Sparkles className="w-3.5 h-3.5" />
           // INITIATE ENGAGEMENT
         </span>
-        <span className="hidden sm:inline-block text-[11px] text-hoza-lavender">
+        <span className="hidden sm:inline-block text-[11px] text-[#D4FF00]/70">
           ESTIMATED SPRINT TURNAROUND: 14 DAYS
         </span>
       </div>
@@ -143,13 +143,13 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenProjectModal }) => {
         <SmoothHeading
           title="HAVE SOMETHING"
           highlight="TO BUILD?"
-          highlightGradient="from-hoza-white via-hoza-lavender to-hoza-electric"
+          highlightGradient="from-[#D4FF00] via-[#E6FF4D] to-[#D4FF00]"
           className="text-5xl sm:text-7xl lg:text-8xl leading-[0.92]"
         />
 
         <p className="mt-8 text-base sm:text-xl text-hoza-muted max-w-2xl leading-relaxed">
           Tell us what you are trying to create, improve or automate. We will
-          help you determine the best way to move forward—with clear milestones,
+          help you determine the best way to move forwardâ€”with clear milestones,
           no agency fluff, and working code.
         </p>
 
@@ -157,16 +157,16 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenProjectModal }) => {
         <div className="mt-10 flex flex-wrap items-center gap-4 sm:gap-6">
           <button
             onClick={onOpenProjectModal}
-            className="btn-tactical btn-tactical-cyan text-sm"
+            className="btn-tactical btn-tactical-volt text-sm"
           >
             <span className="btn-box-left">
-              <Sparkles className="w-4 h-4 text-[#08050D]" />
+              <Sparkles className="w-4 h-4 text-[#09090B]" />
             </span>
             <span className="btn-label font-black tracking-wider py-3.5">
               Start Your Project
             </span>
             <span className="btn-box-right">
-              <ArrowUpRight className="w-4 h-4 text-[#08050D]" />
+              <ArrowUpRight className="w-4 h-4 text-[#09090B]" />
             </span>
           </button>
 
@@ -189,25 +189,25 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenProjectModal }) => {
         </div>
 
         {/* Alternative Quick Contact Channels & Socials */}
-        <div className="mt-8 flex flex-wrap items-center gap-4 font-mono text-xs text-hoza-muted pt-4 border-t border-hoza-violet/60">
+        <div className="mt-8 flex flex-wrap items-center gap-4 font-mono text-xs text-hoza-muted pt-4 border-t border-[#D4FF00]/20">
           <a
             href="mailto:hello@hoza.studio"
             className="flex items-center gap-2 hover:text-hoza-white transition-colors"
           >
-            <Mail className="w-3.5 h-3.5 text-hoza-electric" />
+            <Mail className="w-3.5 h-3.5 text-[#D4FF00]" />
             <span>hello@hoza.studio</span>
           </a>
-          <span className="text-hoza-darkMuted">•</span>
+          <span className="text-hoza-darkMuted">â€¢</span>
           <button
             onClick={onOpenProjectModal}
             className="flex items-center gap-2 hover:text-hoza-white transition-colors text-left"
           >
-            <Calendar className="w-3.5 h-3.5 text-hoza-electric" />
+            <Calendar className="w-3.5 h-3.5 text-[#D4FF00]" />
             <span>Schedule Intro Call (30 mins)</span>
           </button>
-          <span className="text-hoza-darkMuted">•</span>
-          <span className="text-hoza-lavender">Direct Partner Access</span>
-          <span className="text-hoza-darkMuted">•</span>
+          <span className="text-hoza-darkMuted">â€¢</span>
+          <span className="text-[#D4FF00]/70">Direct Partner Access</span>
+          <span className="text-hoza-darkMuted">â€¢</span>
           <div className="flex items-center gap-3">
             <a
               href="https://github.com/hozadigital"
@@ -238,7 +238,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenProjectModal }) => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X @hozadigital"
-              className="text-neutral-400 hover:text-[#00F0FF] transition-colors flex items-center gap-1.5"
+              className="text-neutral-400 hover:text-[#D4FF00] transition-colors flex items-center gap-1.5"
             >
               <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -250,7 +250,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenProjectModal }) => {
       </div>
 
       {/* Bottom status */}
-      <div className="relative z-10 flex items-center justify-between border-t border-hoza-violet/80 pt-4 font-mono text-[11px] text-hoza-darkMuted">
+      <div className="relative z-10 flex items-center justify-between border-t border-[#D4FF00]/20 pt-4 font-mono text-[11px] text-hoza-darkMuted">
         <span>INTERACTIVE BRANDMARK (DRAG TO DISPLACE // AUTO-RESTORES ON IDLE)</span>
         <span>HOZA FAST FORWARD // 2026</span>
       </div>

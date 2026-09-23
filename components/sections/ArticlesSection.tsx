@@ -17,7 +17,7 @@ const HozaLogo: React.FC<{ className?: string }> = ({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={cn(
-        "text-[#8B5CFF] hover:text-[#00F0FF] transition-colors duration-300 drop-shadow-[0_0_25px_rgba(139,92,255,0.55)]",
+        "text-[#D4FF00] hover:text-[#D4FF00] transition-colors duration-300 drop-shadow-[0_0_25px_rgba(212,255,0,0.55)]",
         className
       )}
       aria-label="Hoza Digital Logo"
@@ -35,8 +35,8 @@ const HozaLogo: React.FC<{ className?: string }> = ({
         cx="147"
         cy="41"
         r="6"
-        fill="#00F0FF"
-        className="animate-pulse shadow-[0_0_15px_#00F0FF]"
+        fill="#D4FF00"
+        className="animate-pulse shadow-[0_0_15px_#D4FF00]"
       />
       <polygon
         points="215,0 319,0 319,20 256,63 319,63 319,82 215,82 215,63 278,19 215,19"
@@ -60,7 +60,7 @@ const HozaEmblem: React.FC<{ className?: string }> = ({
       viewBox="0 0 100 100"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-full h-full text-[#8B5CFF] hover:text-[#00F0FF] transition-colors duration-300 drop-shadow-[0_0_25px_rgba(139,92,255,0.65)]"
+      className="w-full h-full text-[#D4FF00] hover:text-[#D4FF00] transition-colors duration-300 drop-shadow-[0_0_25px_rgba(212,255,0,0.65)]"
       aria-label="Hoza Emblem"
     >
       {/* Outer cyber ring */}
@@ -77,7 +77,7 @@ const HozaEmblem: React.FC<{ className?: string }> = ({
         cx="50"
         cy="50"
         r="49"
-        stroke="#00F0FF"
+        stroke="#D4FF00"
         strokeWidth="1"
         opacity="0.3"
       />
@@ -92,8 +92,8 @@ const HozaEmblem: React.FC<{ className?: string }> = ({
         cx="50"
         cy="50"
         r="6.5"
-        fill="#00F0FF"
-        className="animate-pulse shadow-[0_0_18px_#00F0FF]"
+        fill="#D4FF00"
+        className="animate-pulse shadow-[0_0_18px_#D4FF00]"
       />
     </svg>
   </div>
@@ -113,36 +113,36 @@ export const ArticlesSection: React.FC = () => {
   return (
     <section
       id="articles"
-      className="relative w-full py-20 sm:py-28 bg-[#08050D] border-t border-hoza-violet/50 overflow-hidden select-none"
+      className="relative w-full py-20 sm:py-28 bg-[#09090B] border-t border-white/10 overflow-hidden select-none"
     >
       {/* Ambient background glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#8B5CFF]/10 blur-[140px] pointer-events-none rounded-full" />
-      <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#00F0FF]/5 blur-[120px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#D4FF00]/8 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#D4FF00]/5 blur-[120px] pointer-events-none rounded-full" />
 
-      {/* ── TOP SECTION METADATA ────────────────────────────────────────────── */}
+      {/* â”€â”€ TOP SECTION METADATA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 mb-6 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
         <div className="flex items-center gap-2">
-          <Newspaper className="w-4 h-4 text-[#00F0FF]" />
-          <span className="tracking-wider uppercase font-bold text-[#00F0FF]">
+          <Newspaper className="w-4 h-4 text-[#D4FF00]" />
+          <span className="tracking-wider uppercase font-bold text-[#D4FF00]">
             // 08 DISPATCHES / FIELD NOTES & PERSPECTIVES
           </span>
         </div>
         <div className="flex items-center gap-3">
-          <span className="w-2 h-2 rounded-full bg-[#00F0FF] shadow-[0_0_8px_#00F0FF] animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-[#D4FF00] shadow-[0_0_8px_#D4FF00] animate-pulse" />
           <span className="text-hoza-muted text-[11px] uppercase tracking-widest font-mono">
             LIVE RELEASES // HOZA DIGITAL
           </span>
         </div>
       </div>
 
-      {/* ── MEDIUM BULKHEAD-STYLE "ARTICLES" REPEATING MARQUEE WITH HOZA EMBLEM ─── */}
-      <div className="group relative w-full overflow-hidden flex items-center border-y border-white/5 py-3 sm:py-4 bg-[#0B0616]/60 backdrop-blur-sm select-none">
+      {/* â”€â”€ MEDIUM BULKHEAD-STYLE "ARTICLES" REPEATING MARQUEE WITH HOZA EMBLEM â”€â”€â”€ */}
+      <div className="group relative w-full overflow-hidden flex items-center border-y border-white/5 py-3 sm:py-4 bg-[#0E0E12]/60 backdrop-blur-sm select-none">
         {/* Edge gradient vignettes */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#08050D] via-[#08050D]/80 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#08050D] via-[#08050D]/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#09090B] via-[#09090B]/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#09090B] via-[#09090B]/80 to-transparent z-10 pointer-events-none" />
 
         {/* Track 1 */}
-        <div className="flex shrink-0 items-center gap-6 sm:gap-10 pr-6 sm:pr-10 whitespace-nowrap animate-ticker-left-slow group-hover:[animation-play-state:paused]">
+        <div className="flex shrink-0 items-center gap-6 sm:gap-10 pr-6 sm:pr-10 whitespace-nowrap animate-ticker-left-slow">
           {[...Array(8)].map((_, i) => (
             <div key={`articles-track1-${i}`} className="flex items-center gap-6 sm:gap-10">
               <span className="font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tighter uppercase text-[#F3EFE0] leading-none select-none drop-shadow-[0_2px_12px_rgba(255,255,255,0.05)]">
@@ -157,7 +157,7 @@ export const ArticlesSection: React.FC = () => {
 
         {/* Track 2 (Exact Duplicate Clone for 100% Seamless Infinite Loop) */}
         <div
-          className="flex shrink-0 items-center gap-6 sm:gap-10 pr-6 sm:pr-10 whitespace-nowrap animate-ticker-left-slow group-hover:[animation-play-state:paused]"
+          className="flex shrink-0 items-center gap-6 sm:gap-10 pr-6 sm:pr-10 whitespace-nowrap animate-ticker-left-slow"
           aria-hidden="true"
         >
           {[...Array(8)].map((_, i) => (
@@ -173,11 +173,11 @@ export const ArticlesSection: React.FC = () => {
         </div>
       </div>
 
-      {/* ── CONTROLS & ARTICLE CARDS CONTAINER ──────────────────────────────── */}
+      {/* â”€â”€ CONTROLS & ARTICLE CARDS CONTAINER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8 mt-12 sm:mt-16">
         {/* Filter Toggle and Link to Official Article Page */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-          <div className="flex items-center gap-2 p-1 bg-[#0F081D]/80 border border-white/10 rounded-full backdrop-blur-md">
+          <div className="flex items-center gap-2 p-1 bg-[#121216]/80 border border-white/10 rounded-full backdrop-blur-md">
             <button
               onClick={() => {
                 soundEffects.playClick?.();
@@ -185,7 +185,7 @@ export const ArticlesSection: React.FC = () => {
               }}
               className={`px-4 py-1.5 rounded-full text-xs font-mono font-bold transition-all duration-200 ${
                 viewMode === "featured"
-                  ? "bg-[#8B5CFF] text-white shadow-[0_0_12px_rgba(139,92,255,0.4)]"
+                  ? "bg-[#D4FF00] text-[#09090B] shadow-[0_0_12px_rgba(212,255,0,0.4)]"
                   : "text-hoza-muted hover:text-white"
               }`}
             >
@@ -198,7 +198,7 @@ export const ArticlesSection: React.FC = () => {
               }}
               className={`px-4 py-1.5 rounded-full text-xs font-mono font-bold transition-all duration-200 ${
                 viewMode === "all"
-                  ? "bg-[#8B5CFF] text-white shadow-[0_0_12px_rgba(139,92,255,0.4)]"
+                  ? "bg-[#D4FF00] text-[#09090B] shadow-[0_0_12px_rgba(212,255,0,0.4)]"
                   : "text-hoza-muted hover:text-white"
               }`}
             >
@@ -211,14 +211,14 @@ export const ArticlesSection: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={() => soundEffects.playHover?.()}
-            className="group inline-flex items-center gap-2 text-xs font-mono text-hoza-gray-300 hover:text-[#00F0FF] transition-colors"
+            className="group inline-flex items-center gap-2 text-xs font-mono text-hoza-gray-300 hover:text-[#D4FF00] transition-colors"
           >
             <span>VIEW COMPLETE ARTICLE INDEX</span>
             <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </a>
         </div>
 
-        {/* ── BULKHEAD-STYLE TACTICAL ARTICLES GRID ─────────────────────────── */}
+        {/* â”€â”€ BULKHEAD-STYLE TACTICAL ARTICLES GRID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           <AnimatePresence>
             {displayedArticles.map((article: HozaArticle, idx: number) => (
@@ -230,30 +230,30 @@ export const ArticlesSection: React.FC = () => {
                 transition={{ duration: 0.3, delay: idx * 0.08 }}
                 onClick={() => handleOpenArticle(article.url)}
                 onMouseEnter={() => soundEffects.playHover?.()}
-                className="group relative flex flex-col justify-between p-6 sm:p-7 bg-[#0B0616]/90 hover:bg-[#110826] border border-white/10 hover:border-[#8B5CFF]/60 rounded-2xl backdrop-blur-md transition-all duration-300 cursor-pointer shadow-lg hover:shadow-[0_0_25px_rgba(139,92,255,0.2)]"
+                className="group relative flex flex-col justify-between p-6 sm:p-7 bg-[#121216]/90 hover:bg-[#16161C] border border-white/10 hover:border-[#D4FF00]/60 rounded-2xl backdrop-blur-md transition-all duration-300 cursor-pointer shadow-lg hover:shadow-[0_0_25px_rgba(212,255,0,0.2)]"
               >
-                {/* Tactical Corner Brackets with Hoza theme violet/cyan */}
+                {/* Tactical Corner Brackets with Hoza theme volt/cyan */}
                 <div
-                  className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 rounded-tl-md border-[#8B5CFF]/60 group-hover:border-[#00F0FF] transition-colors"
+                  className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 rounded-tl-md border-[#D4FF00]/60 group-hover:border-[#D4FF00] transition-colors"
                   aria-hidden="true"
                 />
                 <div
-                  className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 rounded-tr-md border-[#8B5CFF]/60 group-hover:border-[#00F0FF] transition-colors"
+                  className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 rounded-tr-md border-[#D4FF00]/60 group-hover:border-[#D4FF00] transition-colors"
                   aria-hidden="true"
                 />
                 <div
-                  className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 rounded-bl-md border-[#8B5CFF]/60 group-hover:border-[#00F0FF] transition-colors"
+                  className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 rounded-bl-md border-[#D4FF00]/60 group-hover:border-[#D4FF00] transition-colors"
                   aria-hidden="true"
                 />
                 <div
-                  className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 rounded-br-md border-[#8B5CFF]/60 group-hover:border-[#00F0FF] transition-colors"
+                  className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 rounded-br-md border-[#D4FF00]/60 group-hover:border-[#D4FF00] transition-colors"
                   aria-hidden="true"
                 />
 
                 {/* Top content area */}
                 <div>
                   {/* Article Compressed Thumbnail Media Frame */}
-                  <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden mb-5 bg-[#140C29] border border-white/10 group-hover:border-[#8B5CFF]/50 transition-all duration-300 shadow-inner">
+                  <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden mb-5 bg-[#141418] border border-white/10 group-hover:border-[#D4FF00]/50 transition-all duration-300 shadow-inner">
                     <img
                       src={article.thumbnail}
                       alt={article.title}
@@ -262,25 +262,25 @@ export const ArticlesSection: React.FC = () => {
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
                     {/* Subtle cyber gradient vignette */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B0616]/80 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0E0E12]/80 via-transparent to-transparent pointer-events-none" />
 
                     {/* Category floating badge */}
                     <div className="absolute top-2.5 left-2.5 z-10">
-                      <span className="px-2.5 py-0.5 rounded-full bg-[#08050D]/85 backdrop-blur-md border border-white/15 font-mono text-[10px] text-[#00F0FF] group-hover:border-[#00F0FF]/40 uppercase tracking-wider font-semibold transition-colors">
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#0E0E12]/85 backdrop-blur-md border border-white/15 font-mono text-[10px] text-[#D4FF00] group-hover:border-[#D4FF00]/40 uppercase tracking-wider font-semibold transition-colors">
                         {article.category}
                       </span>
                     </div>
 
                     {/* Read Time floating badge */}
                     <div className="absolute top-2.5 right-2.5 z-10">
-                      <span className="px-2 py-0.5 rounded-full bg-[#08050D]/85 backdrop-blur-md border border-white/15 font-mono text-[9px] text-hoza-muted">
+                      <span className="px-2 py-0.5 rounded-full bg-[#0E0E12]/85 backdrop-blur-md border border-white/15 font-mono text-[9px] text-hoza-muted">
                         {article.readTime}
                       </span>
                     </div>
                   </div>
 
                   {/* Article Title */}
-                  <h3 className="font-bold text-base sm:text-lg text-hoza-white group-hover:text-[#00F0FF] transition-colors leading-snug mb-3 line-clamp-2">
+                  <h3 className="font-bold text-base sm:text-lg text-hoza-white group-hover:text-[#D4FF00] transition-colors leading-snug mb-3 line-clamp-2">
                     {article.title}
                   </h3>
 
@@ -302,9 +302,9 @@ export const ArticlesSection: React.FC = () => {
                     </span>
                   </div>
 
-                  {/* Tactical Action Button with Hoza Electric Purple & Cyan Hover */}
+                  {/* Tactical Action Button with Hoza Electric Volt & Cyan Hover */}
                   <div
-                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#8B5CFF] group-hover:bg-[#00F0FF] text-white group-hover:text-[#08050D] flex items-center justify-center font-bold shadow-[0_0_12px_rgba(139,92,255,0.4)] group-hover:shadow-[0_0_16px_rgba(0,240,255,0.6)] transition-all duration-300 group-hover:scale-105"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[#D4FF00] group-hover:bg-[#D4FF00] text-[#09090B] group-hover:text-[#09090B] flex items-center justify-center font-bold shadow-[0_0_12px_rgba(212,255,0,0.4)] group-hover:shadow-[0_0_16px_rgba(212,255,0,0.6)] transition-all duration-300 group-hover:scale-105"
                     aria-label={`Read article: ${article.title}`}
                   >
                     <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -315,10 +315,10 @@ export const ArticlesSection: React.FC = () => {
           </AnimatePresence>
         </div>
 
-        {/* ── FOOTER SUB-BANNER ──────────────────────────────────────────────── */}
-        <div className="mt-12 p-6 rounded-2xl bg-[#0F081D]/60 border border-white/10 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-4">
+        {/* â”€â”€ FOOTER SUB-BANNER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        <div className="mt-12 p-6 rounded-2xl bg-[#121216]/60 border border-white/10 backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 text-center sm:text-left">
-            <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center shrink-0 text-[#8B5CFF]">
+            <div className="w-10 h-10 rounded-xl bg-[#D4FF00]/10 border border-[#D4FF00]/20 flex items-center justify-center shrink-0 text-[#D4FF00]">
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
@@ -336,7 +336,7 @@ export const ArticlesSection: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => soundEffects.playClick?.()}
-            className="shrink-0 px-5 py-2.5 rounded-xl bg-white/5 hover:bg-[#8B5CFF] border border-white/10 hover:border-[#8B5CFF] text-xs font-mono font-bold text-hoza-white hover:text-white transition-all duration-300 shadow-sm hover:shadow-[0_0_15px_rgba(139,92,255,0.4)] flex items-center gap-2"
+            className="shrink-0 px-5 py-2.5 rounded-xl bg-white/5 hover:bg-[#D4FF00] border border-white/10 hover:border-[#D4FF00] text-xs font-mono font-bold text-hoza-white hover:text-[#09090B] transition-all duration-300 shadow-sm hover:shadow-[0_0_15px_rgba(212,255,0,0.4)] flex items-center gap-2"
           >
             <span>READ ALL ARTICLES</span>
             <ArrowUpRight className="w-4 h-4" />

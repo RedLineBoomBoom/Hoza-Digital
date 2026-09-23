@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import { CheckCircle2 } from "lucide-react";
@@ -43,17 +43,17 @@ export const Process: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="border-b border-hoza-violet pb-8 mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6"
+        className="border-b border-[#D4FF00]/20 pb-8 mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6"
       >
         <div>
-          <div className="font-mono text-xs text-[#00F0FF] uppercase tracking-widest mb-3 flex items-center gap-2">
-            <span className="w-2 h-2 bg-[#00F0FF] shadow-[0_0_8px_#00F0FF] inline-block" />
+          <div className="font-mono text-xs text-[#D4FF00] uppercase tracking-widest mb-3 flex items-center gap-2">
+            <span className="w-2 h-2 bg-[#D4FF00] shadow-[0_0_8px_#D4FF00] inline-block" />
             <span>// 04 THE EXECUTION PROTOCOL</span>
           </div>
           <SmoothHeading
             title="IDEA TO"
             highlight="LAUNCH."
-            highlightGradient="from-hoza-white via-[#C8B7FF] to-[#8B5CFF]"
+            highlightGradient="from-[#E6FF4D] via-[#D4FF00] to-[#E6FF4D]"
           />
         </div>
 
@@ -68,9 +68,9 @@ export const Process: React.FC = () => {
       {/* Process Timeline with Animated Electric Line */}
       <div className="relative">
         {/* Continuous Center Animated Laser Line for Desktop */}
-        <div className="hidden lg:block absolute left-1/2 top-4 bottom-8 w-[2px] -translate-x-1/2 bg-hoza-violet/40">
+        <div className="hidden lg:block absolute left-1/2 top-4 bottom-8 w-[2px] -translate-x-1/2 bg-[#D4FF00]/15">
           <motion.div
-            className="w-full bg-gradient-to-b from-[#8B5CFF] via-[#00F0FF] to-[#8B5CFF] origin-top shadow-[0_0_16px_rgba(0,240,255,0.8)]"
+            className="w-full bg-gradient-to-b from-[#D4FF00] via-[#D4FF00] to-[#D4FF00] origin-top shadow-[0_0_16px_rgba(212,255,0,0.6)]"
             style={{ scaleY, height: "100%" }}
           />
         </div>
@@ -107,22 +107,22 @@ export const Process: React.FC = () => {
                     ease: [0.16, 1, 0.3, 1],
                   }}
                 >
-                  <div className="group p-6 sm:p-8 bg-[#0C0C0C]/95 tactical-corners border border-white/15 hover:border-[#00F0FF] transition-all duration-300 shadow-2xl relative overflow-hidden">
+                  <div className="group p-6 sm:p-8 bg-[#0C0C0C]/95 tactical-corners border border-white/15 hover:border-[#D4FF00] transition-all duration-300 shadow-2xl relative overflow-hidden">
                     <span className="tactical-corner-tr" />
                     <span className="tactical-corner-bl" />
                     {/* Ambient subtle top edge laser highlight */}
-                    <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#00F0FF]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4FF00]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                     <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4 font-mono text-xs">
-                      <span className="text-[#00F0FF] font-bold tracking-wider">
+                      <span className="text-[#D4FF00] font-bold tracking-wider">
                         [PHASE {step.step}]
                       </span>
-                      <span className="text-[#C8B7FF] tracking-widest uppercase font-semibold">
+                      <span className="text-[#D4FF00]/70 tracking-widest uppercase font-semibold">
                         {step.label}
                       </span>
                     </div>
 
-                    <h3 className="font-display font-black text-2xl sm:text-3xl text-hoza-white uppercase tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#C8B7FF] transition-all duration-200">
+                    <h3 className="font-display font-black text-2xl sm:text-3xl text-hoza-white uppercase tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#D4FF00] transition-all duration-200">
                       {step.title}
                     </h3>
 
@@ -131,7 +131,7 @@ export const Process: React.FC = () => {
                     </p>
 
                     {/* Staggered Deliverables Badges */}
-                    <div className="mt-6 pt-4 border-t border-hoza-violet/80 flex flex-wrap gap-2">
+                    <div className="mt-6 pt-4 border-t border-[#D4FF00]/20 flex flex-wrap gap-2">
                       {step.deliverables.map((d, dIdx) => (
                         <motion.span
                           key={dIdx}
@@ -143,9 +143,9 @@ export const Process: React.FC = () => {
                             delay: 0.15 + dIdx * 0.08,
                             ease: "easeOut",
                           }}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#08050D] border border-hoza-violet rounded-sm font-mono text-[11px] text-hoza-muted transition-all duration-200 hover:border-[#00F0FF]/50 hover:text-white"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#09090B] border border-[#D4FF00]/20 rounded-sm font-mono text-[11px] text-hoza-muted transition-all duration-200 hover:border-[#D4FF00]/50 hover:text-white"
                         >
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#00F0FF]" />
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#D4FF00]" />
                           <span>{d}</span>
                         </motion.span>
                       ))}
@@ -167,10 +167,10 @@ export const Process: React.FC = () => {
                 >
                   <div className="relative group cursor-default">
                     {/* Pulsing ambient halo */}
-                    <div className="absolute inset-0 bg-[#8B5CFF]/30 blur-md transition-opacity duration-300 group-hover:opacity-100 opacity-60" />
+                    <div className="absolute inset-0 bg-[#D4FF00]/20 blur-md transition-opacity duration-300 group-hover:opacity-100 opacity-60" />
 
                     {/* Square Number Node */}
-                    <div className="relative w-12 h-12 bg-[#08050D] border-2 border-[#8B5CFF] text-[#C8B7FF] flex items-center justify-center font-mono text-sm font-bold shadow-[0_0_16px_rgba(139,92,255,0.45)] group-hover:border-[#00F0FF] group-hover:text-[#00F0FF] group-hover:shadow-[0_0_24px_rgba(0,240,255,0.6)] transition-all duration-300">
+                    <div className="relative w-12 h-12 bg-[#09090B] border-2 border-[#D4FF00] text-[#D4FF00] flex items-center justify-center font-mono text-sm font-bold shadow-[0_0_16px_rgba(212,255,0,0.45)] group-hover:border-[#D4FF00] group-hover:text-[#D4FF00] group-hover:shadow-[0_0_24px_rgba(212,255,0,0.6)] transition-all duration-300">
                       {step.step}
                     </div>
                   </div>
@@ -186,3 +186,4 @@ export const Process: React.FC = () => {
     </section>
   );
 };
+

@@ -1,4 +1,4 @@
-export interface Capability {
+﻿export interface Capability {
   id: string;
   number: string;
   title: string;
@@ -17,7 +17,7 @@ export const CAPABILITIES: Capability[] = [
     shortDesc: "Clear, credible digital experiences built to earn attention, establish market authority, and create business opportunities.",
     businessImpact: "Fast-loading, SEO-dominant digital flagships that convert high-value corporate and institutional inquiries.",
     previewType: "browser",
-    metrics: "< 0.6s LCP • 100/100 CWV",
+    metrics: "< 0.6s LCP â€¢ 100/100 CWV",
     deliverables: ["Custom Architecture", "Multi-Region Edge CDN", "Fluid Kinetic Typography", "Headless CMS Integration"],
   },
   {
@@ -37,7 +37,7 @@ export const CAPABILITIES: Capability[] = [
     shortDesc: "Reliable platforms and dashboards that simplify complex workflows for enterprise teams and customers.",
     businessImpact: "Replaces slow legacy software with reactive, secure cloud interfaces employees and clients love using.",
     previewType: "dashboard",
-    metrics: "Realtime Telemetry • 99.99% Uptime",
+    metrics: "Realtime Telemetry â€¢ 99.99% Uptime",
     deliverables: ["Role-Based Access Control", "Reactive UI States", "GraphQL & REST Pipelines", "Complex State Orchestration"],
   },
   {
@@ -47,7 +47,7 @@ export const CAPABILITIES: Capability[] = [
     shortDesc: "Fast, intuitive mobile products on iOS and Android designed around real user behaviour and gesture ergonomics.",
     businessImpact: "Pocket-sized product engines designed for daily retention, seamless biometric payments, and offline resilience.",
     previewType: "mobile",
-    metrics: "120fps Gesture Motion • Native Core",
+    metrics: "120fps Gesture Motion â€¢ Native Core",
     deliverables: ["Offline-First Sync", "Biometric Authentication", "Push Notification Lifecycles", "Native Hardware Interop"],
   },
   {
@@ -57,7 +57,7 @@ export const CAPABILITIES: Capability[] = [
     shortDesc: "Connected systems and autonomous agents that remove repetitive manual work and keep company operations moving 24/7.",
     businessImpact: "Eliminates hundreds of manual hours every month by connecting CRM, WhatsApp, billing, databases, and AI logic.",
     previewType: "workflow",
-    metrics: "10,000+ Tasks/Hr • 0% Manual Error",
+    metrics: "10,000+ Tasks/Hr â€¢ 0% Manual Error",
     deliverables: ["Autonomous AI Agents", "WhatsApp Cloud API Integration", "CRM Ingestion Sync", "Self-Healing Webhook Mesh"],
   },
   {
@@ -67,7 +67,7 @@ export const CAPABILITIES: Capability[] = [
     shortDesc: "Purpose-built distributed backends and proprietary algorithms for requirements that off-the-shelf software cannot solve.",
     businessImpact: "Gives your company an unfair technological moat with tailored high-throughput software architecture.",
     previewType: "modular",
-    metrics: "Deterministic Architecture • Scaled",
+    metrics: "Deterministic Architecture â€¢ Scaled",
     deliverables: ["Microservices Architecture", "Event-Driven Queues", "Proprietary Data Engines", "Enterprise Audit Logging"],
   },
   {
@@ -77,7 +77,7 @@ export const CAPABILITIES: Capability[] = [
     shortDesc: "Clear, media-ready announcements and digital press hubs for your product launches, investment milestones, and company news.",
     businessImpact: "Positions your company in tier-1 tech publications with journalist-ready assets, interactive press kits, and instant syndication.",
     previewType: "press",
-    metrics: "Top-Tier Media Reach • SEO Syndicated",
+    metrics: "Top-Tier Media Reach â€¢ SEO Syndicated",
     deliverables: ["Digital Press Kits", "Media Contact Hubs", "Embargo Systems", "Interactive Asset Vaults"],
   },
   {
@@ -87,7 +87,7 @@ export const CAPABILITIES: Capability[] = [
     shortDesc: "Editorial layouts, covers, and typography for digital publications, magazines, and tabloids, crafted for print and screens.",
     businessImpact: "Transforms complex reports, research papers, and company catalogues into award-winning editorial experiences.",
     previewType: "editorial",
-    metrics: "Art-Directed Layouts • 300+ DPI & Web",
+    metrics: "Art-Directed Layouts â€¢ 300+ DPI & Web",
     deliverables: ["Grid Systems", "Cover Typography", "Digital Flippable Editions", "Print-Ready Vector Files"],
   },
 ];
@@ -128,7 +128,7 @@ export const PROJECTS: Project[] = [
       { label: "Average Page Load", value: "0.42s" },
       { label: "Institutional Inquiries", value: "180+" },
     ],
-    accentColor: "#8B5CFF",
+    accentColor: "#D4FF00",
   },
   {
     id: "project-02",
@@ -148,7 +148,7 @@ export const PROJECTS: Project[] = [
       { label: "Dispatch Velocity", value: "6.8x Faster" },
       { label: "Error Rate Reduction", value: "99.4%" },
     ],
-    accentColor: "#A478FF",
+    accentColor: "#E6FF4D",
   },
   {
     id: "project-03",
@@ -166,9 +166,9 @@ export const PROJECTS: Project[] = [
     impactStats: [
       { label: "Daily Active Users", value: "450K+" },
       { label: "Checkout Completion", value: "99.2%" },
-      { label: "App Store Rating", value: "4.9 ★" },
+      { label: "App Store Rating", value: "4.9 â˜…" },
     ],
-    accentColor: "#00F0FF",
+    accentColor: "#D4FF00",
   },
   {
     id: "project-04",
@@ -188,7 +188,7 @@ export const PROJECTS: Project[] = [
       { label: "Median Response", value: "1.4s" },
       { label: "Monthly Cost Cut", value: "68%" },
     ],
-    accentColor: "#C8B7FF",
+    accentColor: "#D4FF00",
   },
 ];
 
@@ -316,49 +316,49 @@ export const REGIONAL_HUBS = [
     city: "Jakarta",
     country: "Indonesia",
     status: "HQ & Engineering Hub",
-    coordinates: "6.2088° S, 106.8456° E",
+    coordinates: "6.2088Â° S, 106.8456Â° E",
     ping: "12ms",
-    statusColor: "#8B5CFF",
+    statusColor: "#D4FF00",
   },
   {
     city: "Singapore",
     country: "Singapore",
     status: "Commercial & Regional Node",
-    coordinates: "1.3521° N, 103.8198° E",
+    coordinates: "1.3521Â° N, 103.8198Â° E",
     ping: "18ms",
-    statusColor: "#8B5CFF",
+    statusColor: "#D4FF00",
   },
   {
     city: "Tokyo",
     country: "Japan",
     status: "Asia-Pacific Gateway",
-    coordinates: "35.6762° N, 139.6503° E",
+    coordinates: "35.6762Â° N, 139.6503Â° E",
     ping: "45ms",
-    statusColor: "#C8B7FF",
+    statusColor: "#D4FF00",
   },
   {
     city: "San Francisco",
     country: "United States",
     status: "International Client Hub",
-    coordinates: "37.7749° N, 122.4194° W",
+    coordinates: "37.7749Â° N, 122.4194Â° W",
     ping: "138ms",
-    statusColor: "#C8B7FF",
+    statusColor: "#D4FF00",
   },
   {
     city: "London",
     country: "United Kingdom",
     status: "European Client Node",
-    coordinates: "51.5074° N, 0.1278° W",
+    coordinates: "51.5074Â° N, 0.1278Â° W",
     ping: "162ms",
-    statusColor: "#C8B7FF",
+    statusColor: "#E6FF4D",
   },
   {
     city: "Sydney",
     country: "Australia",
     status: "Oceania Coverage",
-    coordinates: "33.8688° S, 151.2093° E",
+    coordinates: "33.8688Â° S, 151.2093Â° E",
     ping: "92ms",
-    statusColor: "#C8B7FF",
+    statusColor: "#E6FF4D",
   },
 ];
 

@@ -8,6 +8,19 @@ import {
   X,
   Maximize2,
   ExternalLink,
+  Cpu,
+  Database,
+  Network,
+  Activity,
+  Layers,
+  Terminal,
+  ShieldCheck,
+  Zap,
+  Radio,
+  Server,
+  Bot,
+  BrainCircuit,
+  Lock,
 } from "lucide-react";
 import { PROJECTS, Project } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
@@ -16,8 +29,102 @@ import { soundEffects } from "@/components/ui/SoundEffects";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
+interface ArchitectureNode {
+  label: string;
+  sublabel: string;
+  icon: React.ComponentType<{ className?: string }>;
+}
+
+interface ArchitectureMetric {
+  label: string;
+  before: string;
+  after: string;
+  delta: string;
+}
+
+interface ProjectArchitecture {
+  topologyTitle: string;
+  protocolBadge: string;
+  nodes: ArchitectureNode[];
+  metrics: ArchitectureMetric[];
+  telemetryLog: string;
+  telemetryStatus: string;
+}
+
+const PROJECT_ARCHITECTURES: Record<string, ProjectArchitecture> = {
+  "project-01": {
+    topologyTitle: "MULTI-REGION SSR EDGE TOPOLOGY",
+    protocolBadge: "TLS 1.3 // ZERO-COLD-START",
+    nodes: [
+      { label: "EDGE CLIENT", sublabel: "Global Anycast", icon: Cpu },
+      { label: "NEXT.JS 15", sublabel: "Edge Compute", icon: Layers },
+      { label: "UPSTASH REDIS", sublabel: "Sub-5ms Cache", icon: Zap },
+      { label: "POSTGRES RLS", sublabel: "Encrypted Vault", icon: Database },
+    ],
+    metrics: [
+      { label: "LIGHTHOUSE", before: "42", after: "99", delta: "+57 pts Lift" },
+      { label: "RENDER LCP", before: "3.9s", after: "0.42s", delta: "-89% Speed" },
+      { label: "EDGE TTFB", before: "840ms", after: "28ms", delta: "-97% Latency" },
+    ],
+    telemetryLog: "[TELEMETRY] 200 OK • GET /api/v2/deal-flow/institutional • latency=14ms • SLA=100%",
+    telemetryStatus: "OPTIMAL",
+  },
+  "project-02": {
+    topologyTitle: "EVENT-DRIVEN TELEMATICS STREAM",
+    protocolBadge: "MQTT + WSS // SUB-100MS STREAM",
+    nodes: [
+      { label: "FLEET IOT", sublabel: "OBD-II Sensors", icon: Radio },
+      { label: "APACHE KAFKA", sublabel: "12k evt/s Ingest", icon: Network },
+      { label: "GO WORKERS", sublabel: "Geospatial Mesh", icon: Server },
+      { label: "TIMESCALEDB", sublabel: "PostGIS Cluster", icon: Database },
+    ],
+    metrics: [
+      { label: "DISPATCH TIME", before: "45m", after: "1.2m", delta: "37x Faster" },
+      { label: "FLEET SCALE", before: "250", after: "4,800+", delta: "+1,820% Cap" },
+      { label: "PACKET LOSS", before: "14.2%", after: "0.02%", delta: "99.98% Reliable" },
+    ],
+    telemetryLog: "[TELEMETRY] 101 UPGRADE • WSS /fleet/telematics/live • 4,820 units active • loss=0.00%",
+    telemetryStatus: "STREAMING",
+  },
+  "project-03": {
+    topologyTitle: "DISTRIBUTED PAYMENT MICRO-LEDGER",
+    protocolBadge: "PCI-DSS L1 // ISO-8583 COMPLIANT",
+    nodes: [
+      { label: "OFFLINE APP", sublabel: "SQLite Cache", icon: ShieldCheck },
+      { label: "ENVOY GATEWAY", sublabel: "mTLS Auth Mesh", icon: Lock },
+      { label: "RUST SERVICE", sublabel: "QRIS Engine", icon: Zap },
+      { label: "COCKROACHDB", sublabel: "Distributed ACID", icon: Database },
+    ],
+    metrics: [
+      { label: "QRIS SETTLE", before: "4.8s", after: "0.65s", delta: "-86% Latency" },
+      { label: "OFFLINE PASS", before: "0%", after: "100%", delta: "Zero Dropout" },
+      { label: "PEAK TPS", before: "180", after: "6,500+", delta: "+3,500% Scale" },
+    ],
+    telemetryLog: "[TELEMETRY] 201 CREATED • POST /v1/qris/settle • id=tx_9f82d • latency=58ms",
+    telemetryStatus: "ACID OK",
+  },
+  "project-04": {
+    topologyTitle: "MULTI-AGENT COGNITIVE SWARM",
+    protocolBadge: "SOC2 TYPE II // GUARDRAILED PII",
+    nodes: [
+      { label: "OMNICHANNEL", sublabel: "WhatsApp / Hook", icon: Network },
+      { label: "AGENT MESH", sublabel: "LangGraph Core", icon: Layers },
+      { label: "PINECONE DB", sublabel: "Vector Memory", icon: BrainCircuit },
+      { label: "HYBRID LLM", sublabel: "Reasoning Fallback", icon: Bot },
+    ],
+    metrics: [
+      { label: "FIRST RESPONSE", before: "48m", after: "1.4s", delta: "2,057x Faster" },
+      { label: "AUTO-RESOLVE", before: "28%", after: "84.6%", delta: "+56.6 pts Auto" },
+      { label: "TOKEN SPEND", before: "2.4k", after: "480", delta: "-80% Compute Cost" },
+    ],
+    telemetryLog: "[TELEMETRY] 200 OK • POST /agents/swarm/execute • tokens=482 • latency=1.24s",
+    telemetryStatus: "OPTIMAL",
+  },
+};
+
 export const SelectedWork: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [viewMode, setViewMode] = useState<"live" | "architecture">("live");
   const [activeModalProject, setActiveModalProject] = useState<Project | null>(
     null
   );
@@ -28,6 +135,13 @@ export const SelectedWork: React.FC = () => {
   const followerRef = useRef<HTMLDivElement>(null);
 
   const currentProject = PROJECTS[currentIndex];
+  const currentArch =
+    PROJECT_ARCHITECTURES[currentProject.id] ||
+    PROJECT_ARCHITECTURES["project-01"];
+  const activeModalArch = activeModalProject
+    ? PROJECT_ARCHITECTURES[activeModalProject.id] ||
+      PROJECT_ARCHITECTURES["project-01"]
+    : null;
 
   const handleNext = () => {
     soundEffects.playClick?.();
@@ -91,20 +205,20 @@ export const SelectedWork: React.FC = () => {
       className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full select-none"
     >
       {/* Background ambient glow */}
-      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-[#8B5CFF]/10 blur-[140px] pointer-events-none rounded-full" />
-      <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#00F0FF]/5 blur-[130px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-[#D4FF00]/8 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#D4FF00]/5 blur-[130px] pointer-events-none rounded-full" />
 
-      {/* ── SECTION HEADER ─────────────────────────────────────────────────── */}
-      <div className="border-b border-hoza-violet pb-6 mb-10 sm:mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10">
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬ SECTION HEADER Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
+      <div className="border-b border-[#D4FF00]/20 pb-6 mb-10 sm:mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10">
         <div>
-          <div className="font-mono text-xs text-[#00F0FF] uppercase tracking-widest mb-3 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#00F0FF] animate-pulse" />
+          <div className="font-mono text-xs text-[#D4FF00] uppercase tracking-widest mb-3 flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#D4FF00] animate-pulse" />
             <span>// 02 SELECTED PRODUCTION WORK</span>
           </div>
           <SmoothHeading
             title="BUILT TO WORK."
             highlight="DESIGNED TO IMPRESS."
-            highlightGradient="from-hoza-white via-[#8B5CFF] to-[#00F0FF]"
+            highlightGradient="from-[#E6FF4D] via-[#D4FF00] to-[#E6FF4D]"
           />
         </div>
 
@@ -116,35 +230,127 @@ export const SelectedWork: React.FC = () => {
         </div>
       </div>
 
-      {/* ── BULKHEAD SPLIT SHOWCASE CONTAINER ──────────────────────────────── */}
-      <div className="relative w-full rounded-3xl border border-white/15 bg-[#08050D] shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 min-h-[540px] lg:min-h-[580px]">
-        {/* ── LEFT HALF: LIVE PRODUCTION PREVIEW ─────────────────────────────── */}
-        <div className="relative bg-[#090514] flex flex-col justify-between p-6 sm:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-white/10 overflow-hidden">
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬ BULKHEAD SPLIT SHOWCASE CONTAINER Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
+      <div className="relative w-full rounded-3xl border border-white/15 bg-[#09090B] shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 min-h-[540px] lg:min-h-[580px]">
+        {/* Ã¢â€â‚¬Ã¢â€â‚¬ LEFT HALF: LIVE PRODUCTION PREVIEW Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
+        <div className="relative bg-[#0E0E12] flex flex-col justify-between p-6 sm:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-white/10 overflow-hidden">
           {/* Subtle Cyber Grid Background */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:28px_28px] pointer-events-none" />
 
-          {/* Top Live Production Header */}
-          <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-white/10">
-            <div className="flex items-center gap-2.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#8B5CFF] shadow-[0_0_8px_#8B5CFF]" />
-              <span className="font-mono text-xs font-bold text-hoza-white tracking-wide uppercase">
+          {/* Top Live Production Header with Interactive View Mode Switcher */}
+          <div className="relative z-10 flex items-center justify-between gap-2 sm:gap-3 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-2 min-w-0">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#D4FF00] shadow-[0_0_8px_#D4FF00] shrink-0" />
+              <span className="font-mono text-xs font-bold text-hoza-white tracking-wide uppercase truncate">
                 {currentProject.client}
               </span>
-              <span className="text-[10px] font-mono text-hoza-muted hidden sm:inline">
-                // LIVE PRODUCTION
+              <span className="text-[10px] font-mono text-hoza-muted hidden xl:inline truncate shrink-0">
+                // {viewMode === "live" ? "SIMULATION" : "ARCHITECTURE"}
               </span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              <span className="font-mono text-[10px] font-bold text-emerald-400 uppercase tracking-wider">
-                100% OPERATIONAL
-              </span>
+
+            {/* Mode Switcher */}
+            <div className="flex items-center p-0.5 rounded-lg bg-black/60 border border-white/10 font-mono text-[10px] shrink-0">
+              <button
+                type="button"
+                onClick={() => {
+                  soundEffects.playClick?.();
+                  setViewMode("live");
+                }}
+                className={cn(
+                  "px-2.5 py-1 rounded-md transition-all cursor-pointer whitespace-nowrap",
+                  viewMode === "live"
+                    ? "bg-[#D4FF00] text-black font-bold shadow-[0_0_10px_rgba(212,255,0,0.3)]"
+                    : "text-neutral-400 hover:text-white"
+                )}
+              >
+                LIVE PREVIEW
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  soundEffects.playClick?.();
+                  setViewMode("architecture");
+                }}
+                className={cn(
+                  "px-2.5 py-1 rounded-md transition-all cursor-pointer flex items-center gap-1.5 whitespace-nowrap",
+                  viewMode === "architecture"
+                    ? "bg-[#D4FF00] text-black font-bold shadow-[0_0_10px_rgba(212,255,0,0.3)]"
+                    : "text-neutral-400 hover:text-white"
+                )}
+              >
+                <span>ARCHITECTURE</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              </button>
             </div>
           </div>
 
-          {/* Center: Dynamic Project Live Simulation Mockup with Slide Animation */}
+          {/* Center: Dynamic Project Live Simulation Mockup or Architecture Inspector */}
           <div className="relative z-10 py-5 sm:py-6 flex-1 flex flex-col justify-center">
             <AnimatePresence mode="wait" initial={false}>
+              {viewMode === "architecture" ? (
+                <motion.div
+                  key={`arch-${currentProject.id}`}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.2 }}
+                  className="w-full space-y-3 py-1 font-mono"
+                >
+                  {/* Visual Pipeline Data Flow Diagram */}
+                  <div className="bg-[#121216] border border-[#D4FF00]/40 p-4 rounded-xl shadow-lg relative overflow-hidden">
+                    <div className="flex items-center justify-between text-[10px] text-hoza-muted mb-3 border-b border-white/10 pb-2">
+                      <span className="flex items-center gap-1.5 text-[#D4FF00] font-bold">
+                        <Network className="w-3.5 h-3.5" />
+                        <span className="truncate max-w-[200px] sm:max-w-none">{currentArch.topologyTitle}</span>
+                      </span>
+                      <span className="text-emerald-400 text-[10px] font-bold shrink-0">{currentArch.protocolBadge}</span>
+                    </div>
+
+                    {/* Node Flow */}
+                    <div className="grid grid-cols-4 gap-2 text-center text-[10px]">
+                      {currentArch.nodes.map((node, nIdx) => {
+                        const NodeIcon = node.icon;
+                        return (
+                          <div
+                            key={nIdx}
+                            className="p-2 rounded-lg bg-black/50 border border-white/10 flex flex-col items-center justify-center hover:border-[#D4FF00]/40 transition-colors"
+                          >
+                            <NodeIcon className="w-3.5 h-3.5 text-[#D4FF00] mb-1 shrink-0" />
+                            <span className="text-white font-bold truncate max-w-full text-[10px]">{node.label}</span>
+                            <span className="text-[8px] text-neutral-400 truncate max-w-full">{node.sublabel}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Audit-Verified Performance Delta */}
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    {currentArch.metrics.map((metric, mIdx) => (
+                      <div key={mIdx} className="bg-[#121216] border border-white/10 p-3 rounded-xl">
+                        <div className="text-[10px] text-neutral-400 mb-1 truncate">{metric.label}</div>
+                        <div className="text-sm sm:text-base font-bold text-white flex items-center justify-center gap-1">
+                          <span className="text-neutral-500 line-through text-xs">{metric.before}</span>
+                          <span className="text-[#D4FF00]">&rarr; {metric.after}</span>
+                        </div>
+                        <span className="text-[9px] text-emerald-400 font-mono">{metric.delta}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Live Telemetry Log Line */}
+                  <div className="p-3 bg-[#070709] border border-white/10 rounded-xl text-[10px] text-neutral-400 flex items-center justify-between">
+                    <div className="flex items-center gap-2 truncate">
+                      <Terminal className="w-3.5 h-3.5 text-[#D4FF00] shrink-0" />
+                      <span className="text-neutral-300 truncate font-mono text-[10px]">
+                        {currentArch.telemetryLog}
+                      </span>
+                    </div>
+                    <span className="text-emerald-400 font-mono shrink-0 pl-2 font-bold">{currentArch.telemetryStatus}</span>
+                  </div>
+                </motion.div>
+              ) : (
               <motion.div
                 key={currentProject.id}
                 initial={{ opacity: 0, x: direction * 35 }}
@@ -156,7 +362,7 @@ export const SelectedWork: React.FC = () => {
                 {/* PROJECT 01: KINETIX GLOBAL */}
                 {currentProject.id === "project-01" && (
                   <div className="space-y-3.5">
-                    <div className="flex justify-between items-center bg-[#0F081D]/90 border border-[#8B5CFF]/30 p-4 rounded-xl shadow-lg">
+                    <div className="flex justify-between items-center bg-[#121216]/90 border border-[#D4FF00]/30 p-4 rounded-xl shadow-lg">
                       <div>
                         <div className="font-mono text-[10px] text-hoza-muted">
                           INSTITUTIONAL PIPELINE
@@ -165,18 +371,18 @@ export const SelectedWork: React.FC = () => {
                           $84,200,000 ARR
                         </div>
                       </div>
-                      <span className="px-3 py-1.5 bg-[#8B5CFF]/20 text-[#00F0FF] border border-[#00F0FF]/30 rounded-lg font-mono text-xs font-bold">
+                      <span className="px-3 py-1.5 bg-[#D4FF00]/15 text-[#D4FF00] border border-[#D4FF00]/30 rounded-lg font-mono text-xs font-bold">
                         +340% SURGE
                       </span>
                     </div>
 
-                    <div className="h-28 bg-[#0F081D]/60 border border-white/10 rounded-xl p-3.5 flex flex-col justify-between backdrop-blur-md">
+                    <div className="h-28 bg-[#121216]/60 border border-white/10 rounded-xl p-3.5 flex flex-col justify-between backdrop-blur-md">
                       <div className="flex justify-between font-mono text-[11px] text-hoza-muted">
                         <span>GLOBAL REACH (SG / ID / US)</span>
-                        <span className="text-[#00F0FF] font-bold">0.42s LCP</span>
+                        <span className="text-[#D4FF00] font-bold">0.42s LCP</span>
                       </div>
                       <div className="w-full bg-white/5 h-2 rounded-full overflow-hidden p-0.5 border border-white/10">
-                        <div className="bg-gradient-to-r from-[#8B5CFF] via-[#A478FF] to-[#00F0FF] h-full rounded-full w-[88%]" />
+                        <div className="bg-gradient-to-r from-[#D4FF00] via-[#E6FF4D] to-[#D4FF00] h-full rounded-full w-[88%]" />
                       </div>
                       <div className="flex justify-between font-mono text-[10px] text-hoza-muted">
                         <span>SSR CACHE HIT: 99.8%</span>
@@ -190,7 +396,7 @@ export const SelectedWork: React.FC = () => {
                 {currentProject.id === "project-02" && (
                   <div className="space-y-3.5 font-mono text-xs">
                     <div className="grid grid-cols-2 gap-3">
-                      <div className="bg-[#0F081D]/90 p-3.5 rounded-xl border border-white/10">
+                      <div className="bg-[#121216]/90 p-3.5 rounded-xl border border-white/10">
                         <span className="text-[10px] text-hoza-muted block">
                           MANUAL HOURS SAVED
                         </span>
@@ -198,19 +404,19 @@ export const SelectedWork: React.FC = () => {
                           920 hrs/mo
                         </div>
                       </div>
-                      <div className="bg-[#0F081D]/90 p-3.5 rounded-xl border border-white/10">
+                      <div className="bg-[#121216]/90 p-3.5 rounded-xl border border-white/10">
                         <span className="text-[10px] text-hoza-muted block">
                           DISPATCH VELOCITY
                         </span>
-                        <div className="font-display font-black text-xl sm:text-2xl text-[#00F0FF] mt-1">
+                        <div className="font-display font-black text-xl sm:text-2xl text-[#D4FF00] mt-1">
                           6.8x FASTER
                         </div>
                       </div>
                     </div>
 
-                    <div className="p-3.5 bg-[#0F081D]/60 border border-white/10 rounded-xl text-[11px] space-y-1.5">
-                      <div className="flex justify-between text-hoza-lavender font-semibold">
-                        <span>● FLEET CONSIGNMENT #4829</span>
+                    <div className="p-3.5 bg-[#121216]/60 border border-white/10 rounded-xl text-[11px] space-y-1.5">
+                      <div className="flex justify-between text-[#D4FF00]/70 font-semibold">
+                        <span>Ã¢â€”Â FLEET CONSIGNMENT #4829</span>
                         <span className="text-emerald-400">EN ROUTE</span>
                       </div>
                       <div className="flex justify-between text-hoza-muted text-[10px]">
@@ -224,7 +430,7 @@ export const SelectedWork: React.FC = () => {
                 {/* PROJECT 03: PULSE PAY & MOBILITY */}
                 {currentProject.id === "project-03" && (
                   <div className="flex items-center justify-center py-2">
-                    <div className="w-full max-w-sm bg-[#0F081D]/90 p-4 rounded-2xl border border-white/10 shadow-2xl space-y-3.5">
+                    <div className="w-full max-w-sm bg-[#121216]/90 p-4 rounded-2xl border border-white/10 shadow-2xl space-y-3.5">
                       <div className="flex justify-between items-center border-b border-white/10 pb-2">
                         <span className="font-mono text-xs text-hoza-white font-bold">
                           PULSE PASS // TRANSIT &amp; QRIS
@@ -233,7 +439,7 @@ export const SelectedWork: React.FC = () => {
                           450K DAU
                         </span>
                       </div>
-                      <div className="bg-[#08050D] p-3 rounded-xl border border-white/10 flex justify-between items-center">
+                      <div className="bg-[#09090B] p-3 rounded-xl border border-white/10 flex justify-between items-center">
                         <div>
                           <div className="font-mono text-[9px] text-hoza-muted">
                             INSTANT BALANCE
@@ -242,13 +448,13 @@ export const SelectedWork: React.FC = () => {
                             Rp 4.250.000
                           </div>
                         </div>
-                        <div className="px-3 py-1 bg-[#8B5CFF] rounded-md text-[10px] font-mono font-bold text-white shadow-[0_0_10px_rgba(139,92,255,0.4)]">
+                        <div className="px-3 py-1 bg-[#D4FF00] rounded-md text-[10px] font-mono font-bold text-[#09090B] shadow-[0_0_10px_rgba(212,255,0,0.4)]">
                           SCAN
                         </div>
                       </div>
                       <div className="font-mono text-[10px] text-hoza-muted flex justify-between">
                         <span>AVG PAYMENT TIME</span>
-                        <span className="text-[#00F0FF] font-bold">0.8 SECONDS</span>
+                        <span className="text-[#D4FF00] font-bold">0.8 SECONDS</span>
                       </div>
                     </div>
                   </div>
@@ -257,7 +463,7 @@ export const SelectedWork: React.FC = () => {
                 {/* PROJECT 04: AURA AUTONOMOUS AI MESH */}
                 {currentProject.id === "project-04" && (
                   <div className="space-y-3.5 font-mono text-xs">
-                    <div className="flex justify-between items-center bg-[#0F081D]/90 p-3.5 rounded-xl border border-white/10">
+                    <div className="flex justify-between items-center bg-[#121216]/90 p-3.5 rounded-xl border border-white/10">
                       <div>
                         <div className="text-[10px] text-hoza-muted">
                           AUTONOMOUS AI INFERENCE MESH
@@ -266,23 +472,23 @@ export const SelectedWork: React.FC = () => {
                           <span>84.6% AUTO-RESOLVED</span>
                         </div>
                       </div>
-                      <span className="px-2.5 py-1 bg-[#00F0FF]/15 text-[#00F0FF] border border-[#00F0FF]/30 rounded-md text-[10px] font-bold">
+                      <span className="px-2.5 py-1 bg-[#D4FF00]/15 text-[#D4FF00] border border-[#D4FF00]/30 rounded-md text-[10px] font-bold">
                         1.4s MEDIAN
                       </span>
                     </div>
 
-                    <div className="p-3 bg-[#08050D] rounded-xl border border-white/10 text-[11px] space-y-1.5">
-                      <div className="flex items-center justify-between text-[#00F0FF] text-[10px] border-b border-white/10 pb-1.5">
-                        <span>● INBOUND PIPELINE: WHATSAPP + REST</span>
+                    <div className="p-3 bg-[#09090B] rounded-xl border border-white/10 text-[11px] space-y-1.5">
+                      <div className="flex items-center justify-between text-[#D4FF00] text-[10px] border-b border-white/10 pb-1.5">
+                        <span>Ã¢â€”Â INBOUND PIPELINE: WHATSAPP + REST</span>
                         <span className="text-emerald-400">ZERO HUMAN WAIT</span>
                       </div>
                       <div className="space-y-1 text-[10px]">
                         <div className="flex justify-between text-hoza-muted">
-                          <span className="text-[#8B5CFF]">&gt; INGEST:</span>
+                          <span className="text-[#D4FF00]">&gt; INGEST:</span>
                           <span className="text-white">Order #8921-AURA (RMA Approved)</span>
                         </div>
                         <div className="flex justify-between text-hoza-muted">
-                          <span className="text-[#00F0FF]">&gt; DISPATCH:</span>
+                          <span className="text-[#D4FF00]">&gt; DISPATCH:</span>
                           <span className="text-emerald-400">Warehouse Webhook Fired (0.4s)</span>
                         </div>
                       </div>
@@ -290,6 +496,7 @@ export const SelectedWork: React.FC = () => {
                   </div>
                 )}
               </motion.div>
+            )}
             </AnimatePresence>
           </div>
 
@@ -308,7 +515,7 @@ export const SelectedWork: React.FC = () => {
                   soundEffects.playClick?.();
                   setActiveModalProject(currentProject);
                 }}
-                className="group/btn inline-flex items-center gap-1.5 text-[11px] font-mono text-[#00F0FF] hover:text-white px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-all cursor-pointer"
+                className="group/btn inline-flex items-center gap-1.5 text-[11px] font-mono text-[#D4FF00] hover:text-white px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-all cursor-pointer"
               >
                 <span>EXPAND SPEC</span>
                 <Maximize2 className="w-3 h-3 group-hover/btn:scale-110 transition-transform" />
@@ -319,14 +526,14 @@ export const SelectedWork: React.FC = () => {
                 <button
                   onClick={handlePrev}
                   aria-label="Previous project"
-                  className="p-1.5 rounded-lg bg-white/5 hover:bg-[#8B5CFF] text-hoza-muted hover:text-white border border-white/10 transition-all cursor-pointer"
+                  className="p-1.5 rounded-lg bg-white/5 hover:bg-[#D4FF00] text-hoza-muted hover:text-[#09090B] border border-white/10 transition-all cursor-pointer"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
                 <button
                   onClick={handleNext}
                   aria-label="Next project"
-                  className="p-1.5 rounded-lg bg-white/5 hover:bg-[#8B5CFF] text-hoza-muted hover:text-white border border-white/10 transition-all cursor-pointer"
+                  className="p-1.5 rounded-lg bg-white/5 hover:bg-[#D4FF00] text-hoza-muted hover:text-[#09090B] border border-white/10 transition-all cursor-pointer"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>
@@ -335,7 +542,7 @@ export const SelectedWork: React.FC = () => {
           </div>
         </div>
 
-        {/* ── RIGHT HALF: HOZA EDITORIAL CARD + DYNAMIC ARROW FOLLOWER CURSOR ── */}
+        {/* Ã¢â€â‚¬Ã¢â€â‚¬ RIGHT HALF: HOZA EDITORIAL CARD + DYNAMIC ARROW FOLLOWER CURSOR Ã¢â€â‚¬Ã¢â€â‚¬ */}
         <div
           ref={rightContainerRef}
           data-custom-cursor="hide"
@@ -345,20 +552,20 @@ export const SelectedWork: React.FC = () => {
           onMouseDown={() => setIsMouseDown(true)}
           onMouseUp={() => setIsMouseDown(false)}
           onClick={handleNext}
-          className="relative bg-[#0D071E] text-white p-8 sm:p-10 lg:p-12 flex flex-col justify-between overflow-hidden cursor-none group select-none transition-colors border-t lg:border-t-0 border-[#8B5CFF]/20"
+          className="relative bg-[#0E0E12] text-white p-8 sm:p-10 lg:p-12 flex flex-col justify-between overflow-hidden cursor-none group select-none transition-colors border-t lg:border-t-0 border-[#D4FF00]/20"
         >
           {/* Subtle Cyber Grid & Ambient Glow */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#8B5CFF0D_1px,transparent_1px),linear-gradient(to_bottom,#8B5CFF0D_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
-          <div className="absolute -top-24 -right-24 w-72 h-72 bg-[#00F0FF]/10 rounded-full blur-[100px] pointer-events-none" />
-          <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-[#8B5CFF]/15 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#D4FF000A_1px,transparent_1px),linear-gradient(to_bottom,#D4FF000A_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+          <div className="absolute -top-24 -right-24 w-72 h-72 bg-[#D4FF00]/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-[#D4FF00]/8 rounded-full blur-[100px] pointer-events-none" />
 
           {/* Tactical Top Right Cyan Corner Bracket */}
           <div
             className="absolute top-6 right-6 flex items-start pointer-events-none"
             aria-hidden="true"
           >
-            <span className="w-4 h-0.5 bg-[#00F0FF] shadow-[0_0_8px_#00F0FF]" />
-            <span className="w-0.5 h-4 bg-[#00F0FF] shadow-[0_0_8px_#00F0FF]" />
+            <span className="w-4 h-0.5 bg-[#D4FF00] shadow-[0_0_8px_#D4FF00]" />
+            <span className="w-0.5 h-4 bg-[#D4FF00] shadow-[0_0_8px_#D4FF00]" />
           </div>
 
           {/* Tactical Bottom Left Purple & Cyan Corner Mark */}
@@ -366,15 +573,15 @@ export const SelectedWork: React.FC = () => {
             className="absolute bottom-6 left-6 flex items-end gap-1 pointer-events-none z-10"
             aria-hidden="true"
           >
-            <span className="w-0.5 h-4 bg-[#8B5CFF] shadow-[0_0_8px_#8B5CFF]" />
-            <span className="w-4 h-0.5 bg-[#8B5CFF] shadow-[0_0_8px_#8B5CFF]" />
-            <span className="w-2.5 h-0.5 bg-[#00F0FF] ml-1 shadow-[0_0_6px_#00F0FF]" />
+            <span className="w-0.5 h-4 bg-[#D4FF00] shadow-[0_0_8px_#D4FF00]" />
+            <span className="w-4 h-0.5 bg-[#D4FF00] shadow-[0_0_8px_#D4FF00]" />
+            <span className="w-2.5 h-0.5 bg-[#D4FF00] ml-1 shadow-[0_0_6px_#D4FF00]" />
           </div>
 
           {/* Top Label & Description */}
           <div className="relative z-10">
-            <div className="font-mono text-xs sm:text-sm font-bold tracking-widest text-[#00F0FF] uppercase flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#00F0FF] shadow-[0_0_6px_#00F0FF] animate-pulse" />
+            <div className="font-mono text-xs sm:text-sm font-bold tracking-widest text-[#D4FF00] uppercase flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#D4FF00] shadow-[0_0_6px_#D4FF00] animate-pulse" />
               <span>
                 {currentProject.category.toUpperCase()} ___ HOZA DIGITAL
               </span>
@@ -388,23 +595,23 @@ export const SelectedWork: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25 }}
-                className="mt-5 sm:mt-6 font-sans text-sm sm:text-base md:text-lg text-[#DCD6EC] leading-relaxed max-w-lg font-normal"
+                className="mt-5 sm:mt-6 font-sans text-sm sm:text-base md:text-lg text-hoza-muted leading-relaxed max-w-lg font-normal"
               >
                 {currentProject.subtitle}
               </motion.p>
             </AnimatePresence>
           </div>
 
-          {/* ── CENTER: RESTING ARROW BUTTON (FOR MOBILE & IDLE DESKTOP STATE) ── */}
+          {/* Ã¢â€â‚¬Ã¢â€â‚¬ CENTER: RESTING ARROW BUTTON (FOR MOBILE & IDLE DESKTOP STATE) Ã¢â€â‚¬Ã¢â€â‚¬ */}
           <div className="my-6 sm:my-8 flex items-center justify-center relative pointer-events-none">
             <div
               className={cn(
-                "w-18 h-18 sm:w-22 sm:h-22 rounded-full bg-gradient-to-br from-[#8B5CFF] to-[#6320EE] border-2 border-[#00F0FF] text-white flex items-center justify-center shadow-[0_0_30px_rgba(0,240,255,0.45),0_0_15px_rgba(139,92,255,0.7)] transition-all duration-300",
+                "w-18 h-18 sm:w-22 sm:h-22 rounded-full bg-gradient-to-br from-[#D4FF00] to-[#E6FF4D] border-2 border-[#09090B] text-white flex items-center justify-center shadow-[0_0_30px_rgba(212,255,0,0.45)] transition-all duration-300",
                 isHoveredRight ? "opacity-0 scale-75" : "opacity-100 scale-100 animate-pulse"
               )}
               aria-hidden="true"
             >
-              <ArrowRight className="w-8 h-8 sm:w-10 sm:h-10 text-white stroke-[2.5]" />
+              <ArrowRight className="w-8 h-8 sm:w-10 sm:h-10 text-[#09090B] stroke-[2.5]" />
             </div>
           </div>
 
@@ -423,7 +630,7 @@ export const SelectedWork: React.FC = () => {
                   {titleLine1}
                 </span>
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#E2D9F3] to-[#8B5CFF]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#E6FF4D] to-[#D4FF00]">
                   {titleLine2}
                 </span>
               </motion.h2>
@@ -432,7 +639,7 @@ export const SelectedWork: React.FC = () => {
         </div>
       </div>
 
-      {/* ── DESKTOP ACTIVE FOLLOWER ARROW CURSOR ───────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬ DESKTOP ACTIVE FOLLOWER ARROW CURSOR Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       {/* Replaces the standard/custom cursor when mouse is inside the card area */}
       <div
         ref={followerRef}
@@ -447,15 +654,15 @@ export const SelectedWork: React.FC = () => {
       >
         <div
           className={cn(
-            "w-20 h-20 sm:w-22 sm:h-22 rounded-full bg-gradient-to-br from-[#8B5CFF] to-[#6320EE] border-2 border-[#00F0FF] text-white flex items-center justify-center shadow-[0_0_35px_rgba(0,240,255,0.7),0_0_20px_rgba(139,92,255,0.9)] transition-transform duration-100 ease-out",
+            "w-20 h-20 sm:w-22 sm:h-22 rounded-full bg-gradient-to-br from-[#D4FF00] to-[#E6FF4D] border-2 border-[#09090B] text-white flex items-center justify-center shadow-[0_0_35px_rgba(212,255,0,0.7)] transition-transform duration-100 ease-out",
             isMouseDown ? "scale-90" : "scale-100"
           )}
         >
-          <ArrowRight className="w-8 h-8 sm:w-9 sm:h-9 text-white stroke-[2.5]" />
+          <ArrowRight className="w-8 h-8 sm:w-9 sm:h-9 text-[#09090B] stroke-[2.5]" />
         </div>
       </div>
 
-      {/* ── PROJECT QUICK-SWITCHER PILL BAR ─────────────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬ PROJECT QUICK-SWITCHER PILL BAR Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <div className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
         {PROJECTS.map((proj, idx) => {
           const isActive = idx === currentIndex;
@@ -466,14 +673,14 @@ export const SelectedWork: React.FC = () => {
               className={cn(
                 "px-4 py-2 rounded-full font-mono text-xs font-bold transition-all duration-200 cursor-pointer flex items-center gap-2",
                 isActive
-                  ? "bg-[#8B5CFF] text-white shadow-[0_0_15px_rgba(139,92,255,0.4)] border border-[#8B5CFF]"
-                  : "bg-[#0F081D]/80 text-hoza-muted hover:text-white border border-white/10 hover:border-white/20"
+                  ? "bg-[#D4FF00] text-[#09090B] shadow-[0_0_15px_rgba(212,255,0,0.4)] border border-[#D4FF00]"
+                  : "bg-[#121216]/80 text-hoza-muted hover:text-white border border-white/10 hover:border-white/20"
               )}
             >
               <span
                 className={cn(
                   "w-1.5 h-1.5 rounded-full",
-                  isActive ? "bg-[#00F0FF] shadow-[0_0_6px_#00F0FF]" : "bg-white/30"
+                  isActive ? "bg-[#09090B]" : "bg-white/30"
                 )}
               />
               <span>0{idx + 1} // {proj.title}</span>
@@ -482,11 +689,11 @@ export const SelectedWork: React.FC = () => {
         })}
       </div>
 
-      {/* ── CASE STUDY DETAIL MODAL SPEC ───────────────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬ CASE STUDY DETAIL MODAL SPEC Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       {activeModalProject && (
         <div
           onClick={() => setActiveModalProject(null)}
-          className="fixed inset-0 z-50 bg-[#08050D]/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8 animate-in fade-in duration-200 cursor-pointer"
+          className="fixed inset-0 z-50 bg-[#09090B]/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8 animate-in fade-in duration-200 cursor-pointer"
         >
           <div
             onClick={(e) => e.stopPropagation()}
@@ -494,13 +701,13 @@ export const SelectedWork: React.FC = () => {
           >
             <button
               onClick={() => setActiveModalProject(null)}
-              className="absolute top-6 right-6 p-2 rounded-lg border border-white/20 text-hoza-muted hover:text-white hover:border-[#00F0FF] bg-[#141414] transition-colors cursor-pointer"
+              className="absolute top-6 right-6 p-2 rounded-lg border border-white/20 text-hoza-muted hover:text-white hover:border-[#D4FF00] bg-[#141418] transition-colors cursor-pointer"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <div className="font-mono text-xs text-[#00F0FF] uppercase mb-2 font-bold">
+            <div className="font-mono text-xs text-[#D4FF00] uppercase mb-2 font-bold">
               {activeModalProject.tag} // {activeModalProject.category}
             </div>
 
@@ -509,7 +716,7 @@ export const SelectedWork: React.FC = () => {
             </h3>
 
             <p className="mt-2 text-sm text-hoza-muted">
-              Client: {activeModalProject.client} • {activeModalProject.region} •{" "}
+              Client: {activeModalProject.client} Ã¢â‚¬Â¢ {activeModalProject.region} Ã¢â‚¬Â¢{" "}
               {activeModalProject.year}
             </p>
 
@@ -558,7 +765,7 @@ export const SelectedWork: React.FC = () => {
                       key={i}
                       className="p-3 bg-white/5 rounded-xl border border-white/10"
                     >
-                      <div className="font-display font-black text-xl text-[#00F0FF]">
+                      <div className="font-display font-black text-xl text-[#D4FF00]">
                         {stat.value}
                       </div>
                       <div className="font-mono text-[9px] text-hoza-muted uppercase mt-0.5">
@@ -568,6 +775,49 @@ export const SelectedWork: React.FC = () => {
                   ))}
                 </div>
               </div>
+
+              {activeModalArch && (
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <h4 className="font-mono text-xs text-hoza-muted uppercase tracking-wider">
+                      // SYSTEM ARCHITECTURE &amp; TOPOLOGY
+                    </h4>
+                    <span className="font-mono text-[10px] text-emerald-400 font-bold">
+                      {activeModalArch.protocolBadge}
+                    </span>
+                  </div>
+                  <div className="bg-[#121216] border border-white/10 p-4 rounded-xl font-mono space-y-3">
+                    <div className="flex items-center gap-2 text-xs font-bold text-white">
+                      <Network className="w-3.5 h-3.5 text-[#D4FF00]" />
+                      <span>{activeModalArch.topologyTitle}</span>
+                    </div>
+
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-[10px]">
+                      {activeModalArch.nodes.map((n, i) => {
+                        const Icon = n.icon;
+                        return (
+                          <div
+                            key={i}
+                            className="p-2.5 rounded-lg bg-black/50 border border-white/10 flex flex-col items-center justify-center"
+                          >
+                            <Icon className="w-3.5 h-3.5 text-[#D4FF00] mb-1" />
+                            <span className="text-white font-bold truncate max-w-full">{n.label}</span>
+                            <span className="text-[8px] text-neutral-400 truncate max-w-full">{n.sublabel}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    <div className="pt-2 border-t border-white/10 flex items-center justify-between text-[10px] text-neutral-400">
+                      <div className="flex items-center gap-1.5 truncate">
+                        <Terminal className="w-3 h-3 text-[#D4FF00] shrink-0" />
+                        <span className="truncate">{activeModalArch.telemetryLog}</span>
+                      </div>
+                      <span className="text-emerald-400 font-bold shrink-0 pl-2">{activeModalArch.telemetryStatus}</span>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="mt-8 pt-6 border-t border-white/10 flex justify-between items-center">
@@ -588,3 +838,4 @@ export const SelectedWork: React.FC = () => {
     </section>
   );
 };
+

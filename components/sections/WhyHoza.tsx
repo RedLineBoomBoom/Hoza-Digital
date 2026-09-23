@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useRef, useCallback } from "react";
 import {
@@ -131,16 +131,16 @@ export const WhyHoza: React.FC = () => {
       className="relative py-28 px-6 sm:px-8 max-w-7xl mx-auto w-full select-none"
     >
       {/* Section Header */}
-      <div className="border-b border-hoza-violet pb-8 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div className="border-b border-[#D4FF00]/20 pb-8 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
-          <div className="font-mono text-xs text-[#00F0FF] uppercase tracking-widest mb-3 flex items-center gap-2">
-            <Sliders className="w-3.5 h-3.5 text-[#00F0FF]" />
+          <div className="font-mono text-xs text-[#D4FF00] uppercase tracking-widest mb-3 flex items-center gap-2">
+            <Sliders className="w-3.5 h-3.5 text-[#D4FF00]" />
             <span>// VELOCITY BENCHMARK ACCELERATOR</span>
           </div>
           <SmoothHeading
             title="LESS TALK."
             highlight="MORE SHIPPED."
-            highlightGradient="from-hoza-white via-[#8B5CFF] to-[#00F0FF]"
+            highlightGradient="from-[#E6FF4D] via-[#D4FF00] to-[#E6FF4D]"
           />
         </div>
 
@@ -158,21 +158,21 @@ export const WhyHoza: React.FC = () => {
         <span className="tactical-corner-tr" />
         <span className="tactical-corner-bl" />
         {/* Ambient Backlight Glow */}
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#8B5CFF]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#D4FF00]/8 rounded-full blur-3xl pointer-events-none" />
 
         {/* Step Header */}
         <div className="border-b border-white/10 pb-8 mb-8">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-8">
             <div>
-              <span className="font-mono text-xs text-[#00F0FF] uppercase font-bold tracking-wider block flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 bg-[#00F0FF]" />
+              <span className="font-mono text-xs text-[#D4FF00] uppercase font-bold tracking-wider block flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 bg-[#D4FF00]" />
                 <span>STEP 1: SELECT YOUR INITIATIVE COMPLEXITY</span>
               </span>
               <div className="flex flex-wrap items-center gap-3 mt-1.5">
                 <h3 className="font-display font-black text-2xl sm:text-3xl text-hoza-white uppercase tracking-tight">
                   {currentStage.label}
                 </h3>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#00F0FF]/15 border border-[#00F0FF]/40 text-[#00F0FF] font-mono text-[10px] font-bold tracking-wider">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#D4FF00]/15 border border-[#D4FF00]/40 text-[#D4FF00] font-mono text-[10px] font-bold tracking-wider">
                   {currentStage.tag}
                 </span>
               </div>
@@ -186,10 +186,10 @@ export const WhyHoza: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
                 transition={{ duration: 0.2 }}
-                className="px-4 py-2.5 rounded-xl bg-[#08050D] border border-hoza-violet max-w-lg flex items-center gap-2.5 font-mono text-xs shadow-inner"
+                className="px-4 py-2.5 rounded-xl bg-[#121216] border border-[#D4FF00]/30 max-w-lg flex items-center gap-2.5 font-mono text-xs shadow-inner"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00F0FF] animate-pulse shrink-0" />
-                <span className="text-[#00F0FF] font-bold shrink-0">// SPEC:</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D4FF00] animate-pulse shrink-0" />
+                <span className="text-[#D4FF00] font-bold shrink-0">// SPEC:</span>
                 <span className="text-hoza-white font-medium">{currentStage.scope}</span>
               </motion.div>
             </AnimatePresence>
@@ -207,10 +207,10 @@ export const WhyHoza: React.FC = () => {
               className="relative w-full h-8 flex items-center cursor-pointer group touch-none select-none"
             >
               {/* Background Outer Groove */}
-              <div className="w-full h-3 rounded-full bg-[#150D27] border border-hoza-violet/80 relative overflow-visible shadow-inner">
+              <div className="w-full h-3 rounded-full bg-[#18181D] border border-[#D4FF00]/20 relative overflow-visible shadow-inner">
                 {/* Glowing Laser Progress Fill */}
                 <div
-                  className="absolute left-0 top-0 bottom-0 rounded-full bg-gradient-to-r from-[#8B5CFF] via-[#00F0FF] to-[#00F0FF] shadow-[0_0_16px_rgba(0,240,255,0.6)]"
+                  className="absolute left-0 top-0 bottom-0 rounded-full bg-gradient-to-r from-[#D4FF00] via-[#E6FF4D] to-[#D4FF00] shadow-[0_0_16px_rgba(212,255,0,0.5)]"
                   style={{
                     width: `${currentPercentage}%`,
                     transition: isDragging
@@ -236,8 +236,8 @@ export const WhyHoza: React.FC = () => {
                         className={cn(
                           "w-2 h-2 rounded-full transition-all duration-300",
                           isActive
-                            ? "bg-[#00F0FF] shadow-[0_0_8px_#00F0FF]"
-                            : "bg-[#2A1D44] border border-white/20"
+                            ? "bg-[#D4FF00] shadow-[0_0_8px_#D4FF00]"
+                            : "bg-[#27272A] border border-white/20"
                         )}
                       />
                     </div>
@@ -257,19 +257,19 @@ export const WhyHoza: React.FC = () => {
               >
                 {/* Floating Tooltip Indicator with dynamic edge-clamping translation */}
                 <div
-                  className="absolute -top-10 px-3 py-1 rounded-full bg-[#08050D] border border-[#00F0FF] shadow-[0_0_16px_rgba(0,240,255,0.6)] whitespace-nowrap font-mono text-[10px] font-bold text-[#00F0FF] flex items-center gap-1.5 pointer-events-none transition-transform duration-75"
+                  className="absolute -top-10 px-3 py-1 rounded-full bg-[#09090B] border border-[#D4FF00] shadow-[0_0_16px_rgba(212,255,0,0.5)] whitespace-nowrap font-mono text-[10px] font-bold text-[#D4FF00] flex items-center gap-1.5 pointer-events-none transition-transform duration-75"
                   style={{
                     left: "50%",
                     transform: `translateX(${tooltipTranslateX}%)`,
                   }}
                 >
-                  <Zap className="w-2.5 h-2.5 fill-[#00F0FF]" />
+                  <Zap className="w-2.5 h-2.5 fill-[#D4FF00]" />
                   <span>{currentStage.hozaTime}</span>
                 </div>
 
                 {/* Orbiting Beacon Rings */}
-                <div className="relative w-7 h-7 rounded-full bg-[#08050D] border-2 border-[#00F0FF] shadow-[0_0_20px_#00F0FF,inset_0_0_8px_#00F0FF] flex items-center justify-center transition-transform group-hover:scale-110">
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#00F0FF] shadow-[0_0_8px_#00F0FF] animate-pulse" />
+                <div className="relative w-7 h-7 rounded-full bg-[#09090B] border-2 border-[#D4FF00] shadow-[0_0_20px_#D4FF00,inset_0_0_8px_#D4FF00] flex items-center justify-center transition-transform group-hover:scale-110">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#D4FF00] shadow-[0_0_8px_#D4FF00] animate-pulse" />
                 </div>
               </div>
             </div>
@@ -286,7 +286,7 @@ export const WhyHoza: React.FC = () => {
                     className={cn(
                       "font-mono text-[11px] sm:text-xs py-2 px-3 rounded-xl border transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-left cursor-pointer",
                       isCurrent
-                        ? "border-[#00F0FF]/60 bg-[#00F0FF]/10 text-[#00F0FF] shadow-[0_0_20px_rgba(0,240,255,0.15)] font-bold"
+                        ? "border-[#D4FF00]/60 bg-[#D4FF00]/10 text-[#D4FF00] shadow-[0_0_20px_rgba(212,255,0,0.15)] font-bold"
                         : "border-transparent text-hoza-muted hover:text-white hover:bg-white/[0.04]"
                     )}
                   >
@@ -376,18 +376,18 @@ export const WhyHoza: React.FC = () => {
           </div>
 
           {/* Hoza Digital Fast-Forward Card */}
-          <div className="p-6 sm:p-8 bg-[#0E0E0E] tactical-corners border border-[#00F0FF]/50 flex flex-col justify-between space-y-6 shadow-[0_0_30px_rgba(0,240,255,0.15)] relative overflow-hidden">
+          <div className="p-6 sm:p-8 bg-[#0E0E0E] tactical-corners border border-[#D4FF00]/40 flex flex-col justify-between space-y-6 shadow-[0_0_30px_rgba(212,255,0,0.1)] relative overflow-hidden">
             <span className="tactical-corner-tr" />
             <span className="tactical-corner-bl" />
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#00F0FF]/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#D4FF00]/8 rounded-full blur-3xl pointer-events-none" />
 
             <div>
-              <div className="flex items-center justify-between border-b border-[#00F0FF]/30 pb-4 mb-4">
-                <div className="flex items-center gap-2 text-[#00F0FF] font-mono text-xs uppercase font-bold">
+              <div className="flex items-center justify-between border-b border-[#D4FF00]/20 pb-4 mb-4">
+                <div className="flex items-center gap-2 text-[#D4FF00] font-mono text-xs uppercase font-bold">
                   <Zap className="w-4 h-4" />
                   <span>HOZA DIGITAL SPRINTS</span>
                 </div>
-                <span className="px-2 py-0.5 bg-[#00F0FF]/20 text-[#00F0FF] font-mono text-[10px] font-bold border border-[#00F0FF]/40 rounded">
+                <span className="px-2 py-0.5 bg-[#D4FF00]/15 text-[#D4FF00] font-mono text-[10px] font-bold border border-[#D4FF00]/40 rounded">
                   {currentStage.efficiency}
                 </span>
               </div>
@@ -405,7 +405,7 @@ export const WhyHoza: React.FC = () => {
                     <span className="font-mono text-[10px] text-hoza-muted uppercase block">
                       PRODUCTION RELEASE TIME
                     </span>
-                    <span className="font-display font-black text-3xl sm:text-4xl text-[#00F0FF]">
+                    <span className="font-display font-black text-3xl sm:text-4xl text-[#D4FF00]">
                       {currentStage.hozaTime}
                     </span>
                   </div>
@@ -421,25 +421,25 @@ export const WhyHoza: React.FC = () => {
                           )}%`,
                         }}
                         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                        className="h-full bg-gradient-to-r from-[#8B5CFF] to-[#00F0FF] shadow-[0_0_12px_#00F0FF] rounded-full"
+                        className="h-full bg-gradient-to-r from-[#D4FF00] to-[#E6FF4D] shadow-[0_0_12px_#D4FF00] rounded-full"
                       />
                     </div>
-                    <span className="font-mono text-[10px] text-[#00F0FF] block text-right font-bold">
+                    <span className="font-mono text-[10px] text-[#D4FF00] block text-right font-bold">
                       WORKING SOFTWARE IN PRODUCTION IN ~{currentStage.hozaWeeks} WEEKS
                     </span>
                   </div>
 
                   <div className="space-y-2 pt-2 text-xs font-mono text-hoza-white">
                     <div className="flex items-center gap-2">
-                      <Check className="w-3.5 h-3.5 text-[#00F0FF] shrink-0" />
+                      <Check className="w-3.5 h-3.5 text-[#D4FF00] shrink-0" />
                       <span>Direct line to senior full-stack engineers & designers</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Check className="w-3.5 h-3.5 text-[#00F0FF] shrink-0" />
+                      <Check className="w-3.5 h-3.5 text-[#D4FF00] shrink-0" />
                       <span>Pixel-perfect 1:1 code fidelity with sub-second LCP</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Check className="w-3.5 h-3.5 text-[#00F0FF] shrink-0" />
+                      <Check className="w-3.5 h-3.5 text-[#D4FF00] shrink-0" />
                       <span>Fixed milestone pricing with upfront deliverables</span>
                     </div>
                   </div>
@@ -447,7 +447,7 @@ export const WhyHoza: React.FC = () => {
               </AnimatePresence>
             </div>
 
-            <div className="pt-4 border-t border-[#00F0FF]/30 flex items-center justify-between font-mono text-xs">
+            <div className="pt-4 border-t border-[#D4FF00]/20 flex items-center justify-between font-mono text-xs">
               <span className="text-hoza-muted">COMMERCIAL EFFICIENCY:</span>
               <span className="text-emerald-400 font-bold">{currentStage.costSavings}</span>
             </div>
