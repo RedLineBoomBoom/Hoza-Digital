@@ -290,7 +290,7 @@ export const Footer: React.FC<{
         {/* Bottom Colophon & Scroll to Top */}
         <div className="border-t border-[#D4FF00]/20 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-hoza-darkMuted">
           <div>
-            Â© {new Date().getFullYear()} HOZA STUDIO. ALL RIGHTS RESERVED. BUILT IN INDONESIA. READY FOR ANYWHERE.
+            © {new Date().getFullYear()} HOZA STUDIO. ALL RIGHTS RESERVED. BUILT IN INDONESIA. READY FOR ANYWHERE.
           </div>
 
           <div className="flex items-center gap-6">

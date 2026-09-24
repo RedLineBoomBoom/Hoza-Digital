@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useRef, useState, useEffect } from "react";
 import { MessageCircle, Calendar, Mail, ArrowUpRight, Sparkles } from "lucide-react";
@@ -70,11 +70,11 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenProjectModal }) => {
   return (
     <section
       id="contact"
-      className="relative min-h-[90vh] flex flex-col justify-between py-28 px-6 sm:px-8 max-w-7xl mx-auto w-full select-none overflow-hidden"
+      className="relative min-h-[90vh] flex flex-col justify-between py-20 sm:py-28 px-4 sm:px-8 max-w-7xl mx-auto w-full select-none overflow-hidden"
     >
       {/* Large Interactive Draggable / Distortable Background Brand Logo */}
       <div
-        className="absolute inset-0 flex items-center justify-center pointer-events-auto cursor-grab active:cursor-grabbing z-0 opacity-20 hover:opacity-35 transition-opacity px-6 touch-none"
+        className="absolute inset-0 flex items-center justify-center pointer-events-none md:pointer-events-auto cursor-grab active:cursor-grabbing z-0 opacity-20 hover:opacity-35 transition-opacity px-4 sm:px-6 md:touch-none"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -139,25 +139,25 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenProjectModal }) => {
       </div>
 
       {/* Center Headline & Actions */}
-      <div className="relative z-10 my-auto py-12 max-w-4xl">
+      <div className="relative z-10 my-auto py-10 sm:py-12 max-w-4xl">
         <SmoothHeading
           title="HAVE SOMETHING"
           highlight="TO BUILD?"
           highlightGradient="from-[#D4FF00] via-[#E6FF4D] to-[#D4FF00]"
-          className="text-5xl sm:text-7xl lg:text-8xl leading-[0.92]"
+          className="text-4xl min-[400px]:text-5xl sm:text-7xl lg:text-8xl leading-[0.95] sm:leading-[0.92]"
         />
 
-        <p className="mt-8 text-base sm:text-xl text-hoza-muted max-w-2xl leading-relaxed">
+        <p className="mt-6 sm:mt-8 text-sm sm:text-xl text-hoza-muted max-w-2xl leading-relaxed">
           Tell us what you are trying to create, improve or automate. We will
           help you determine the best way to move forward—with clear milestones,
           no agency fluff, and working code.
         </p>
 
         {/* Primary and Secondary CTA Buttons - Bulkhead Tactical Style */}
-        <div className="mt-10 flex flex-wrap items-center gap-4 sm:gap-6">
+        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
           <button
             onClick={onOpenProjectModal}
-            className="btn-tactical btn-tactical-volt text-sm"
+            className="btn-tactical btn-tactical-volt text-sm w-full sm:w-auto justify-between"
           >
             <span className="btn-box-left">
               <Sparkles className="w-4 h-4 text-[#09090B]" />
@@ -174,7 +174,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenProjectModal }) => {
             href="https://wa.me/6285111505115?text=Hello%20Hoza%20Studio%2C%20I%20have%20a%20project%20I%20would%20like%20to%20build."
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-tactical hover:border-emerald-400 hover:text-emerald-400 text-sm"
+            className="btn-tactical hover:border-emerald-400 hover:text-emerald-400 text-sm w-full sm:w-auto justify-between"
           >
             <span className="btn-box-left">
               <MessageCircle className="w-4 h-4 text-emerald-400" />

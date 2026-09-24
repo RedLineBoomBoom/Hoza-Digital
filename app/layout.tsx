@@ -140,11 +140,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-hoza-bg text-hoza-white font-sans antialiased selection:bg-[#D4FF00] selection:text-hoza-bg relative">
+      <body className="bg-hoza-bg text-hoza-white font-sans antialiased selection:bg-[#D4FF00] selection:text-hoza-bg relative overflow-x-hidden w-full">
         {/* Subtle background technical grid & vignette */}
         <div className="fixed inset-0 pointer-events-none bg-grid-tech z-0 opacity-40" />
         <div className="fixed inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(212,255,0,0.15),rgba(8,5,13,0))] z-0" />
-        <div className="relative z-10 flex flex-col min-h-screen">
+        <div className="relative z-10 flex flex-col min-h-screen w-full overflow-x-hidden">
           {children}
         </div>
       </body>

@@ -299,7 +299,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Drawer Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-[#09090B]/95 backdrop-blur-2xl lg:hidden pt-20 px-6 flex flex-col justify-between pb-10 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-50 bg-[#09090B]/95 backdrop-blur-2xl lg:hidden pt-20 px-4 min-[380px]:px-6 flex flex-col justify-between pb-10 overflow-y-auto max-h-screen animate-in fade-in duration-200">
           <div className="space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-white/10">
               <span className="font-mono text-xs text-[#D4FF00] uppercase tracking-widest">

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import { motion } from "framer-motion";
@@ -75,35 +75,50 @@ const CHIPS: ChipData[] = [
 ];
 
 export const HeroInteractiveChips: React.FC = () => {
+  const [canDrag, setCanDrag] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkCanDrag = () => {
+      setCanDrag(
+        window.innerWidth >= 768 &&
+        window.matchMedia("(pointer: fine)").matches
+      );
+    };
+    checkCanDrag();
+    window.addEventListener("resize", checkCanDrag);
+    return () => window.removeEventListener("resize", checkCanDrag);
+  }, []);
+
   return (
     <div className="relative w-full py-4 mt-6">
-      <div className="text-center font-mono text-[10px] text-hoza-muted uppercase tracking-widest mb-3 flex items-center justify-center gap-2">
+      <div className="text-center font-mono text-[9px] min-[360px]:text-[10px] text-hoza-muted uppercase tracking-widest mb-3 flex items-center justify-center gap-2">
         <Sparkles className="w-3 h-3 text-[#D4FF00] animate-pulse" />
-        <span>INTERACTIVE SYSTEM CAPABILITIES • DRAG TO EXPLORE</span>
+        <span>INTERACTIVE SYSTEM CAPABILITIES {canDrag ? "• DRAG TO EXPLORE" : ""}</span>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 max-w-4xl mx-auto px-4">
+      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3.5 max-w-4xl mx-auto px-2 sm:px-4">
         {CHIPS.map((chip) => (
           <motion.div
             key={chip.id}
-            drag
-            dragConstraints={{ left: -60, right: 60, top: -30, bottom: 30 }}
+            drag={canDrag}
+            dragConstraints={canDrag ? { left: -60, right: 60, top: -30, bottom: 30 } : false}
             dragElastic={0.25}
             initial={{ opacity: 0, y: 15, rotate: chip.initialPos.rotate }}
             animate={{ opacity: 1, y: 0, rotate: chip.initialPos.rotate }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            whileHover={{ scale: 1.06, zIndex: 30 }}
+            whileHover={canDrag ? { scale: 1.06, zIndex: 30 } : undefined}
+            whileTap={{ scale: 0.96 }}
             whileDrag={{ scale: 1.12, zIndex: 40, cursor: "grabbing" }}
             onHoverStart={() => soundEffects.playHover?.()}
             onDragStart={() => soundEffects.playClick?.()}
-            className={`cursor-grab select-none px-3.5 py-2 rounded-full bg-[#121216]/90 border backdrop-blur-md shadow-lg transition-colors flex items-center gap-2.5 ${chip.accent}`}
+            className={`select-none px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-full bg-[#121216]/90 border backdrop-blur-md shadow-lg transition-colors flex items-center gap-2 sm:gap-2.5 ${canDrag ? "cursor-grab" : "cursor-default"} ${chip.accent}`}
           >
             <span className="p-1 rounded-full bg-white/5">{chip.icon}</span>
             <div className="flex flex-col text-left">
-              <span className="font-mono text-xs font-semibold text-hoza-white leading-tight">
+              <span className="font-mono text-[11px] sm:text-xs font-semibold text-hoza-white leading-tight">
                 {chip.label}
               </span>
-              <span className="font-mono text-[9px] text-hoza-muted leading-tight">
+              <span className="font-mono text-[8px] sm:text-[9px] text-hoza-muted leading-tight">
                 {chip.sub}
               </span>
             </div>

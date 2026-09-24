@@ -21,11 +21,10 @@ export const TechMatrix: React.FC = () => {
   };
 
   return (
-    <section id="tech" className="relative py-24 sm:py-28 px-6 sm:px-8 max-w-7xl mx-auto w-full select-none">
+    <section id="tech" className="relative py-24 sm:py-28 px-4 sm:px-8 max-w-7xl mx-auto w-full select-none">
       {/* Background Ambience */}
       <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-96 h-96 bg-[#D4FF00]/10 blur-[120px] pointer-events-none rounded-full" />
 
-      {/* â”€â”€ SECTION HEADER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="border-b border-[#D4FF00]/20 pb-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10">
         <div>
           <div className="font-mono text-xs text-[#D4FF00] uppercase tracking-widest mb-3 flex items-center gap-2">
@@ -47,7 +46,7 @@ export const TechMatrix: React.FC = () => {
         </div>
       </div>
 
-      {/* â”€â”€ KINETIC INFINITE TICKER (Subtle & Elegant) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* KINETIC INFINITE TICKER */}
       <div className="group mb-12 overflow-hidden border-y border-white/10 py-3 bg-[#0E0E12]/60 backdrop-blur-sm relative rounded-xl z-10 flex items-center select-none">
         <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#09090B] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#09090B] to-transparent z-10 pointer-events-none" />
@@ -82,11 +81,11 @@ export const TechMatrix: React.FC = () => {
         </div>
       </div>
 
-      {/* â”€â”€ INTERACTIVE CATEGORY SELECTOR & DETAILS (Clean 2-Column) â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* INTERACTIVE CATEGORY SELECTOR & DETAILS */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start relative z-10">
-        {/* Category List Sidebar (4 cols) */}
-        <div className="lg:col-span-4 p-2 bg-[#121216]/80 border border-white/10 rounded-2xl backdrop-blur-md shadow-xl space-y-1.5">
-          <div className="px-3 pt-2 pb-2 font-mono text-[10px] text-hoza-muted uppercase tracking-wider">
+        {/* Category List Sidebar (4 cols on lg, horizontal pill bar on mobile) */}
+        <div className="lg:col-span-4 p-1.5 sm:p-2 bg-[#121216]/80 border border-white/10 rounded-2xl backdrop-blur-md shadow-xl flex lg:flex-col overflow-x-auto lg:overflow-visible gap-1.5 no-scrollbar">
+          <div className="px-3 pt-2 pb-2 font-mono text-[10px] text-hoza-muted uppercase tracking-wider hidden lg:block">
             Select Architecture Domain
           </div>
           {TECH_CATEGORIES.map((cat) => {
@@ -97,7 +96,7 @@ export const TechMatrix: React.FC = () => {
                 onClick={() => handleSelectCategory(cat.category)}
                 onMouseEnter={() => soundEffects.playHover?.()}
                 className={cn(
-                  "w-full p-3.5 sm:p-4 text-left rounded-xl transition-colors duration-200 flex items-center justify-between select-none cursor-pointer group relative overflow-hidden",
+                  "p-2.5 sm:p-3.5 lg:p-4 text-left rounded-xl transition-colors duration-200 flex items-center justify-between select-none cursor-pointer group relative overflow-hidden shrink-0 lg:shrink whitespace-nowrap lg:whitespace-normal gap-2.5",
                   isSelected
                     ? "text-white font-bold"
                     : "text-hoza-muted hover:text-white hover:bg-white/5 border border-transparent"
@@ -110,22 +109,22 @@ export const TechMatrix: React.FC = () => {
                     transition={{ type: "spring", stiffness: 420, damping: 32 }}
                   />
                 )}
-                <div className="flex items-center gap-3 relative z-10">
+                <div className="flex items-center gap-2 sm:gap-3 relative z-10">
                   <span
                     className={cn(
-                      "w-2 h-2 rounded-full transition-all",
+                      "w-2 h-2 rounded-full transition-all shrink-0",
                       isSelected
                         ? "bg-[#D4FF00] shadow-[0_0_8px_#D4FF00]"
                         : "bg-white/20 group-hover:bg-white/40"
                     )}
                   />
-                  <span className="text-sm font-sans tracking-wide">
+                  <span className="text-xs sm:text-sm font-sans tracking-wide">
                     {cat.category}
                   </span>
                 </div>
                 <span
                   className={cn(
-                    "text-[10px] font-mono px-2 py-0.5 rounded-full transition-colors relative z-10",
+                    "text-[9px] sm:text-[10px] font-mono px-2 py-0.5 rounded-full transition-colors relative z-10 shrink-0",
                     isSelected
                       ? "bg-[#D4FF00]/30 text-[#D4FF00] border border-[#D4FF00]/40"
                       : "bg-white/5 text-hoza-muted group-hover:text-white"
@@ -139,7 +138,7 @@ export const TechMatrix: React.FC = () => {
         </div>
 
         {/* Category Details Card (8 cols) */}
-        <div className="lg:col-span-8 p-6 sm:p-8 md:p-10 rounded-2xl border border-white/10 bg-[#121216]/80 backdrop-blur-md shadow-2xl relative min-h-[500px] flex flex-col justify-between">
+        <div className="lg:col-span-8 p-4 sm:p-8 md:p-10 rounded-2xl border border-white/10 bg-[#121216]/80 backdrop-blur-md shadow-2xl relative min-h-[420px] lg:min-h-[500px] flex flex-col justify-between">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentCategory.category}

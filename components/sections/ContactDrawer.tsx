@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { X, CheckCircle2, AlertCircle, Send, Sparkles } from "lucide-react";
@@ -111,12 +111,12 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
   ];
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#09090B]/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200">
-      <div className="hud-box bg-hoza-surface border border-[#D4FF00]/20 max-w-3xl w-full p-6 sm:p-10 relative max-h-[92vh] overflow-y-auto shadow-2xl">
+    <div className="fixed inset-0 z-50 bg-[#09090B]/95 backdrop-blur-xl flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200">
+      <div className="hud-box bg-hoza-surface border border-[#D4FF00]/20 max-w-3xl w-full p-4 min-[400px]:p-6 sm:p-10 relative max-h-[92vh] overflow-y-auto shadow-2xl">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 p-2 border border-[#D4FF00]/20 text-hoza-muted hover:text-hoza-white hover:border-[#D4FF00] bg-hoza-bg transition-colors"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 border border-[#D4FF00]/20 text-hoza-muted hover:text-hoza-white hover:border-[#D4FF00] bg-hoza-bg transition-colors"
           aria-label="Close project modal"
         >
           <X className="w-5 h-5" />
@@ -133,7 +133,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
               <div className="font-mono text-xs text-[#D4FF00] uppercase tracking-widest">
                 // TRANSMISSION ACKNOWLEDGED
               </div>
-              <h3 className="font-display font-black text-3xl sm:text-4xl text-hoza-white uppercase">
+              <h3 className="font-display font-black text-2xl sm:text-4xl text-hoza-white uppercase">
                 PROJECT REQUEST RECEIVED
               </h3>
               <p className="text-sm sm:text-base text-[#D4FF00]/70 max-w-md mx-auto">
@@ -175,7 +175,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
               <span>// PROJECT INITIATION PROTOCOL</span>
             </div>
 
-            <h3 className="font-display font-black text-3xl sm:text-4xl text-hoza-white uppercase">
+            <h3 className="font-display font-black text-2xl min-[400px]:text-3xl sm:text-4xl text-hoza-white uppercase">
               Start a Project with Hoza
             </h3>
             <p className="text-xs sm:text-sm text-hoza-muted mt-1">

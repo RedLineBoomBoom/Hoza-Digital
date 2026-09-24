@@ -208,7 +208,6 @@ export const SelectedWork: React.FC = () => {
       <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-[#D4FF00]/8 blur-[140px] pointer-events-none rounded-full" />
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#D4FF00]/5 blur-[130px] pointer-events-none rounded-full" />
 
-      {/* Ã¢â€â‚¬Ã¢â€â‚¬ SECTION HEADER Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <div className="border-b border-[#D4FF00]/20 pb-6 mb-10 sm:mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10">
         <div>
           <div className="font-mono text-xs text-[#D4FF00] uppercase tracking-widest mb-3 flex items-center gap-2">
@@ -230,10 +229,8 @@ export const SelectedWork: React.FC = () => {
         </div>
       </div>
 
-      {/* Ã¢â€â‚¬Ã¢â€â‚¬ BULKHEAD SPLIT SHOWCASE CONTAINER Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <div className="relative w-full rounded-3xl border border-white/15 bg-[#09090B] shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 min-h-[540px] lg:min-h-[580px]">
-        {/* Ã¢â€â‚¬Ã¢â€â‚¬ LEFT HALF: LIVE PRODUCTION PREVIEW Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
-        <div className="relative bg-[#0E0E12] flex flex-col justify-between p-6 sm:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-white/10 overflow-hidden">
+        <div className="relative bg-[#0E0E12] flex flex-col justify-between p-4 min-[380px]:p-5 sm:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-white/10 overflow-hidden">
           {/* Subtle Cyber Grid Background */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:28px_28px] pointer-events-none" />
 
@@ -307,8 +304,8 @@ export const SelectedWork: React.FC = () => {
                       <span className="text-emerald-400 text-[10px] font-bold shrink-0">{currentArch.protocolBadge}</span>
                     </div>
 
-                    {/* Node Flow */}
-                    <div className="grid grid-cols-4 gap-2 text-center text-[10px]">
+                    {/* Node Flow (2 cols on mobile, 4 on sm+) */}
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-[10px]">
                       {currentArch.nodes.map((node, nIdx) => {
                         const NodeIcon = node.icon;
                         return (
@@ -326,12 +323,12 @@ export const SelectedWork: React.FC = () => {
                   </div>
 
                   {/* Audit-Verified Performance Delta */}
-                  <div className="grid grid-cols-3 gap-2 text-center">
+                  <div className="grid grid-cols-1 min-[400px]:grid-cols-3 gap-2 text-center">
                     {currentArch.metrics.map((metric, mIdx) => (
-                      <div key={mIdx} className="bg-[#121216] border border-white/10 p-3 rounded-xl">
+                      <div key={mIdx} className="bg-[#121216] border border-white/10 p-2.5 sm:p-3 rounded-xl">
                         <div className="text-[10px] text-neutral-400 mb-1 truncate">{metric.label}</div>
-                        <div className="text-sm sm:text-base font-bold text-white flex items-center justify-center gap-1">
-                          <span className="text-neutral-500 line-through text-xs">{metric.before}</span>
+                        <div className="text-xs sm:text-base font-bold text-white flex items-center justify-center gap-1">
+                          <span className="text-neutral-500 line-through text-[11px] sm:text-xs">{metric.before}</span>
                           <span className="text-[#D4FF00]">&rarr; {metric.after}</span>
                         </div>
                         <span className="text-[9px] text-emerald-400 font-mono">{metric.delta}</span>
@@ -542,7 +539,6 @@ export const SelectedWork: React.FC = () => {
           </div>
         </div>
 
-        {/* Ã¢â€â‚¬Ã¢â€â‚¬ RIGHT HALF: HOZA EDITORIAL CARD + DYNAMIC ARROW FOLLOWER CURSOR Ã¢â€â‚¬Ã¢â€â‚¬ */}
         <div
           ref={rightContainerRef}
           data-custom-cursor="hide"
@@ -552,7 +548,7 @@ export const SelectedWork: React.FC = () => {
           onMouseDown={() => setIsMouseDown(true)}
           onMouseUp={() => setIsMouseDown(false)}
           onClick={handleNext}
-          className="relative bg-[#0E0E12] text-white p-8 sm:p-10 lg:p-12 flex flex-col justify-between overflow-hidden cursor-none group select-none transition-colors border-t lg:border-t-0 border-[#D4FF00]/20"
+          className="relative bg-[#0E0E12] text-white p-5 min-[380px]:p-6 sm:p-10 lg:p-12 flex flex-col justify-between overflow-hidden cursor-none group select-none transition-colors border-t lg:border-t-0 border-[#D4FF00]/20"
         >
           {/* Subtle Cyber Grid & Ambient Glow */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#D4FF000A_1px,transparent_1px),linear-gradient(to_bottom,#D4FF000A_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
@@ -602,16 +598,16 @@ export const SelectedWork: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          {/* Ã¢â€â‚¬Ã¢â€â‚¬ CENTER: RESTING ARROW BUTTON (FOR MOBILE & IDLE DESKTOP STATE) Ã¢â€â‚¬Ã¢â€â‚¬ */}
+          {/* CENTER: RESTING ARROW BUTTON */}
           <div className="my-6 sm:my-8 flex items-center justify-center relative pointer-events-none">
             <div
               className={cn(
-                "w-18 h-18 sm:w-22 sm:h-22 rounded-full bg-gradient-to-br from-[#D4FF00] to-[#E6FF4D] border-2 border-[#09090B] text-white flex items-center justify-center shadow-[0_0_30px_rgba(212,255,0,0.45)] transition-all duration-300",
+                "w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-[#D4FF00] to-[#E6FF4D] border-2 border-[#09090B] text-white flex items-center justify-center shadow-[0_0_30px_rgba(212,255,0,0.45)] transition-all duration-300",
                 isHoveredRight ? "opacity-0 scale-75" : "opacity-100 scale-100 animate-pulse"
               )}
               aria-hidden="true"
             >
-              <ArrowRight className="w-8 h-8 sm:w-10 sm:h-10 text-[#09090B] stroke-[2.5]" />
+              <ArrowRight className="w-7 h-7 sm:w-9 sm:h-9 text-[#09090B] stroke-[2.5]" />
             </div>
           </div>
 
@@ -624,7 +620,7 @@ export const SelectedWork: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.3 }}
-                className="font-black text-3xl sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[5rem] uppercase tracking-tighter text-white leading-[0.88] select-none"
+                className="font-black text-2xl min-[360px]:text-3xl sm:text-5xl md:text-6xl lg:text-[4.25rem] xl:text-[5rem] uppercase tracking-tighter text-white leading-[0.9] sm:leading-[0.88] select-none"
               >
                 <span className="text-white drop-shadow-[0_2px_15px_rgba(0,0,0,0.8)]">
                   {titleLine1}
@@ -639,7 +635,6 @@ export const SelectedWork: React.FC = () => {
         </div>
       </div>
 
-      {/* Ã¢â€â‚¬Ã¢â€â‚¬ DESKTOP ACTIVE FOLLOWER ARROW CURSOR Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       {/* Replaces the standard/custom cursor when mouse is inside the card area */}
       <div
         ref={followerRef}
@@ -662,7 +657,6 @@ export const SelectedWork: React.FC = () => {
         </div>
       </div>
 
-      {/* Ã¢â€â‚¬Ã¢â€â‚¬ PROJECT QUICK-SWITCHER PILL BAR Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <div className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
         {PROJECTS.map((proj, idx) => {
           const isActive = idx === currentIndex;
@@ -671,7 +665,7 @@ export const SelectedWork: React.FC = () => {
               key={proj.id}
               onClick={() => handleSelectProject(idx)}
               className={cn(
-                "px-4 py-2 rounded-full font-mono text-xs font-bold transition-all duration-200 cursor-pointer flex items-center gap-2",
+                "px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-mono text-xs font-bold transition-all duration-200 cursor-pointer flex items-center gap-2",
                 isActive
                   ? "bg-[#D4FF00] text-[#09090B] shadow-[0_0_15px_rgba(212,255,0,0.4)] border border-[#D4FF00]"
                   : "bg-[#121216]/80 text-hoza-muted hover:text-white border border-white/10 hover:border-white/20"
@@ -679,17 +673,17 @@ export const SelectedWork: React.FC = () => {
             >
               <span
                 className={cn(
-                  "w-1.5 h-1.5 rounded-full",
+                  "w-1.5 h-1.5 rounded-full shrink-0",
                   isActive ? "bg-[#09090B]" : "bg-white/30"
                 )}
               />
-              <span>0{idx + 1} // {proj.title}</span>
+              <span className="hidden sm:inline">0{idx + 1} // {proj.title}</span>
+              <span className="sm:hidden">0{idx + 1} // {proj.title.split(" ")[0]}</span>
             </button>
           );
         })}
       </div>
 
-      {/* Ã¢â€â‚¬Ã¢â€â‚¬ CASE STUDY DETAIL MODAL SPEC Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       {activeModalProject && (
         <div
           onClick={() => setActiveModalProject(null)}

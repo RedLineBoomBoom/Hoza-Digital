@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { FAQS } from "@/lib/constants";
@@ -25,11 +25,10 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="relative py-24 sm:py-28 px-6 sm:px-8 max-w-7xl mx-auto w-full select-none">
+    <section id="faq" className="relative py-20 sm:py-28 px-4 sm:px-8 max-w-7xl mx-auto w-full select-none">
       {/* Background Glow */}
       <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-[#D4FF00]/10 blur-[130px] pointer-events-none rounded-full" />
 
-      {/* â”€â”€ SECTION HEADER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="border-b border-[#D4FF00]/20 pb-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10">
         <div>
           <div className="font-mono text-xs text-[#D4FF00] uppercase tracking-widest mb-3 flex items-center gap-2">
@@ -51,7 +50,6 @@ export const FAQSection: React.FC = () => {
         </div>
       </div>
 
-      {/* â”€â”€ CLEAN CATEGORY FILTER PILLS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="flex flex-wrap items-center gap-2 mb-10 p-1.5 bg-[#121216]/80 border border-white/10 rounded-xl w-fit backdrop-blur-md relative z-10">
         {categories.map((cat) => {
           const isSelected = activeCategory === cat;
@@ -85,7 +83,6 @@ export const FAQSection: React.FC = () => {
         })}
       </div>
 
-      {/* â”€â”€ CLEAN ACCORDION LIST (High Readability & Calm Surfaces) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="space-y-3.5 max-w-4xl relative z-10">
         {filteredFaqs.map((faq, idx) => {
           const isOpen = openIndex === idx;
@@ -102,10 +99,10 @@ export const FAQSection: React.FC = () => {
               <button
                 onClick={() => toggleFAQ(idx)}
                 onMouseEnter={() => soundEffects.playHover?.()}
-                className="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 cursor-pointer select-none group"
+                className="w-full p-4 min-[400px]:p-5 sm:p-6 text-left flex items-start justify-between gap-3 sm:gap-4 cursor-pointer select-none group"
                 aria-expanded={isOpen}
               >
-                <div className="flex items-start gap-4 sm:gap-5">
+                <div className="flex items-start gap-3 sm:gap-5">
                   <span className="font-mono text-xs text-[#D4FF00]/70 pt-1 font-semibold">
                     0{idx + 1}
                   </span>
@@ -140,7 +137,7 @@ export const FAQSection: React.FC = () => {
                     transition={{ duration: 0.25, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="px-5 sm:px-6 pb-6 pt-2 text-sm sm:text-base text-hoza-white/80 leading-relaxed font-sans border-t border-white/10 pl-12 sm:pl-16">
+                    <div className="px-4 min-[400px]:px-5 sm:px-6 pb-5 sm:pb-6 pt-2 text-xs min-[400px]:text-sm sm:text-base text-hoza-white/80 leading-relaxed font-sans border-t border-white/10 pl-8 min-[400px]:pl-12 sm:pl-16">
                       <p>{faq.answer}</p>
                     </div>
                   </motion.div>
@@ -151,8 +148,8 @@ export const FAQSection: React.FC = () => {
         })}
       </div>
 
-      {/* â”€â”€ DIRECT CONTACT BANNER (Clean & Welcoming) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <div className="mt-12 p-6 sm:p-8 rounded-2xl border border-white/10 bg-[#121216]/80 backdrop-blur-md max-w-4xl flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-xl relative z-10">
+      {/* Consult Box */}
+      <div className="mt-10 sm:mt-12 p-5 sm:p-8 rounded-2xl border border-white/10 bg-[#121216]/80 backdrop-blur-md max-w-4xl flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-xl relative z-10">
         <div className="flex items-center gap-3.5">
           <div className="w-10 h-10 rounded-xl bg-[#D4FF00]/15 border border-[#D4FF00]/30 flex items-center justify-center shrink-0">
             <MessageSquare className="w-5 h-5 text-[#D4FF00]" />
@@ -171,7 +168,7 @@ export const FAQSection: React.FC = () => {
           href="https://wa.me/6285111505115?text=Hi%20Hoza%2C%20I%20have%20a%20technical%20question%20about%20a%20project."
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#D4FF00] hover:bg-[#E6FF4D] text-[#09090B] font-bold text-xs sm:text-sm transition-all duration-200 shadow-[0_0_20px_rgba(212,255,0,0.4)] shrink-0 cursor-pointer"
+          className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#D4FF00] hover:bg-[#E6FF4D] text-[#09090B] font-bold text-xs sm:text-sm transition-all duration-200 shadow-[0_0_20px_rgba(212,255,0,0.4)] w-full sm:w-auto shrink-0 cursor-pointer"
         >
           <MessageCircle className="w-4 h-4" />
           <span>Consult with Engineer</span>

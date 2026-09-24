@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
@@ -54,10 +54,10 @@ export const RegionalMap: React.FC = () => {
   return (
     <section
       id="network"
-      className="relative py-28 px-6 sm:px-8 max-w-7xl mx-auto w-full select-none"
+      className="relative py-20 sm:py-28 px-4 sm:px-8 max-w-7xl mx-auto w-full select-none"
     >
       {/* Section Header */}
-      <div className="border-b border-[#D4FF00]/20 pb-8 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div className="border-b border-[#D4FF00]/20 pb-8 mb-12 sm:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
           <div className="font-mono text-xs text-[#D4FF00] uppercase tracking-widest mb-3 flex items-center gap-2">
             <Radio className="w-3.5 h-3.5 text-[#D4FF00] animate-pulse" />
@@ -79,14 +79,14 @@ export const RegionalMap: React.FC = () => {
       </div>
 
       {/* Main 3D Globe + Telemetry HUD Container */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch bg-[#0C0C0C]/95 tactical-corners border border-white/15 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch bg-[#0C0C0C]/95 tactical-corners border border-white/15 p-4 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
         <span className="tactical-corner-tr" />
         <span className="tactical-corner-bl" />
         {/* Ambient Backlight Glow */}
         <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#D4FF00]/10 rounded-full blur-3xl pointer-events-none" />
 
         {/* Left: 3D Interactive Cyber Globe Viewport (7 cols) */}
-        <div className="lg:col-span-7 relative flex flex-col justify-between min-h-[440px] sm:min-h-[500px] overflow-hidden border border-white/15 bg-[#09090B] p-4 tactical-corners">
+        <div className="lg:col-span-7 relative flex flex-col justify-between min-h-[360px] sm:min-h-[500px] overflow-hidden border border-white/15 bg-[#09090B] p-3 sm:p-4 tactical-corners">
           <span className="tactical-corner-tr" />
           <span className="tactical-corner-bl" />
           {/* Top Telemetry Header Stamp */}
@@ -146,7 +146,7 @@ export const RegionalMap: React.FC = () => {
         </div>
 
         {/* Right: Live Telemetry Diagnostic Console (5 cols) */}
-        <div className="lg:col-span-5 p-6 sm:p-8 bg-[#0E0E0E] tactical-corners border border-white/15 flex flex-col justify-between space-y-6 relative">
+        <div className="lg:col-span-5 p-4 sm:p-8 bg-[#0E0E0E] tactical-corners border border-white/15 flex flex-col justify-between space-y-6 relative">
           <span className="tactical-corner-tr" />
           <span className="tactical-corner-bl" />
           <div>
@@ -217,7 +217,7 @@ export const RegionalMap: React.FC = () => {
 
             {probeResult && (
               <div className="font-mono text-[10px] text-emerald-400 text-center animate-in fade-in duration-150">
-                âœ“ PROBE CONFIRMED: {probeResult}
+                ✓ PROBE CONFIRMED: {probeResult}
               </div>
             )}
 

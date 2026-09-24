@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
@@ -14,7 +14,7 @@ interface SmoothHeadingProps {
   align?: "left" | "center";
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -------------------------------------------------------------------------
 // Luxury Kinetic SmoothHeading
 // - Masked spatial slit reveal with 3D perspective fold & optical blur dissipation
 // - Word-by-word cascading rhythm for Line 1 (crisp white)
@@ -22,7 +22,7 @@ interface SmoothHeadingProps {
 // - Rock-solid dual scroll observer (useInView + native viewport probe)
 //   Ensures animation NEVER triggers prematurely while offscreen, and ALWAYS
 //   unfurls with buttery 60/120fps silkiness as the user scrolls into view.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// -------------------------------------------------------------------------
 export const SmoothHeading: React.FC<SmoothHeadingProps> = ({
   title,
   highlight,
@@ -120,7 +120,7 @@ export const SmoothHeading: React.FC<SmoothHeadingProps> = ({
     >
       <Tag
         className={cn(
-          "font-display font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[0.95] text-hoza-white uppercase",
+          "font-display font-black text-3xl min-[400px]:text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[0.95] text-hoza-white uppercase",
           align === "center" && "text-center",
           className
         )}

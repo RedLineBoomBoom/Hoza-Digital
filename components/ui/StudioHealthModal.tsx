@@ -60,7 +60,7 @@ export const StudioHealthModal: React.FC<StudioHealthModalProps> = ({
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 select-none">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 min-[400px]:p-4 sm:p-6 select-none">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -79,7 +79,7 @@ export const StudioHealthModal: React.FC<StudioHealthModalProps> = ({
             className="relative w-full max-w-3xl bg-[#0E0E12] border border-[#D4FF00]/40 rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.9),0_0_30px_rgba(212,255,0,0.15)] overflow-hidden z-10 flex flex-col max-h-[90vh]"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#121216]">
+            <div className="flex items-center justify-between px-4 min-[400px]:px-6 py-3.5 sm:py-4 border-b border-white/10 bg-[#121216]">
               <div className="flex items-center gap-2.5">
                 <div className="w-2.5 h-2.5 rounded-full bg-[#D4FF00] animate-pulse shadow-[0_0_8px_#D4FF00]" />
                 <span className="font-mono text-xs font-bold text-white tracking-widest uppercase">
@@ -95,7 +95,7 @@ export const StudioHealthModal: React.FC<StudioHealthModalProps> = ({
             </div>
 
             {/* Scrollable Body */}
-            <div className="p-6 overflow-y-auto space-y-6">
+            <div className="p-4 min-[400px]:p-6 overflow-y-auto space-y-5 sm:space-y-6">
               {/* Highlight Card: Sprint Availability Scarcity */}
               <div className="p-5 rounded-xl bg-[#14141A] border border-[#D4FF00]/40 relative overflow-hidden shadow-[0_0_20px_rgba(212,255,0,0.1)]">
                 <div className="absolute top-0 right-0 px-3 py-1 bg-[#D4FF00] text-black font-mono text-[10px] font-bold tracking-wider uppercase rounded-bl-lg">

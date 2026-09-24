@@ -30,6 +30,19 @@ export const Capabilities: React.FC<CapabilitiesProps> = ({
 }) => {
   // Page state: [currentPage, direction]
   const [[page, direction], setPage] = useState<[number, number]>([0, 0]);
+  const [isDesktopPointer, setIsDesktopPointer] = useState(false);
+
+  React.useEffect(() => {
+    const checkPointer = () => {
+      setIsDesktopPointer(
+        window.innerWidth >= 768 &&
+        window.matchMedia("(pointer: fine)").matches
+      );
+    };
+    checkPointer();
+    window.addEventListener("resize", checkPointer);
+    return () => window.removeEventListener("resize", checkPointer);
+  }, []);
 
   // Module 1 Interactive Viewport State (Lighthouse toggle)
   const [viewportMode, setViewportMode] = useState<"desktop" | "mobile">("desktop");
@@ -316,17 +329,21 @@ export const Capabilities: React.FC<CapabilitiesProps> = ({
             initial="enter"
             animate="center"
             exit="exit"
-            drag="x"
+            drag={isDesktopPointer ? "x" : false}
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.12}
             onDragEnd={(e, { offset, velocity }) => {
+              if (!isDesktopPointer) return;
               if (offset.x < -60 || velocity.x < -250) {
                 if (page < cohorts.length - 1) paginate(1);
               } else if (offset.x > 60 || velocity.x > 250) {
                 if (page > 0) paginate(-1);
               }
             }}
-            className="w-full flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 overflow-x-auto sm:overflow-x-visible snap-x snap-mandatory pb-4 sm:pb-0 no-scrollbar cursor-grab active:cursor-grabbing"
+            className={cn(
+              "w-full flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 overflow-x-auto sm:overflow-x-visible snap-x snap-mandatory pb-4 sm:pb-0 no-scrollbar",
+              isDesktopPointer && "cursor-grab active:cursor-grabbing"
+            )}
           >
             {cohorts[page].items.map((cap) => {
               const Icon = cap.icon;
@@ -337,7 +354,7 @@ export const Capabilities: React.FC<CapabilitiesProps> = ({
                   onClick={() => onSelectService?.(cap.serviceName)}
                   onMouseEnter={() => soundEffects.playHover?.()}
                   className={cn(
-                    "capability-card shrink-0 w-[86vw] max-w-[340px] sm:w-auto snap-center min-h-[540px] p-6 sm:p-7 relative flex flex-col justify-between transition-all duration-300 select-none group border rounded-2xl overflow-hidden",
+                    "capability-card shrink-0 w-[84vw] max-w-[340px] sm:w-auto snap-center min-h-[500px] sm:min-h-[540px] p-4 min-[380px]:p-6 sm:p-7 relative flex flex-col justify-between transition-all duration-300 select-none group border rounded-2xl overflow-hidden",
                     "bg-[#121216]/90 backdrop-blur-md text-hoza-white border-[#27272A] hover:border-[#D4FF00] hover:bg-[#16161C] hover:shadow-[0_0_35px_rgba(212,255,0,0.2),inset_0_1px_0_rgba(212,255,0,0.1)] hover:-translate-y-2 cursor-pointer"
                   )}
                 >

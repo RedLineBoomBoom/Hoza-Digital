@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -69,7 +69,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
     {
       name: "Arma",
       role: "Lead Ops",
-      location: "Hoza Digital Core Team Â· Remote-First",
+      location: "Hoza Digital Core Team • Remote-First",
       avatar: "/images/authors/arma.webp",
       bio: "Lead Operations at Hoza Digital. Specializing in analytics pipelines, sales intelligence, workflow automation, and client delivery systems that eliminate friction and scale revenue.",
       stats: "24h Response SLA",
@@ -82,7 +82,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
     {
       name: "Owen",
       role: "Lead Engineer",
-      location: "Hoza Digital Core Team Â· Remote-First",
+      location: "Hoza Digital Core Team • Remote-First",
       avatar: "/images/authors/owen.webp",
       bio: "Lead Engineer at Hoza Digital. Building mission-critical full-stack web platforms, mobile products, real-time database architectures, and high-performance serverless infrastructure.",
       stats: "Sub-Second Deploys",
@@ -95,7 +95,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
     {
       name: "Amma",
       role: "Engineer",
-      location: "Hoza Digital Core Team Â· Remote-First",
+      location: "Hoza Digital Core Team • Remote-First",
       avatar: "/images/authors/amma.webp",
       bio: "Frontend & Systems Engineer at Hoza Digital. Focused on design systems, conversion-driven UX/UI, interaction fidelity, and fluid web experiences that drive user action.",
       stats: "100% Type-Safe",
@@ -225,9 +225,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
   return (
     <section
       id="about"
-      className="relative py-24 px-6 sm:px-8 max-w-7xl mx-auto w-full select-none"
+      className="relative py-20 sm:py-24 px-4 sm:px-8 max-w-7xl mx-auto w-full select-none"
     >
-      {/* â”€â”€ SECTION HEADER (Clean, Balanced & Aligned) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* Section Header */}
       <div className="border-b border-[#D4FF00]/20 pb-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
           <div className="font-mono text-xs text-[#D4FF00] uppercase tracking-widest mb-3 flex items-center gap-2">
@@ -250,7 +250,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
         </div>
       </div>
 
-      {/* â”€â”€ CLEAN TAB BAR (Segmented Pill Style, High Readability) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* Tabs */}
       <div className="mb-10 p-1.5 bg-[#121214] border border-white/10 rounded-xl grid grid-cols-2 md:grid-cols-4 gap-1.5">
         {tabs.map((tab) => {
           const isSelected = activeTab === tab.id;
@@ -263,7 +263,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
               onClick={() => handleTabSelect(tab.id)}
               onMouseEnter={() => soundEffects.playHover?.()}
               className={cn(
-                "py-3 px-4 rounded-lg text-left transition-all duration-200 cursor-pointer flex items-center gap-3 relative group",
+                "py-2.5 sm:py-3 px-2.5 sm:px-4 rounded-lg text-left transition-all duration-200 cursor-pointer flex items-center gap-2 sm:gap-3 relative group",
                 isSelected
                   ? "bg-[#1E1E22] text-white shadow-lg border border-white/15"
                   : "text-neutral-400 hover:text-white hover:bg-white/5 border border-transparent"
@@ -292,12 +292,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
         })}
       </div>
 
-      {/* â”€â”€ CONTENT PANEL (Simple, Clean, Easy on the Eyes) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="bg-[#0D0D10] border border-white/10 rounded-2xl p-4 sm:p-8 lg:p-10 relative overflow-hidden shadow-2xl">
         <AnimatePresence mode="wait">
-          {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+          {/* ---
               TAB 0: STUDIO & MISSION
-              â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+              --- */}
           {activeTab === 0 && (
             <motion.div
               key="tab-mission"
@@ -424,9 +423,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             </motion.div>
           )}
 
-          {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+          {/* ---
               TAB 1: CORE SQUAD
-              â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+              --- */}
           {activeTab === 1 && (
             <motion.div
               key="tab-squad"
@@ -440,7 +439,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
               <div className="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                   <span className="font-mono text-xs text-[#D4FF00] uppercase tracking-wider block mb-1">
-                    Who Builds It Â· Remote-First Â· Since 2025
+                    Who Builds It • Remote-First • Since 2025
                   </span>
                   <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                     Dedicated Engineers, Zero Account Managers.
@@ -555,9 +554,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             </motion.div>
           )}
 
-          {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+          {/* ---
               TAB 2: 11 AUTOMATION ENGINES (Clean Categorized Layout)
-              â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+              --- */}
           {activeTab === 2 && (
             <motion.div
               key="tab-engines"
@@ -634,9 +633,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({
             </motion.div>
           )}
 
-          {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+          {/* ---
               TAB 3: PLATFORM & STACK
-              â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+              --- */}
           {activeTab === 3 && (
             <motion.div
               key="tab-platform"

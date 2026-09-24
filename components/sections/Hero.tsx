@@ -227,10 +227,10 @@ export const Hero: React.FC<HeroProps> = ({
           initial={{ opacity: 0, y: -14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#121216]/90 border border-[#D4FF00]/40 text-[#D4FF00] font-mono text-[11px] uppercase tracking-[0.2em] shadow-[0_0_16px_rgba(212,255,0,0.2)] mb-5 sm:mb-6 backdrop-blur-md"
+          className="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 rounded-full bg-[#121216]/90 border border-[#D4FF00]/40 text-[#D4FF00] font-mono text-[9px] min-[360px]:text-[10px] sm:text-[11px] uppercase tracking-wider sm:tracking-[0.2em] shadow-[0_0_16px_rgba(212,255,0,0.2)] mb-5 sm:mb-6 backdrop-blur-md max-w-full truncate"
         >
-          <Sparkles className="w-3.5 h-3.5 text-[#D4FF00] animate-pulse" />
-          <span>HOZA DIGITAL STUDIO // PRODUCTION ENGINE</span>
+          <Sparkles className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#D4FF00] animate-pulse shrink-0" />
+          <span className="truncate">HOZA DIGITAL STUDIO // PRODUCTION ENGINE</span>
         </motion.div>
 
         {/* Massive Clean Brutalist Stacked Headline with Kinetic Hover Slants */}
@@ -238,16 +238,16 @@ export const Hero: React.FC<HeroProps> = ({
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center justify-center font-display font-black text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] xl:text-[8.75rem] leading-[0.88] tracking-[-0.04em] uppercase select-none space-y-1 sm:space-y-2"
+          className="flex flex-col items-center justify-center font-display font-black text-3xl min-[360px]:text-[2.25rem] min-[420px]:text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] xl:text-[8.75rem] leading-[0.9] sm:leading-[0.88] tracking-[-0.04em] uppercase select-none space-y-1 sm:space-y-2 max-w-full"
         >
           {/* Line 1: WE BUILD */}
-          <div className="flex items-center justify-center gap-x-3 sm:gap-x-5 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
+          <div className="flex items-center justify-center gap-x-2.5 sm:gap-x-5 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
             <KineticWord text="WE" />
             <KineticWord text="BUILD" />
           </div>
 
           {/* Line 2: DIGITAL THINGS. */}
-          <div className="flex items-center justify-center gap-x-3 sm:gap-x-5 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
+          <div className="flex items-center justify-center gap-x-2.5 sm:gap-x-5 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
             <KineticWord text="DIGITAL" />
             <KineticWord text="THINGS." dotColor="text-[#D4FF00]" />
           </div>
@@ -280,7 +280,7 @@ export const Hero: React.FC<HeroProps> = ({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 mt-7 sm:mt-9"
+          className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 mt-7 sm:mt-9 w-full max-w-xl mx-auto"
         >
           <button
             onClick={() => {
@@ -288,7 +288,7 @@ export const Hero: React.FC<HeroProps> = ({
               onOpenProjectModal();
             }}
             onMouseEnter={() => soundEffects.playHover?.()}
-            className="btn-tactical btn-tactical-volt shadow-[0_0_25px_rgba(212,255,0,0.35)]"
+            className="btn-tactical btn-tactical-volt shadow-[0_0_25px_rgba(212,255,0,0.35)] w-full sm:w-auto justify-between"
           >
             <span className="btn-box-left">
               <Zap className="w-3.5 h-3.5 text-[#09090B]" />
@@ -309,7 +309,7 @@ export const Hero: React.FC<HeroProps> = ({
               else if (onOpenEstimator) onOpenEstimator();
             }}
             onMouseEnter={() => soundEffects.playHover?.()}
-            className="btn-tactical hover:border-[#D4FF00]"
+            className="btn-tactical hover:border-[#D4FF00] w-full sm:w-auto justify-between"
           >
             <span className="btn-box-left">
               <Gauge className="w-3.5 h-3.5 text-[#D4FF00]" />
@@ -328,7 +328,7 @@ export const Hero: React.FC<HeroProps> = ({
               onOpenStudioDeck?.();
             }}
             onMouseEnter={() => soundEffects.playHover?.()}
-            className="btn-tactical hover:border-[#D4FF00] bg-white/[0.04]"
+            className="btn-tactical hover:border-[#D4FF00] bg-white/[0.04] w-full sm:w-auto justify-between"
           >
             <span className="btn-box-left">
               <FileDown className="w-3.5 h-3.5 text-[#D4FF00]" />
@@ -347,29 +347,29 @@ export const Hero: React.FC<HeroProps> = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-white/10 w-full max-w-2xl grid grid-cols-3 gap-4 sm:gap-8 text-center font-mono"
+          className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-white/10 w-full max-w-2xl grid grid-cols-3 gap-2 sm:gap-8 text-center font-mono"
         >
           <div>
-            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-hoza-white font-display">
+            <div className="text-lg min-[360px]:text-xl sm:text-2xl lg:text-3xl font-bold text-hoza-white font-display">
               14 DAYS
             </div>
-            <div className="text-[10px] text-hoza-muted uppercase mt-1 tracking-wider">
+            <div className="text-[9px] min-[360px]:text-[10px] text-hoza-muted uppercase mt-1 tracking-wider">
               SPRINT VELOCITY
             </div>
           </div>
           <div>
-            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#D4FF00] font-display">
+            <div className="text-lg min-[360px]:text-xl sm:text-2xl lg:text-3xl font-bold text-[#D4FF00] font-display">
               100 / 100
             </div>
-            <div className="text-[10px] text-hoza-muted uppercase mt-1 tracking-wider">
+            <div className="text-[9px] min-[360px]:text-[10px] text-hoza-muted uppercase mt-1 tracking-wider">
               LIGHTHOUSE SPEED
             </div>
           </div>
           <div>
-            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-hoza-white font-display">
+            <div className="text-lg min-[360px]:text-xl sm:text-2xl lg:text-3xl font-bold text-hoza-white font-display">
               100% IP
             </div>
-            <div className="text-[10px] text-hoza-muted uppercase mt-1 tracking-wider">
+            <div className="text-[9px] min-[360px]:text-[10px] text-hoza-muted uppercase mt-1 tracking-wider">
               CODE TRANSFER
             </div>
           </div>
@@ -377,12 +377,12 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       {/* Bottom Sub-Telemetry Notice */}
-      <div className="relative z-20 flex items-center justify-between font-mono text-[10px] text-hoza-muted border-t border-white/5 pt-3 w-full">
-        <span>ARCH: DETERMINISTIC REACT &bull; ZERO RUNTIME BLOAT</span>
-        <span className="hidden sm:inline-block text-[#D4FF00]">
+      <div className="relative z-20 flex items-center justify-between font-mono text-[9px] sm:text-[10px] text-hoza-muted border-t border-white/5 pt-3 w-full gap-2">
+        <span className="truncate">ARCH: DETERMINISTIC REACT &bull; ZERO RUNTIME BLOAT</span>
+        <span className="hidden sm:inline-block text-[#D4FF00] shrink-0">
           HOZA CYBER PLATFORM v4.0
         </span>
-        <span>LATENCY OPTIMIZED</span>
+        <span className="shrink-0">LATENCY OPTIMIZED</span>
       </div>
     </section>
   );

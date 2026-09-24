@@ -184,7 +184,7 @@ export const StudioDeckModal: React.FC<StudioDeckModalProps> = ({
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 select-none">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 min-[400px]:p-4 sm:p-6 select-none">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -203,7 +203,7 @@ export const StudioDeckModal: React.FC<StudioDeckModalProps> = ({
             className="relative w-full max-w-2xl bg-[#0E0E12] border border-[#D4FF00]/40 rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.9),0_0_30px_rgba(212,255,0,0.15)] overflow-hidden z-10 flex flex-col"
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#121216]">
+            <div className="flex items-center justify-between px-4 min-[400px]:px-6 py-3.5 sm:py-4 border-b border-white/10 bg-[#121216]">
               <div className="flex items-center gap-2.5">
                 <FileDown className="w-4 h-4 text-[#D4FF00]" />
                 <span className="font-mono text-xs font-bold text-white tracking-widest uppercase">
@@ -219,7 +219,7 @@ export const StudioDeckModal: React.FC<StudioDeckModalProps> = ({
             </div>
 
             {/* Body */}
-            <div className="p-6 space-y-5">
+            <div className="p-4 min-[400px]:p-6 space-y-4 sm:space-y-5">
               {/* Progress and status */}
               <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs font-mono">

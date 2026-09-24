@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { soundEffects } from "@/components/ui/SoundEffects";
@@ -134,7 +134,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
   return (
     <section
       id="estimator"
-      className="relative py-24 sm:py-28 px-6 sm:px-8 max-w-7xl mx-auto w-full select-none"
+      className="relative py-24 sm:py-28 px-4 sm:px-8 max-w-7xl mx-auto w-full select-none"
     >
       {/* Section Header */}
       <div className="border-b border-[#D4FF00]/20 pb-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10">
@@ -159,11 +159,11 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
       </div>
 
       {/* Main Estimator HUD Container */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start relative z-10">
         {/* Left Configurator Column (7 cols) */}
         <div className="lg:col-span-7 space-y-6 sm:space-y-8">
           {/* Step 1: Select Foundation (Clean Rounded Container) */}
-          <div className="p-6 sm:p-8 bg-[#121216]/80 border border-white/10 rounded-2xl backdrop-blur-md shadow-xl">
+          <div className="p-4 sm:p-6 lg:p-8 bg-[#121216]/80 border border-white/10 rounded-2xl backdrop-blur-md shadow-xl">
             <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
               <span className="font-mono text-xs text-[#D4FF00] uppercase font-bold flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#D4FF00] shadow-[0_0_8px_#D4FF00]" />
@@ -234,7 +234,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
           </div>
 
           {/* Step 2: Select Addons (Clean Rounded Container) */}
-          <div className="p-6 sm:p-8 bg-[#121216]/80 border border-white/10 rounded-2xl backdrop-blur-md shadow-xl">
+          <div className="p-4 sm:p-6 lg:p-8 bg-[#121216]/80 border border-white/10 rounded-2xl backdrop-blur-md shadow-xl">
             <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
               <span className="font-mono text-xs text-[#D4FF00] uppercase font-bold flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#D4FF00] shadow-[0_0_8px_#D4FF00]" />
@@ -285,7 +285,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
 
         {/* Right Output Scope Summary Column (5 cols, sticky) */}
         <div className="lg:col-span-5 lg:sticky lg:top-28">
-          <div className="p-6 sm:p-8 bg-[#121216]/90 border border-[#D4FF00]/40 rounded-2xl backdrop-blur-md shadow-2xl relative overflow-hidden">
+          <div className="p-4 sm:p-6 lg:p-8 bg-[#121216]/90 border border-[#D4FF00]/40 rounded-2xl backdrop-blur-md shadow-2xl relative overflow-hidden">
             {/* Top Badge */}
             <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
               <span className="font-mono text-xs text-[#D4FF00] uppercase font-bold flex items-center gap-2">
@@ -298,10 +298,10 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
             </div>
 
             {/* Velocity Output Display */}
-            <div className="mb-6 p-5 bg-[#09090B] border border-white/10 rounded-2xl flex items-center justify-between shadow-inner relative overflow-hidden">
-              <div className="min-h-[56px] flex flex-col justify-center">
-                <div className="flex items-center gap-2">
-                  <span className="font-mono text-[10px] text-hoza-muted uppercase block">
+            <div className="mb-6 p-4 sm:p-5 bg-[#09090B] border border-white/10 rounded-2xl flex items-center justify-between shadow-inner relative overflow-hidden gap-3">
+              <div className="min-h-[56px] flex flex-col justify-center min-w-0">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="font-mono text-[9px] min-[360px]:text-[10px] text-hoza-muted uppercase block truncate">
                     ESTIMATED SPRINT DURATION
                   </span>
                   <AnimatePresence mode="wait">
@@ -325,7 +325,7 @@ export const ProjectEstimator: React.FC<ProjectEstimatorProps> = ({
                     exit={{ opacity: 0, y: -8, filter: "blur(2px)" }}
                     transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    <span className="font-display font-black text-3xl sm:text-4xl text-hoza-white mt-1 block">
+                    <span className="font-display font-black text-2xl min-[400px]:text-3xl sm:text-4xl text-hoza-white mt-1 block">
                       ~{totalSprintDays} Working Days
                     </span>
                   </motion.div>
